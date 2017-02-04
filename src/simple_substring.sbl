@@ -1,0 +1,14 @@
+externals ( stem )
+
+
+backwardmode (
+  define stem as (
+     [substring] among (
+       'sses' (<-'ss')
+       'ies'  (<-'i')
+       'ss'   ()
+       's'    (delete)
+     )
+  )
+)
+

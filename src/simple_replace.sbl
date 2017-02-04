@@ -1,0 +1,13 @@
+externals ( stem )
+
+stringescapes {}
+
+stringdef ss   hex 'DF'
+
+define stem as (
+    test repeat (
+        (
+            ['{ss}'] <- 'ss'
+        ) or next
+    )
+)
