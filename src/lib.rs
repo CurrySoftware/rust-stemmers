@@ -1,11 +1,7 @@
 use std::borrow::Cow;
 
-mod simple_replace;
-mod simple_insert;
-mod simple_substring;
 mod german;
-mod combined;
-
+mod english;
 
 #[derive(Debug)]
 pub struct SnowballEnv<'a> {
@@ -35,6 +31,29 @@ impl<'a> SnowballEnv<'a> {
 
     fn get_current(self) -> Cow<'a, str> {
         self.current
+    }
+
+    fn replace_s(&mut self, bra: usize, ket: usize, s: &str) -> i32 {
+        let adjustment = s.len() as i32 - (ket as i32 - bra as i32);
+        let mut result = String::with_capacity(self.current.len());
+        {
+            let (lhs, _) = self.current.split_at(bra);
+            let (_, rhs) = self.current.split_at(ket);
+            result.push_str(lhs);
+            result.push_str(s);
+            result.push_str(rhs);
+        }
+        // ... not very nice...
+        let new_lim = self.limit as i32 + adjustment;
+        self.limit = new_lim as usize;
+        if self.cursor >= ket {
+            let new_cur = self.cursor as i32 + adjustment;
+            self.cursor = new_cur as usize;
+        } else if self.cursor > bra {
+            self.cursor = bra
+        }
+        self.current = Cow::from(result);
+        adjustment
     }
 
     /// Check if s is after cursor.
@@ -71,25 +90,8 @@ impl<'a> SnowballEnv<'a> {
 
     /// Replace string between `bra` and `ket` with s
     fn slice_from(&mut self, s: &str) -> bool {
-        let adjustment = s.len() as i32 - (self.ket as i32 - self.bra as i32);
-        let mut result = String::with_capacity(self.current.len());
-        {
-            let (lhs, _) = self.current.split_at(self.bra);
-            let (_, rhs) = self.current.split_at(self.ket);
-            result.push_str(lhs);
-            result.push_str(s);
-            result.push_str(rhs);
-        }
-        // ... not very nice...
-        let new_lim = self.limit as i32 + adjustment;
-        self.limit = new_lim as usize;
-        if self.cursor >= self.ket {
-            let new_cur = self.cursor as i32 + adjustment;
-            self.cursor = new_cur as usize;
-        } else if self.cursor > self.bra {
-            self.cursor = self.bra
-        }
-        self.current = Cow::from(result);
+        let (bra, ket) = (self.bra, self.ket);
+        self.replace_s(bra, ket, s);
         true
     }
 
@@ -239,6 +241,16 @@ impl<'a> SnowballEnv<'a> {
                 return index;
             }
             index -= 1;
+        }
+    }
+
+    fn insert(&mut self, bra: usize, ket: usize, s: &str) {
+        let adjustment = self.replace_s(bra, ket, s);
+        if bra <= self.bra {
+            self.bra = (self.bra as i32 + adjustment) as usize;
+        }
+        if bra <= self.ket {
+            self.ket = (self.ket as i32 + adjustment) as usize;
         }
     }
 
@@ -400,46 +412,7 @@ mod tests {
     }
 
     #[test]
-    fn simple_replace_test() {
-        use simple_replace::_stem;
-        stemms_to("ß", "ss", _stem);
-        stemms_to("ss", "ss", _stem);
-        stemms_to("test", "test", _stem);
-        stemms_to("ß\nss\nß", "ss\nss\nss", _stem);
-    }
-
-    #[test]
-    fn simple_insert_test() {
-        use simple_insert::_stem;
-        stemms_to("uuu", "uUu", _stem);
-        stemms_to("yyy", "yYy", _stem);
-        stemms_to("aa", "aa", _stem);
-        stemms_to("test", "test", _stem);
-    }
-
-    #[test]
-    fn combined_test() {
-        use combined::_stem;
-        stemms_to("uuußs", "uUusss", _stem);
-        stemms_to("ßsyy", "sssyy", _stem);
-    }
-
-    #[test]
     fn german_test() {
-        use german::_stem;
-
-        stemms_to("bäuerin", "bauerin", _stem);
-        stemms_to("ängste", "angst", _stem);
-        stemms_to("abfällige", "abfall", _stem);
-        stemms_to("ablich", "ablich", _stem);
-        stemms_to("abenlich", "aben", _stem);
-        stemms_to("haß", "hass", _stem);
-        stemms_to("hause", "haus", _stem);
-        stemms_to("aufeinanderschlügen", "aufeinanderschlug", _stem);
-    }
-
-    #[test]
-    fn full_german_test() {
         use german::_stem;
         use std::fs;
         use std::io;
@@ -454,4 +427,22 @@ mod tests {
             stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), _stem);
         }
     }
+
+    #[test]
+    fn english_test() {
+        use english::_stem;
+        use std::fs;
+        use std::io;
+        use std::io::BufRead;
+
+        let vocab = io::BufReader::new(fs::File::open("voc_en.txt").unwrap());
+        let result = io::BufReader::new(fs::File::open("res_en.txt").unwrap());
+
+        let lines = vocab.lines().zip(result.lines());
+
+        for (voc, res) in lines {
+            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), _stem);
+        }
+    }
 }
+
