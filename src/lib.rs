@@ -5,6 +5,7 @@ mod spanish;
 mod german;
 mod english;
 mod portuguese;
+mod italian;
 
 #[derive(Debug)]
 pub struct SnowballEnv<'a> {
@@ -491,6 +492,23 @@ mod tests {
 
         let vocab = io::BufReader::new(fs::File::open("voc_pt.txt").unwrap());
         let result = io::BufReader::new(fs::File::open("res_pt.txt").unwrap());
+
+        let lines = vocab.lines().zip(result.lines());
+
+        for (voc, res) in lines {
+            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), _stem);
+        }
+    }
+
+    #[test]
+    fn italian_test() {
+        use italian::_stem;
+        use std::fs;
+        use std::io;
+        use std::io::BufRead;
+
+        let vocab = io::BufReader::new(fs::File::open("voc_it.txt").unwrap());
+        let result = io::BufReader::new(fs::File::open("res_it.txt").unwrap());
 
         let lines = vocab.lines().zip(result.lines());
 
