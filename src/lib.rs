@@ -80,13 +80,13 @@ impl<'a> SnowballEnv<'a> {
             result.push_str(s);
             result.push_str(rhs);
         }
-        // ... not very nice... 
+        // ... not very nice...
         let new_lim = self.limit as i32 + adjustment;
         self.limit = new_lim as usize;
         if self.cursor >= self.ket {
             let new_cur = self.cursor as i32 + adjustment;
             self.cursor = new_cur as usize;
-        } else if self.cursor > self.bra{
+        } else if self.cursor > self.bra {
             self.cursor = self.bra
         }
         self.current = Cow::from(result);
@@ -255,26 +255,17 @@ impl<'a> SnowballEnv<'a> {
         let mut common_j = 0;
 
         let mut first_key_inspected = false;
-
         loop {
             let k = i + ((j - i) >> 1);
             let mut diff: i32 = 0;
             let mut common = min(common_i, common_j);
             let w = &amongs[k as usize];
-            for lvar in w.0.chars().skip(common) {
+            for lvar in common..w.0.len() {
                 if c + common == l {
                     diff = -1;
                     break;
                 }
-                // Get next char boundries for self.current and w
-                let char_bound = Self::get_next_char_boundry(&self.current, c + common);
-                let cur_char = self.current[char_bound..].chars().next();
-
-                // Diff them!
-                if cur_char.is_none() {
-                    break;
-                }
-                diff = cur_char.unwrap() as i32 - lvar as i32;
+                diff = self.current.as_bytes()[c + common] as i32 - w.0.as_bytes()[lvar] as i32;
                 if diff != 0 {
                     break;
                 }
@@ -302,7 +293,7 @@ impl<'a> SnowballEnv<'a> {
         }
         loop {
             let w = &amongs[i as usize];
-            if common_i >= w.0.chars().count() {
+            if common_i >= w.0.len() {
                 self.cursor = c + w.0.len();
                 if let Some(ref method) = w.3 {
                     let res = method(self);
@@ -347,18 +338,9 @@ impl<'a> SnowballEnv<'a> {
                     diff = -1;
                     break;
                 }
-                // Get the char boundries for self.current and w
-                let char_bound = Self::get_next_char_boundry_b(&self.current, c - 1 - common);
-                let w_char_bound = Self::get_next_char_boundry_b(&w.0, lvar);
-                // Get the chars
-                let cur_char = self.current[char_bound..].chars().next();
-                let w_char = w.0[w_char_bound..].chars().next();
-                // Diff them!
-                if cur_char.is_some() && w_char.is_some() {
-                    diff = cur_char.unwrap() as i32 - w_char.unwrap() as i32;
-                    if diff != 0 {
-                        break;
-                    }
+                diff = self.current.as_bytes()[c - 1 - common] as i32 - w.0.as_bytes()[lvar] as i32;
+                if diff != 0 {
+                    break;
                 }
                 common += 1;
             }
