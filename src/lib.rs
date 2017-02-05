@@ -6,6 +6,7 @@ mod german;
 mod english;
 mod portuguese;
 mod italian;
+mod romanian;
 
 #[derive(Debug)]
 pub struct SnowballEnv<'a> {
@@ -16,7 +17,6 @@ pub struct SnowballEnv<'a> {
     bra: usize,
     ket: usize,
 }
-
 
 struct Among(&'static str, i32, i32, Option<Box<Fn(&SnowballEnv) -> bool + Sync>>);
 
@@ -307,6 +307,7 @@ impl<'a> SnowballEnv<'a> {
                 first_key_inspected = true;
             }
         }
+
         loop {
             let w = &amongs[i as usize];
             if common_i >= w.0.len() {
@@ -349,15 +350,32 @@ impl<'a> SnowballEnv<'a> {
                 common_j
             };
             let w = &amongs[k as usize];
-            for lvar in (0..w.0.len() - common).rev() {
+            for lvar in (0..w.0.len() - common).rev() {                
                 if c - common == lb {
                     diff = -1;
                     break;
                 }
-                diff = self.current.as_bytes()[c - 1 - common] as i32 - w.0.as_bytes()[lvar] as i32;
+                //What we do here, I can only assume.
+                //We do not check bytewise, as in find_among, but characterwise
+                //And probably we check some characters at least twice...
+                //I tried fixing that by counting up common by the number of matched bytes.
+                //That did not work...
+                
+                // Get the char boundries for self.current and w
+                let char_bound = Self::get_next_char_boundry_b(&self.current, c - 1 - common);
+                let w_char_bound = Self::get_next_char_boundry_b(&w.0, lvar);
+                // Get the chars
+                let cur_char = self.current[char_bound..].chars().next();
+                let w_char = w.0[w_char_bound..].chars().next();             
+                // Diff them!
+                if cur_char.is_none() || w_char.is_none() {
+                    break;
+                }
+                diff = cur_char.unwrap() as i32 - w_char.unwrap() as i32;
                 if diff != 0 {
                     break;
                 }
+                //Count up commons. But not one character but the byte width of that char
                 common += 1;
             }
             if diff < 0 {
@@ -381,7 +399,6 @@ impl<'a> SnowballEnv<'a> {
             }
         }
         loop {
-
             let w = &amongs[i as usize];
             if common_i >= w.0.len() {
                 self.cursor = c - w.0.len();
@@ -516,5 +533,21 @@ mod tests {
             stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), _stem);
         }
     }
-}
 
+    #[test]
+    fn romanian_test() {
+        use romanian::_stem;
+        use std::fs;
+        use std::io;
+        use std::io::BufRead;
+
+        let vocab = io::BufReader::new(fs::File::open("voc_ro.txt").unwrap());
+        let result = io::BufReader::new(fs::File::open("res_ro.txt").unwrap());
+
+        let lines = vocab.lines().zip(result.lines());
+
+        for (voc, res) in lines {
+            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), _stem);
+        }
+    }
+}
