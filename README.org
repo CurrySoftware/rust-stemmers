@@ -1,6 +1,6 @@
 #+OPTIONS: toc:nil
 
-* Native Stemmers
+* Rust Stemmers
 This crate implements some stemmer algorithms found in the [[http://snowballstem.org/][snowball project]] which are compiled to rust using a [[https://github.com/JDemler/snowball][rust-backend]] for the snowball language.
 
 * Supported Algorithms
@@ -17,7 +17,6 @@ This crate implements some stemmer algorithms found in the [[http://snowballstem
 * Usage
 #+begin_src rust :exports code
 ```rust
-
 extern crate native_stemmers;
 use native_stemmers::{Algorithm, Stemmer};
 
@@ -32,8 +31,10 @@ assert_eq!(en_stemmer.stem("fruitlessly"), "fruitless");
 
 * Issues
 Generated code is neither beautiful nor idiomatic nor optimized and full of warnings. 
+
 There are some very low hanging fruit to fix this. 
 Contributions to the rust backend or this crate are very welcome.
 
 * Related Projects
-The [[https://github.com/lise-henry/stemmer-rs][stemmer]] crate provides bindings to the C Snowball implementation. 
+- [[https://github.com/JDemler/snowball][rust-backend]] for the snowball language which generated the code in src/snowball/algorithms.
+- The [[https://github.com/lise-henry/stemmer-rs][stemmer]] crate provides bindings to the C Snowball implementation. 
