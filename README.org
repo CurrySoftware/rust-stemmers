@@ -16,7 +16,8 @@ This crate implements some stemmer algorithms found in the [[http://snowballstem
 - Spanish
 
 * Usage
-#+begin_src rust :exports code
+
+#+begin_src rust
 ```rust
 extern crate native_stemmers;
 use native_stemmers::{Algorithm, Stemmer};
@@ -30,6 +31,7 @@ assert_eq!(en_stemmer.stem("fruitlessly"), "fruitless");
 ```
 #+end_src
 
+
 * Issues
 Generated code is neither beautiful nor idiomatic nor optimized and full of warnings. 
 
@@ -41,11 +43,11 @@ It is very simple to add a snowball-stemmer to this library:
 
 0. Install snowball with [[https://github.com/JDemler/snowball][rust-backend]] support.
 1. Put the <language>.sbl file containing the snowball-code in the algorithms directory 
-2. Add `pub mod <language>;` to src/snowball/algorithms/mod.rs
-3. Add an enum-variant to the `Algorithm`-enum
-4. In Stemmer::create add a path for your enum-variant
+2. Add ~pub mod <language>;~ to ~src/snowball/algorithms/mod.rs~
+3. Add an enum-variant to the ~Algorithm~-enum
+4. In ~Stemmer::create~ add a path for your enum-variant
 5. If test-data exists please consider implementing a test case in the tests-module
-6. Run the `recompile_and_test.sh`-script which expects a valid snowball-compiler installation in your path
+6. Run the ~recompile_and_test.sh~-script which expects a valid snowball-compiler installation in your path
 7. Send a pull-request
 
 * Related Projects
