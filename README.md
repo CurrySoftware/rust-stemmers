@@ -14,6 +14,7 @@ This crate implements some stemmer algorithms found in the [snowball project](ht
 -   Italian
 -   Portuguese
 -   Romanian
+-   Russian
 -   Spanish
 
 
@@ -38,6 +39,20 @@ Generated code is neither beautiful nor idiomatic nor optimized and full of warn
 
 There are some very low hanging fruit to fix this. 
 Contributions to the rust backend or this crate are very welcome.
+
+
+# Adding a stemmer
+
+It is very simple to add a snowball-stemmer to this library:
+
+1.  Install snowball with [rust-backend](https://github.com/JDemler/snowball) support.
+2.  Put the <language>.sbl file containing the snowball-code in the algorithms directory
+3.  Add \`pub mod <language>;\` to src/snowball/algorithms/mod.rs
+4.  Add an enum-variant to the \`Algorithm\`-enum
+5.  In Stemmer::create add a path for your enum-variant
+6.  If test-data exists please consider implementing a test case in the tests-module
+7.  Run the \`recompile<sub>and</sub><sub>test.sh</sub>\`-script which expects a valid snowball-compiler installation in your path
+8.  Send a pull-request
 
 
 # Related Projects
