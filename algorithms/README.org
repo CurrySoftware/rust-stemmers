@@ -1,4 +1,4 @@
-These algorithms are copies of the algorithms found in the [[https://github.com/snowballstem/snowball][snowball package]]. (See [[file:LICENSE][LICENSE]]).
+These algorithms are copies of the algorithms found in the [[https://github.com/snowballstem/snowball][snowball package]] and are licensed under the [[file:LICENSE][BSD-3 License]].
 To compile them to rust code yourself, please use the [[https://github.com/JDemler/snowball/tree/fb-rust_support][rust backend]] of the snowball compiler.
 
-This library ships with these algorithms already compiled.
+This library ships with these algorithms already compiled to rust.

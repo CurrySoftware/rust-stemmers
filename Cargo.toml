@@ -1,6 +1,8 @@
 [package]
-name = "snowball"
+name = "rust-stemmers"
 version = "0.1.0"
 authors = ["Jakob Demler <jdemler@curry-software.com>"]
-
-[dependencies]
+description = "A rust implementation of some popular snowball stemming algorithms"
+readme = "README.md"
+keywords = ["nlp", "stemming", "natural-language", "information-retrieval"]
+license = "MIT/BSD-3-Clause"
