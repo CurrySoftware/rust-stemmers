@@ -12,6 +12,7 @@ This crate implements some stemmer algorithms found in the [[http://snowballstem
 - Italian
 - Portuguese
 - Romanian
+- Russian
 - Spanish
 
 * Usage
