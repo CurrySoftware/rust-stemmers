@@ -1,8 +1,8 @@
-mod french;
-mod spanish;
-mod german;
-mod english;
-mod portuguese;
-mod italian;
-mod romanian;
-mod arabic;
+pub mod arabic;
+pub mod english;
+pub mod french;
+pub mod german;
+pub mod italian;
+pub mod portuguese;
+pub mod romanian;
+pub mod spanish;

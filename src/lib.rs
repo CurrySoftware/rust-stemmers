@@ -5,13 +5,33 @@ mod snowball;
 use snowball::SnowballEnv;
 
 
+pub enum Stemmers {
+    Arabic,
+    English,
+    French,
+    German,
+    Italian,
+    Portuguese,
+    Romanian,
+    Spanish
+}
+
 pub struct Stemmer{
     stemmer: Box<Fn(&mut SnowballEnv) -> bool>
 }
 
 impl Stemmer{
-    pub fn create(lang: &str) -> Self {
-
+    pub fn create(lang: Stemmers) -> Self {
+        match lang {
+            Stemmers::Arabic => Stemmer{ stemmer: Box::new(snowball::algorithms::arabic::_stem)},
+            Stemmers::English => Stemmer{ stemmer: Box::new(snowball::algorithms::english::_stem)},
+            Stemmers::French => Stemmer{ stemmer: Box::new(snowball::algorithms::french::_stem)},
+            Stemmers::German => Stemmer{ stemmer: Box::new(snowball::algorithms::german::_stem)},
+            Stemmers::Italian => Stemmer{ stemmer: Box::new(snowball::algorithms::italian::_stem)},
+            Stemmers::Portuguese => Stemmer{ stemmer: Box::new(snowball::algorithms::portuguese::_stem)},
+            Stemmers::Romanian => Stemmer{ stemmer: Box::new(snowball::algorithms::romanian::_stem)},
+            Stemmers::Spanish => Stemmer{ stemmer: Box::new(snowball::algorithms::spanish::_stem)},            
+        }
     }
 
     pub fn stem<'a>(&self, input: &'a str) -> Cow<'a, str> {

@@ -1,8 +1,8 @@
 //! This file was generated automatically by the Snowball to Rust compiler
 //! http://snowballstem.org/
 
-use SnowballEnv;
-use Among;
+use snowball::SnowballEnv;
+use snowball::Among;
 
 static a_0: &'static [Among; 3] = &[
     Among("", -1, 3, None),

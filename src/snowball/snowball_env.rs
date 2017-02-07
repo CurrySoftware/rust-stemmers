@@ -3,7 +3,7 @@ use snowball::Among;
 
 #[derive(Debug)]
 pub struct SnowballEnv<'a> {
-    current: Cow<'a, str>,
+    pub current: Cow<'a, str>,
     pub cursor: usize,
     pub limit: usize,
     pub limit_backward: usize,
@@ -54,7 +54,7 @@ impl<'a> SnowballEnv<'a> {
 
     /// Check if s is after cursor.
     /// If so, move cursor to the end of s
-    fn eq_s(&mut self, s: &str) -> bool {
+    pub fn eq_s(&mut self, s: &str) -> bool {
         if self.cursor >= self.limit {
             return false;
         }
@@ -71,7 +71,7 @@ impl<'a> SnowballEnv<'a> {
 
     /// Check if 's' is before cursor
     /// If so, move cursor to the beginning of s
-    fn eq_s_b(&mut self, s: &str) -> bool {
+    pub fn eq_s_b(&mut self, s: &str) -> bool {
         if (self.cursor as i32 - self.limit_backward as i32) < s.len() as i32 {
             false
             // Check if cursor -s.len is a char boundry. if not well... return false obv
@@ -85,14 +85,14 @@ impl<'a> SnowballEnv<'a> {
     }
 
     /// Replace string between `bra` and `ket` with s
-    fn slice_from(&mut self, s: &str) -> bool {
+    pub fn slice_from(&mut self, s: &str) -> bool {
         let (bra, ket) = (self.bra, self.ket);
         self.replace_s(bra, ket, s);
         true
     }
 
     /// Move cursor to next charater
-    fn next_char(&mut self) {
+    pub fn next_char(&mut self) {
         self.cursor += 1;
         while !self.current.is_char_boundary(self.cursor) {
             self.cursor += 1;
@@ -100,14 +100,14 @@ impl<'a> SnowballEnv<'a> {
     }
 
     /// Move cursor to previous character
-    fn previous_char(&mut self) {
+    pub fn previous_char(&mut self) {
         self.cursor -= 1;
         while !self.current.is_char_boundary(self.cursor) {
             self.cursor -= 1;
         }
     }
 
-    fn byte_index_for_hop(&self, mut delta: i32) -> i32 {
+    pub fn byte_index_for_hop(&self, mut delta: i32) -> i32 {
         if delta > 0 {
             let mut res = self.cursor;
             while delta > 0 {
@@ -135,7 +135,7 @@ impl<'a> SnowballEnv<'a> {
 
     /// Check if the char the cursor points to is in the grouping
     /// This is determined by weird magic stuff. I have no idea how it works
-    fn in_grouping(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
+    pub fn in_grouping(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
         if self.cursor >= self.limit {
             return false;
         }
@@ -154,7 +154,7 @@ impl<'a> SnowballEnv<'a> {
         return false;
     }
 
-    fn in_grouping_b(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
+    pub fn in_grouping_b(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
         if self.cursor <= self.limit_backward {
             return false;
         }
@@ -175,7 +175,7 @@ impl<'a> SnowballEnv<'a> {
         return false;
     }
 
-    fn out_grouping(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
+    pub fn out_grouping(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
         if self.cursor >= self.limit {
             return false;
         }
@@ -194,7 +194,7 @@ impl<'a> SnowballEnv<'a> {
         return false;
     }
 
-    fn out_grouping_b(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
+    pub fn out_grouping_b(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
         if self.cursor <= self.limit_backward {
             return false;
         }
@@ -218,11 +218,11 @@ impl<'a> SnowballEnv<'a> {
 
 
     /// Helper function that removes the string slice between `bra` and `ket`
-    fn slice_del(&mut self) -> bool {
+    pub fn slice_del(&mut self) -> bool {
         self.slice_from("")
     }
 
-    fn get_next_char_boundry(data: &str, mut index: usize) -> usize {
+    pub fn get_next_char_boundry(data: &str, mut index: usize) -> usize {
         loop {
             if index > data.len() || data.is_char_boundary(index) {
                 return index;
@@ -231,7 +231,7 @@ impl<'a> SnowballEnv<'a> {
         }
     }
 
-    fn get_next_char_boundry_b(data: &str, mut index: usize) -> usize {
+    pub fn get_next_char_boundry_b(data: &str, mut index: usize) -> usize {
         loop {
             if data.is_char_boundary(index) {
                 return index;
@@ -240,7 +240,7 @@ impl<'a> SnowballEnv<'a> {
         }
     }
 
-    fn insert(&mut self, bra: usize, ket: usize, s: &str) {
+    pub fn insert(&mut self, bra: usize, ket: usize, s: &str) {
         let adjustment = self.replace_s(bra, ket, s);
         if bra <= self.bra {
             self.bra = (self.bra as i32 + adjustment) as usize;
@@ -251,7 +251,7 @@ impl<'a> SnowballEnv<'a> {
     }
 
 
-    fn find_among(&mut self, amongs: &[Among]) -> i32 {
+    pub fn find_among(&mut self, amongs: &[Among]) -> i32 {
         use std::cmp::min;
         let mut i: i32 = 0;
         let mut j: i32 = amongs.len() as i32;
@@ -321,7 +321,7 @@ impl<'a> SnowballEnv<'a> {
         }
     }
 
-    fn find_among_b(&mut self, amongs: &[Among]) -> i32 {
+    pub fn find_among_b(&mut self, amongs: &[Among]) -> i32 {
         let mut i: i32 = 0;
         let mut j: i32 = amongs.len() as i32;
 
@@ -342,23 +342,23 @@ impl<'a> SnowballEnv<'a> {
                 common_j
             };
             let w = &amongs[k as usize];
-            for lvar in (0..w.0.len() - common).rev() {                
+            for lvar in (0..w.0.len() - common).rev() {
                 if c - common == lb {
                     diff = -1;
                     break;
                 }
-                //What we do here, I can only assume.
-                //We do not check bytewise, as in find_among, but characterwise
-                //And probably we check some characters at least twice...
-                //I tried fixing that by counting up common by the number of matched bytes.
-                //That did not work...
-                
+                // What we do here, I can only assume.
+                // We do not check bytewise, as in find_among, but characterwise
+                // And probably we check some characters at least twice...
+                // I tried fixing that by counting up common by the number of matched bytes.
+                // That did not work...
+
                 // Get the char boundries for self.current and w
                 let char_bound = Self::get_next_char_boundry_b(&self.current, c - 1 - common);
                 let w_char_bound = Self::get_next_char_boundry_b(&w.0, lvar);
                 // Get the chars
                 let cur_char = self.current[char_bound..].chars().next();
-                let w_char = w.0[w_char_bound..].chars().next();             
+                let w_char = w.0[w_char_bound..].chars().next();
                 // Diff them!
                 if cur_char.is_none() || w_char.is_none() {
                     break;
@@ -367,7 +367,7 @@ impl<'a> SnowballEnv<'a> {
                 if diff != 0 {
                     break;
                 }
-                //Count up commons. But not one character but the byte width of that char
+                // Count up commons. But not one character but the byte width of that char
                 common += 1;
             }
             if diff < 0 {

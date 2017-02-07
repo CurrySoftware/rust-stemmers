@@ -1,3 +1,3 @@
-use SnowballEnv;
+use snowball::SnowballEnv;
 
-pub struct Among(&'static str, i32, i32, Option<Box<Fn(&SnowballEnv) -> bool + Sync>>);
+pub struct Among(pub &'static str, pub i32, pub i32, pub Option<Box<Fn(&SnowballEnv) -> bool + Sync>>);
