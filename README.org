@@ -35,6 +35,18 @@ Generated code is neither beautiful nor idiomatic nor optimized and full of warn
 There are some very low hanging fruit to fix this. 
 Contributions to the rust backend or this crate are very welcome.
 
+* Adding a stemmer
+It is very simple to add a snowball-stemmer to this library:
+
+0. Install snowball with [[https://github.com/JDemler/snowball][rust-backend]] support.
+1. Put the <language>.sbl file containing the snowball-code in the algorithms directory 
+2. Add `pub mod <language>;` to src/snowball/algorithms/mod.rs
+3. Add an enum-variant to the `Algorithm`-enum
+4. In Stemmer::create add a path for your enum-variant
+5. If test-data exists please consider implementing a test case in the tests-module
+6. Run the `recompile_and_test.sh`-script which expects a valid snowball-compiler installation in your path
+7. Send a pull-request
+
 * Related Projects
 - [[https://github.com/JDemler/snowball][rust-backend]] for the snowball language which generated the code in src/snowball/algorithms.
 - The [[https://github.com/lise-henry/stemmer-rs][stemmer]] crate provides bindings to the C Snowball implementation. 
