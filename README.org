@@ -1,3 +1,5 @@
+#+OPTIONS: toc:nil
+
 * Native Stemmers
 This crate implements some stemmer algorithms found in the [[http://snowballstem.org/][snowball project]] which are compiled to rust using a [[https://github.com/JDemler/snowball][rust-backend]] for the snowball language.
 
@@ -13,15 +15,20 @@ This crate implements some stemmer algorithms found in the [[http://snowballstem
 - Spanish
 
 * Usage
-``` rust
-extern crate native_stemmers;
+#+begin_src rust :exports code
+```rust
 
+extern crate native_stemmers;
 use native_stemmers::{Algorithm, Stemmer};
 
+// Create a stemmer for the english language
 let en_stemmer = Stemmer::create(Algorithm::English);
-assert_eq!(en_stemmer.stem("fruitlessly"), "fruitless");
 
+// Stemm the word "fruitlessly"
+// Please be aware that all algorithms expect their input to only contain lowercase characters.
+assert_eq!(en_stemmer.stem("fruitlessly"), "fruitless");
 ```
+#+end_src
 
 * Issues
 Generated code is neither beautiful nor idiomatic nor optimized and full of warnings. 

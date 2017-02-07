@@ -1,10 +1,36 @@
+//! This library provides rust implementations for some stemmer algorithms
+//! written in the [snowball language](https://snowballstem.org/).
+//!
+//!
+//! All algorithms expect the input to already be lowercased.
+//!
+//! # Usage
+//! ```toml
+//! [dependencies]
+//! rust-stemmers = "0.1"
+//! ```
+//!
+//! ```rust
+//! extern crate rust_stemmers;
+//!
+//! use rust_stemmers::{Algorithm, Stemmer};
+//!
+//! fn main() {
+//!    let en_stemmer = Stemmer::create(Algorithm::English);
+//!    assert_eq!(en_stemmer.stem("fruitlessly"), "fruitless");
+//! }
+//! ```
+
+
 use std::borrow::Cow;
 
 mod snowball;
 
 use snowball::SnowballEnv;
+use snowball::algorithms;
 
-
+/// Enum of all supported algorithms.
+/// Check the [Snowball-Website](https://snowballstem.org/) for details.
 pub enum Algorithm {
     Arabic,
     English,
@@ -13,27 +39,31 @@ pub enum Algorithm {
     Italian,
     Portuguese,
     Romanian,
-    Spanish
+    Spanish,
 }
 
-pub struct Stemmer{
-    stemmer: Box<Fn(&mut SnowballEnv) -> bool>
+/// Wrapps a usable interface around the actual stemmer implementation
+pub struct Stemmer {
+    stemmer: Box<Fn(&mut SnowballEnv) -> bool>,
 }
 
-impl Stemmer{
+impl Stemmer {
+    /// Create a new stemmer from an algorithm
     pub fn create(lang: Algorithm) -> Self {
         match lang {
-            Algorithm::Arabic => Stemmer{ stemmer: Box::new(snowball::algorithms::arabic::_stem)},
-            Algorithm::English => Stemmer{ stemmer: Box::new(snowball::algorithms::english::_stem)},
-            Algorithm::French => Stemmer{ stemmer: Box::new(snowball::algorithms::french::_stem)},
-            Algorithm::German => Stemmer{ stemmer: Box::new(snowball::algorithms::german::_stem)},
-            Algorithm::Italian => Stemmer{ stemmer: Box::new(snowball::algorithms::italian::_stem)},
-            Algorithm::Portuguese => Stemmer{ stemmer: Box::new(snowball::algorithms::portuguese::_stem)},
-            Algorithm::Romanian => Stemmer{ stemmer: Box::new(snowball::algorithms::romanian::_stem)},
-            Algorithm::Spanish => Stemmer{ stemmer: Box::new(snowball::algorithms::spanish::_stem)},            
+            Algorithm::Arabic => Stemmer { stemmer: Box::new(algorithms::arabic::_stem) },
+            Algorithm::English => Stemmer { stemmer: Box::new(algorithms::english::_stem) },
+            Algorithm::French => Stemmer { stemmer: Box::new(algorithms::french::_stem) },
+            Algorithm::German => Stemmer { stemmer: Box::new(algorithms::german::_stem) },
+            Algorithm::Italian => Stemmer { stemmer: Box::new(algorithms::italian::_stem) },
+            Algorithm::Portuguese => Stemmer { stemmer: Box::new(algorithms::portuguese::_stem) },
+            Algorithm::Romanian => Stemmer { stemmer: Box::new(algorithms::romanian::_stem) },
+            Algorithm::Spanish => Stemmer { stemmer: Box::new(algorithms::spanish::_stem) },
         }
     }
 
+    /// Stem a single word
+    /// Please note, that the input is expected to be all lowercase (if that is applicable).
     pub fn stem<'a>(&self, input: &'a str) -> Cow<'a, str> {
         let mut env = SnowballEnv::create(input);
         (self.stemmer)(&mut env);
@@ -47,7 +77,7 @@ impl Stemmer{
 mod tests {
     use super::{Stemmer, Algorithm};
 
-    fn stemms_to(lhs: &str, rhs: &str, stemmer: Algorithm) {        
+    fn stemms_to(lhs: &str, rhs: &str, stemmer: Algorithm) {
         assert_eq!(Stemmer::create(stemmer).stem(lhs), rhs);
     }
 
@@ -63,7 +93,9 @@ mod tests {
         let lines = vocab.lines().zip(result.lines());
 
         for (voc, res) in lines {
-            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), Algorithm::German);
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::German);
         }
     }
 
@@ -79,7 +111,9 @@ mod tests {
         let lines = vocab.lines().zip(result.lines());
 
         for (voc, res) in lines {
-            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), Algorithm::English);
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::English);
         }
     }
 
@@ -95,7 +129,9 @@ mod tests {
         let lines = vocab.lines().zip(result.lines());
 
         for (voc, res) in lines {
-            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), Algorithm::French);
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::French);
         }
     }
 
@@ -111,7 +147,9 @@ mod tests {
         let lines = vocab.lines().zip(result.lines());
 
         for (voc, res) in lines {
-            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), Algorithm::Spanish);
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::Spanish);
         }
     }
 
@@ -127,7 +165,9 @@ mod tests {
         let lines = vocab.lines().zip(result.lines());
 
         for (voc, res) in lines {
-            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), Algorithm::Portuguese);
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::Portuguese);
         }
     }
 
@@ -143,7 +183,9 @@ mod tests {
         let lines = vocab.lines().zip(result.lines());
 
         for (voc, res) in lines {
-            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), Algorithm::Italian);
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::Italian);
         }
     }
 
@@ -159,7 +201,9 @@ mod tests {
         let lines = vocab.lines().zip(result.lines());
 
         for (voc, res) in lines {
-            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), Algorithm::Romanian);
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::Romanian);
         }
     }
 
@@ -175,7 +219,9 @@ mod tests {
         let lines = vocab.lines().zip(result.lines());
 
         for (voc, res) in lines {
-            stemms_to(voc.unwrap().as_str(), res.unwrap().as_str(), Algorithm::Arabic);
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::Arabic);
         }
     }
 
