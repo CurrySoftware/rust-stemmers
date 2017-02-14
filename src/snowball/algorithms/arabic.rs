@@ -4,7 +4,7 @@
 use snowball::SnowballEnv;
 use snowball::Among;
 
-static a_0: &'static [Among; 161] = &[
+static A_0: &'static [Among; 161] = &[
     Among("!", -1, 3, None),
     Among("\"", -1, 3, None),
     Among("%", -1, 3, None),
@@ -168,7 +168,7 @@ static a_0: &'static [Among; 161] = &[
     Among("\u{FEFC}", -1, 52, None)
 ];
 
-static a_1: &'static [Among; 5] = &[
+static A_1: &'static [Among; 5] = &[
     Among("\u{0622}", -1, 1, None),
     Among("\u{0623}", -1, 1, None),
     Among("\u{0624}", -1, 2, None),
@@ -176,7 +176,7 @@ static a_1: &'static [Among; 5] = &[
     Among("\u{0626}", -1, 3, None)
 ];
 
-static a_2: &'static [Among; 5] = &[
+static A_2: &'static [Among; 5] = &[
     Among("\u{0622}", -1, 1, None),
     Among("\u{0623}", -1, 1, None),
     Among("\u{0624}", -1, 2, None),
@@ -184,14 +184,14 @@ static a_2: &'static [Among; 5] = &[
     Among("\u{0626}", -1, 3, None)
 ];
 
-static a_3: &'static [Among; 4] = &[
+static A_3: &'static [Among; 4] = &[
     Among("\u{0627}\u{0644}", -1, 2, None),
     Among("\u{0628}\u{0627}\u{0644}", -1, 1, None),
     Among("\u{0643}\u{0627}\u{0644}", -1, 1, None),
     Among("\u{0644}\u{0644}", -1, 2, None)
 ];
 
-static a_4: &'static [Among; 5] = &[
+static A_4: &'static [Among; 5] = &[
     Among("\u{0623}\u{0622}", -1, 2, None),
     Among("\u{0623}\u{0623}", -1, 1, None),
     Among("\u{0623}\u{0624}", -1, 3, None),
@@ -199,38 +199,38 @@ static a_4: &'static [Among; 5] = &[
     Among("\u{0623}\u{0627}", -1, 4, None)
 ];
 
-static a_5: &'static [Among; 2] = &[
+static A_5: &'static [Among; 2] = &[
     Among("\u{0641}", -1, 1, None),
     Among("\u{0648}", -1, 2, None)
 ];
 
-static a_6: &'static [Among; 4] = &[
+static A_6: &'static [Among; 4] = &[
     Among("\u{0627}\u{0644}", -1, 2, None),
     Among("\u{0628}\u{0627}\u{0644}", -1, 1, None),
     Among("\u{0643}\u{0627}\u{0644}", -1, 1, None),
     Among("\u{0644}\u{0644}", -1, 2, None)
 ];
 
-static a_7: &'static [Among; 3] = &[
+static A_7: &'static [Among; 3] = &[
     Among("\u{0628}", -1, 1, None),
     Among("\u{0628}\u{0628}", 0, 2, None),
     Among("\u{0643}\u{0643}", -1, 3, None)
 ];
 
-static a_8: &'static [Among; 4] = &[
+static A_8: &'static [Among; 4] = &[
     Among("\u{0633}\u{0623}", -1, 4, None),
     Among("\u{0633}\u{062A}", -1, 2, None),
     Among("\u{0633}\u{0646}", -1, 3, None),
     Among("\u{0633}\u{064A}", -1, 1, None)
 ];
 
-static a_9: &'static [Among; 3] = &[
+static A_9: &'static [Among; 3] = &[
     Among("\u{062A}\u{0633}\u{062A}", -1, 1, None),
     Among("\u{0646}\u{0633}\u{062A}", -1, 1, None),
     Among("\u{064A}\u{0633}\u{062A}", -1, 1, None)
 ];
 
-static a_10: &'static [Among; 10] = &[
+static A_10: &'static [Among; 10] = &[
     Among("\u{0643}\u{0645}\u{0627}", -1, 3, None),
     Among("\u{0647}\u{0645}\u{0627}", -1, 3, None),
     Among("\u{0646}\u{0627}", -1, 2, None),
@@ -243,33 +243,33 @@ static a_10: &'static [Among; 10] = &[
     Among("\u{064A}", -1, 1, None)
 ];
 
-static a_11: &'static [Among; 1] = &[
+static A_11: &'static [Among; 1] = &[
     Among("\u{0646}", -1, 1, None)
 ];
 
-static a_12: &'static [Among; 3] = &[
+static A_12: &'static [Among; 3] = &[
     Among("\u{0627}", -1, 1, None),
     Among("\u{0648}", -1, 1, None),
     Among("\u{064A}", -1, 1, None)
 ];
 
-static a_13: &'static [Among; 1] = &[
+static A_13: &'static [Among; 1] = &[
     Among("\u{0627}\u{062A}", -1, 1, None)
 ];
 
-static a_14: &'static [Among; 1] = &[
+static A_14: &'static [Among; 1] = &[
     Among("\u{062A}", -1, 1, None)
 ];
 
-static a_15: &'static [Among; 1] = &[
+static A_15: &'static [Among; 1] = &[
     Among("\u{0629}", -1, 1, None)
 ];
 
-static a_16: &'static [Among; 1] = &[
+static A_16: &'static [Among; 1] = &[
     Among("\u{064A}", -1, 1, None)
 ];
 
-static a_17: &'static [Among; 12] = &[
+static A_17: &'static [Among; 12] = &[
     Among("\u{0643}\u{0645}\u{0627}", -1, 3, None),
     Among("\u{0647}\u{0645}\u{0627}", -1, 3, None),
     Among("\u{0646}\u{0627}", -1, 2, None),
@@ -284,7 +284,7 @@ static a_17: &'static [Among; 12] = &[
     Among("\u{0646}\u{064A}", -1, 2, None)
 ];
 
-static a_18: &'static [Among; 11] = &[
+static A_18: &'static [Among; 11] = &[
     Among("\u{0627}", -1, 2, None),
     Among("\u{062A}\u{0627}", 0, 3, None),
     Among("\u{062A}\u{0645}\u{0627}", 0, 5, None),
@@ -298,17 +298,17 @@ static a_18: &'static [Among; 11] = &[
     Among("\u{064A}", -1, 2, None)
 ];
 
-static a_19: &'static [Among; 2] = &[
+static A_19: &'static [Among; 2] = &[
     Among("\u{0648}\u{0627}", -1, 1, None),
     Among("\u{062A}\u{0645}", -1, 1, None)
 ];
 
-static a_20: &'static [Among; 2] = &[
+static A_20: &'static [Among; 2] = &[
     Among("\u{0648}", -1, 1, None),
     Among("\u{062A}\u{0645}\u{0648}", 0, 2, None)
 ];
 
-static a_21: &'static [Among; 1] = &[
+static A_21: &'static [Among; 1] = &[
     Among("\u{0649}", -1, 1, None)
 ];
 
@@ -332,7 +332,7 @@ fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
             // [, line 261
             env.bra = env.cursor;
             // substring, line 261
-            let among_var = env.find_among(a_0);
+            let among_var = env.find_among(A_0);
             if among_var == 0{
                  break 'lab1;
             }
@@ -728,7 +728,6 @@ fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 }
             }
             break 'lab0;
-            break 'lab1;
         }
         env.cursor = v_2;;
         // next, line 329
@@ -755,7 +754,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
         // [, line 338
         env.ket = env.cursor;
         // substring, line 338
-        let among_var = env.find_among_b(a_1);
+        let among_var = env.find_among_b(A_1);
         if among_var == 0{
              break 'lab0;
         }
@@ -804,7 +803,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 // [, line 349
                 env.bra = env.cursor;
                 // substring, line 349
-                let among_var = env.find_among(a_2);
+                let among_var = env.find_among(A_2);
                 if among_var == 0{
                      break 'lab3;
                 }
@@ -836,7 +835,6 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
                     }
                 }
                 break 'lab2;
-                break 'lab3;
             }
             env.cursor = v_4;;
             // next, line 356
@@ -859,7 +857,7 @@ fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 363
     env.bra = env.cursor;
     // substring, line 363
-    let among_var = env.find_among(a_3);
+    let among_var = env.find_among(A_3);
     if among_var == 0{
         return false;
     }
@@ -902,7 +900,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 373
     env.bra = env.cursor;
     // substring, line 373
-    let among_var = env.find_among(a_4);
+    let among_var = env.find_among(A_4);
     if among_var == 0{
         return false;
     }
@@ -993,7 +991,7 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 387
     env.bra = env.cursor;
     // substring, line 387
-    let among_var = env.find_among(a_5);
+    let among_var = env.find_among(A_5);
     if among_var == 0{
         return false;
     }
@@ -1032,7 +1030,7 @@ fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 395
     env.bra = env.cursor;
     // substring, line 395
-    let among_var = env.find_among(a_6);
+    let among_var = env.find_among(A_6);
     if among_var == 0{
         return false;
     }
@@ -1082,7 +1080,7 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 404
     env.bra = env.cursor;
     // substring, line 404
-    let among_var = env.find_among(a_7);
+    let among_var = env.find_among(A_7);
     if among_var == 0{
         return false;
     }
@@ -1131,7 +1129,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 415
     env.bra = env.cursor;
     // substring, line 415
-    let among_var = env.find_among(a_8);
+    let among_var = env.find_among(A_8);
     if among_var == 0{
         return false;
     }
@@ -1190,7 +1188,7 @@ fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 426
     env.bra = env.cursor;
     // substring, line 426
-    let among_var = env.find_among(a_9);
+    let among_var = env.find_among(A_9);
     if among_var == 0{
         return false;
     }
@@ -1223,7 +1221,7 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 436
     env.ket = env.cursor;
     // substring, line 436
-    let among_var = env.find_among_b(a_10);
+    let among_var = env.find_among_b(A_10);
     if among_var == 0{
         return false;
     }
@@ -1272,7 +1270,7 @@ fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 444
     env.ket = env.cursor;
     // substring, line 444
-    let among_var = env.find_among_b(a_11);
+    let among_var = env.find_among_b(A_11);
     if among_var == 0{
         return false;
     }
@@ -1301,7 +1299,7 @@ fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 451
     env.ket = env.cursor;
     // substring, line 451
-    let among_var = env.find_among_b(a_12);
+    let among_var = env.find_among_b(A_12);
     if among_var == 0{
         return false;
     }
@@ -1330,7 +1328,7 @@ fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 458
     env.ket = env.cursor;
     // substring, line 458
-    let among_var = env.find_among_b(a_13);
+    let among_var = env.find_among_b(A_13);
     if among_var == 0{
         return false;
     }
@@ -1359,7 +1357,7 @@ fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 465
     env.ket = env.cursor;
     // substring, line 465
-    let among_var = env.find_among_b(a_14);
+    let among_var = env.find_among_b(A_14);
     if among_var == 0{
         return false;
     }
@@ -1388,7 +1386,7 @@ fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 471
     env.ket = env.cursor;
     // substring, line 471
-    let among_var = env.find_among_b(a_15);
+    let among_var = env.find_among_b(A_15);
     if among_var == 0{
         return false;
     }
@@ -1417,7 +1415,7 @@ fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 477
     env.ket = env.cursor;
     // substring, line 477
-    let among_var = env.find_among_b(a_16);
+    let among_var = env.find_among_b(A_16);
     if among_var == 0{
         return false;
     }
@@ -1446,7 +1444,7 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 484
     env.ket = env.cursor;
     // substring, line 484
-    let among_var = env.find_among_b(a_17);
+    let among_var = env.find_among_b(A_17);
     if among_var == 0{
         return false;
     }
@@ -1495,7 +1493,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 492
     env.ket = env.cursor;
     // substring, line 492
-    let among_var = env.find_among_b(a_18);
+    let among_var = env.find_among_b(A_18);
     if among_var == 0{
         return false;
     }
@@ -1564,7 +1562,7 @@ fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 503
     env.ket = env.cursor;
     // substring, line 503
-    let among_var = env.find_among_b(a_19);
+    let among_var = env.find_among_b(A_19);
     if among_var == 0{
         return false;
     }
@@ -1593,7 +1591,7 @@ fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // [, line 511
     env.ket = env.cursor;
     // substring, line 511
-    let among_var = env.find_among_b(a_20);
+    let among_var = env.find_among_b(A_20);
     if among_var == 0{
         return false;
     }
@@ -1632,7 +1630,7 @@ fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bo
     // [, line 519
     env.ket = env.cursor;
     // substring, line 519
-    let among_var = env.find_among_b(a_21);
+    let among_var = env.find_among_b(A_21);
     if among_var == 0{
         return false;
     }
@@ -1715,14 +1713,13 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                         // atleast, line 548
                         'replab7: loop{
                             let v_7 = env.limit - env.cursor;
-                            'lab8: loop{
+                            'lab8: for _ in 0..1 {
                                 // call Suffix_Verb_Step1, line 548
                                 if !r_Suffix_Verb_Step1(env, context){
                                      break 'lab8;
                                 }
                                 v_6 -= 1;
                                 continue 'replab7;
-                                break 'lab8;
                             }
                             env.cursor = env.limit - v_7;;
                             break 'replab7;
@@ -1739,7 +1736,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                          break 'lab10;
                                     }
                                     break 'lab9;
-                                    break 'lab10;
                                 }
                                 env.cursor = env.limit - v_8;;
                                 'lab11: loop{
@@ -1748,7 +1744,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                          break 'lab11;
                                     }
                                     break 'lab9;
-                                    break 'lab11;
                                 }
                                 env.cursor = env.limit - v_8;;
                                 // next, line 549
@@ -1759,7 +1754,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                 break 'lab9;
                             }
                             break 'lab5;
-                            break 'lab6;
                         }
                         env.cursor = env.limit - v_5;;
                         'lab12: loop{
@@ -1768,7 +1762,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                  break 'lab12;
                             }
                             break 'lab5;
-                            break 'lab12;
                         }
                         env.cursor = env.limit - v_5;;
                         // call Suffix_Verb_Step2a, line 552
@@ -1778,7 +1771,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                         break 'lab5;
                     }
                     break 'lab3;
-                    break 'lab4;
                 }
                 env.cursor = env.limit - v_4;;
                 'lab13: loop{
@@ -1801,7 +1793,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                      break 'lab16;
                                 }
                                 break 'lab15;
-                                break 'lab16;
                             }
                             env.cursor = env.limit - v_10;;
                             'lab17: loop{
@@ -1829,7 +1820,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                              break 'lab20;
                                         }
                                         break 'lab19;
-                                        break 'lab20;
                                     }
                                     env.cursor = env.limit - v_12;;
                                     'lab21: loop{
@@ -1838,7 +1828,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                              break 'lab21;
                                         }
                                         break 'lab19;
-                                        break 'lab21;
                                     }
                                     env.cursor = env.limit - v_12;;
                                     'lab22: loop{
@@ -1847,7 +1836,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                              break 'lab22;
                                         }
                                         break 'lab19;
-                                        break 'lab22;
                                     }
                                     env.cursor = env.limit - v_12;;
                                     // next, line 566
@@ -1858,7 +1846,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                     break 'lab19;
                                 }
                                 break 'lab15;
-                                break 'lab17;
                             }
                             env.cursor = env.limit - v_10;;
                             'lab23: loop{
@@ -1877,7 +1864,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                              break 'lab25;
                                         }
                                         break 'lab24;
-                                        break 'lab25;
                                     }
                                     env.cursor = env.limit - v_13;;
                                     'lab26: loop{
@@ -1886,7 +1872,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                              break 'lab26;
                                         }
                                         break 'lab24;
-                                        break 'lab26;
                                     }
                                     env.cursor = env.limit - v_13;;
                                     // call Suffix_Noun_Step2c1, line 570
@@ -1896,7 +1881,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                     break 'lab24;
                                 }
                                 break 'lab15;
-                                break 'lab23;
                             }
                             env.cursor = env.limit - v_10;;
                             'lab27: loop{
@@ -1915,7 +1899,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                                      break 'lab27;
                                 }
                                 break 'lab15;
-                                break 'lab27;
                             }
                             env.cursor = env.limit - v_10;;
                             // (, line 572
@@ -1933,7 +1916,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                          break 'lab13;
                     }
                     break 'lab3;
-                    break 'lab13;
                 }
                 env.cursor = env.limit - v_4;;
                 // call Suffix_All_alef_maqsura, line 580
@@ -1980,7 +1962,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                          break 'lab33;
                     }
                     break 'lab32;
-                    break 'lab33;
                 }
                 env.cursor = v_18;;
                 'lab34: loop{
@@ -1994,7 +1975,6 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                          break 'lab34;
                     }
                     break 'lab32;
-                    break 'lab34;
                 }
                 env.cursor = v_18;;
                 // (, line 590
