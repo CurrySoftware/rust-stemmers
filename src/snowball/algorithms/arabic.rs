@@ -316,10 +316,10 @@ struct Context {
     B_is_defined: bool,
     B_is_verb: bool,
     B_is_noun: bool,
-    I_word_len: usize,
+    i_word_len: usize,
 }
 
-fn __r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 258
     // loop, line 259
     for _ in 0..env.current.chars().count()
@@ -742,7 +742,7 @@ fn __r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 333
     // do, line 335
     let v_1 = env.cursor;
@@ -794,7 +794,7 @@ fn __r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
     let v_2 = env.cursor;
     'lab1: loop{
         // loop, line 346
-        for _ in 0..context.I_word_len
+        for _ in 0..context.i_word_len
         {        // (, line 346
         // or, line 355
         'lab2: loop{
@@ -853,9 +853,9 @@ fn __r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 361
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 363
     env.bra = env.cursor;
     // substring, line 363
@@ -871,7 +871,7 @@ fn __r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 364
-        if !(context.I_word_len > 4){
+        if !(context.i_word_len > 4){
             return false;
         }
         // set is_noun, line 364
@@ -883,7 +883,7 @@ fn __r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 365
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // set is_noun, line 365
@@ -896,9 +896,9 @@ fn __r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 371
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 373
     env.bra = env.cursor;
     // substring, line 373
@@ -914,7 +914,7 @@ fn __r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 374
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // <-, line 374
@@ -924,7 +924,7 @@ fn __r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 375
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // <-, line 375
@@ -934,7 +934,7 @@ fn __r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 3{
         // (, line 376
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // <-, line 376
@@ -944,7 +944,7 @@ fn __r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 4{
         // (, line 377
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // <-, line 377
@@ -954,7 +954,7 @@ fn __r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 5{
         // (, line 378
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // <-, line 378
@@ -965,9 +965,9 @@ fn __r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 383
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // not, line 385
     let v_1 = env.cursor;
     'lab0: loop{
@@ -1005,7 +1005,7 @@ fn __r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 388
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // delete, line 388
@@ -1015,7 +1015,7 @@ fn __r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 389
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // delete, line 389
@@ -1026,9 +1026,9 @@ fn __r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 393
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 395
     env.bra = env.cursor;
     // substring, line 395
@@ -1044,7 +1044,7 @@ fn __r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 396
-        if !(context.I_word_len > 5){
+        if !(context.i_word_len > 5){
             return false;
         }
         // delete, line 396
@@ -1054,7 +1054,7 @@ fn __r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 397
-        if !(context.I_word_len > 4){
+        if !(context.i_word_len > 4){
             return false;
         }
         // delete, line 397
@@ -1065,9 +1065,9 @@ fn __r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 401
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // not, line 403
     let v_1 = env.cursor;
     'lab0: loop{
@@ -1094,7 +1094,7 @@ fn __r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 405
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // delete, line 405
@@ -1104,7 +1104,7 @@ fn __r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 407
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // <-, line 407
@@ -1114,7 +1114,7 @@ fn __r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 3{
         // (, line 408
-        if !(context.I_word_len > 3){
+        if !(context.i_word_len > 3){
             return false;
         }
         // <-, line 408
@@ -1125,9 +1125,9 @@ fn __r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 413
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 415
     env.bra = env.cursor;
     // substring, line 415
@@ -1143,7 +1143,7 @@ fn __r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 417
-        if !(context.I_word_len > 4){
+        if !(context.i_word_len > 4){
             return false;
         }
         // <-, line 417
@@ -1153,7 +1153,7 @@ fn __r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 418
-        if !(context.I_word_len > 4){
+        if !(context.i_word_len > 4){
             return false;
         }
         // <-, line 418
@@ -1163,7 +1163,7 @@ fn __r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 3{
         // (, line 419
-        if !(context.I_word_len > 4){
+        if !(context.i_word_len > 4){
             return false;
         }
         // <-, line 419
@@ -1173,7 +1173,7 @@ fn __r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 4{
         // (, line 420
-        if !(context.I_word_len > 4){
+        if !(context.i_word_len > 4){
             return false;
         }
         // <-, line 420
@@ -1184,9 +1184,9 @@ fn __r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 424
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 426
     env.bra = env.cursor;
     // substring, line 426
@@ -1202,7 +1202,7 @@ fn __r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 427
-        if !(context.I_word_len > 4){
+        if !(context.i_word_len > 4){
             return false;
         }
         // set is_verb, line 427
@@ -1217,9 +1217,9 @@ fn __r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 434
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 436
     env.ket = env.cursor;
     // substring, line 436
@@ -1235,7 +1235,7 @@ fn __r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 437
-        if !(context.I_word_len >= 4){
+        if !(context.i_word_len >= 4){
             return false;
         }
         // delete, line 437
@@ -1245,7 +1245,7 @@ fn __r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 438
-        if !(context.I_word_len >= 5){
+        if !(context.i_word_len >= 5){
             return false;
         }
         // delete, line 438
@@ -1255,7 +1255,7 @@ fn __r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 3{
         // (, line 439
-        if !(context.I_word_len >= 6){
+        if !(context.i_word_len >= 6){
             return false;
         }
         // delete, line 439
@@ -1266,9 +1266,9 @@ fn __r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 442
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 444
     env.ket = env.cursor;
     // substring, line 444
@@ -1284,7 +1284,7 @@ fn __r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 445
-        if !(context.I_word_len > 5){
+        if !(context.i_word_len > 5){
             return false;
         }
         // delete, line 445
@@ -1295,9 +1295,9 @@ fn __r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 449
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 451
     env.ket = env.cursor;
     // substring, line 451
@@ -1313,7 +1313,7 @@ fn __r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 452
-        if !(context.I_word_len > 4){
+        if !(context.i_word_len > 4){
             return false;
         }
         // delete, line 452
@@ -1324,9 +1324,9 @@ fn __r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 456
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 458
     env.ket = env.cursor;
     // substring, line 458
@@ -1342,7 +1342,7 @@ fn __r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 459
-        if !(context.I_word_len >= 5){
+        if !(context.i_word_len >= 5){
             return false;
         }
         // delete, line 459
@@ -1353,9 +1353,9 @@ fn __r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 463
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 465
     env.ket = env.cursor;
     // substring, line 465
@@ -1371,7 +1371,7 @@ fn __r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool
 
     else if among_var == 1{
         // (, line 466
-        if !(context.I_word_len >= 4){
+        if !(context.i_word_len >= 4){
             return false;
         }
         // delete, line 466
@@ -1382,9 +1382,9 @@ fn __r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool
     return true;
 }
 
-fn __r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 469
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 471
     env.ket = env.cursor;
     // substring, line 471
@@ -1400,7 +1400,7 @@ fn __r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool
 
     else if among_var == 1{
         // (, line 472
-        if !(context.I_word_len >= 4){
+        if !(context.i_word_len >= 4){
             return false;
         }
         // delete, line 472
@@ -1411,9 +1411,9 @@ fn __r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool
     return true;
 }
 
-fn __r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 475
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 477
     env.ket = env.cursor;
     // substring, line 477
@@ -1429,7 +1429,7 @@ fn __r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 478
-        if !(context.I_word_len >= 3){
+        if !(context.i_word_len >= 3){
             return false;
         }
         // delete, line 478
@@ -1440,9 +1440,9 @@ fn __r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 482
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 484
     env.ket = env.cursor;
     // substring, line 484
@@ -1458,7 +1458,7 @@ fn __r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 485
-        if !(context.I_word_len >= 4){
+        if !(context.i_word_len >= 4){
             return false;
         }
         // delete, line 485
@@ -1468,7 +1468,7 @@ fn __r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 486
-        if !(context.I_word_len >= 5){
+        if !(context.i_word_len >= 5){
             return false;
         }
         // delete, line 486
@@ -1478,7 +1478,7 @@ fn __r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 3{
         // (, line 487
-        if !(context.I_word_len >= 6){
+        if !(context.i_word_len >= 6){
             return false;
         }
         // delete, line 487
@@ -1489,9 +1489,9 @@ fn __r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 490
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 492
     env.ket = env.cursor;
     // substring, line 492
@@ -1507,7 +1507,7 @@ fn __r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 493
-        if !(context.I_word_len >= 4){
+        if !(context.i_word_len >= 4){
             return false;
         }
         // delete, line 493
@@ -1517,7 +1517,7 @@ fn __r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 494
-        if !(context.I_word_len >= 4){
+        if !(context.i_word_len >= 4){
             return false;
         }
         // delete, line 494
@@ -1527,7 +1527,7 @@ fn __r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 3{
         // (, line 495
-        if !(context.I_word_len >= 5){
+        if !(context.i_word_len >= 5){
             return false;
         }
         // delete, line 495
@@ -1537,7 +1537,7 @@ fn __r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 4{
         // (, line 496
-        if !(context.I_word_len > 5){
+        if !(context.i_word_len > 5){
             return false;
         }
         // delete, line 496
@@ -1547,7 +1547,7 @@ fn __r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 5{
         // (, line 497
-        if !(context.I_word_len >= 6){
+        if !(context.i_word_len >= 6){
             return false;
         }
         // delete, line 497
@@ -1558,9 +1558,9 @@ fn __r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 501
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 503
     env.ket = env.cursor;
     // substring, line 503
@@ -1576,7 +1576,7 @@ fn __r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 504
-        if !(context.I_word_len >= 5){
+        if !(context.i_word_len >= 5){
             return false;
         }
         // delete, line 504
@@ -1587,9 +1587,9 @@ fn __r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 509
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 511
     env.ket = env.cursor;
     // substring, line 511
@@ -1605,7 +1605,7 @@ fn __r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
 
     else if among_var == 1{
         // (, line 512
-        if !(context.I_word_len >= 4){
+        if !(context.i_word_len >= 4){
             return false;
         }
         // delete, line 512
@@ -1615,7 +1615,7 @@ fn __r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     else if among_var == 2{
         // (, line 513
-        if !(context.I_word_len >= 6){
+        if !(context.i_word_len >= 6){
             return false;
         }
         // delete, line 513
@@ -1626,9 +1626,9 @@ fn __r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 517
-    context.I_word_len = env.current.chars().count();
+    context.i_word_len = env.current.chars().count();
     // [, line 519
     env.ket = env.cursor;
     // substring, line 519
@@ -1652,12 +1652,12 @@ fn __r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> 
     return true;
 }
 
-pub fn _stem(env: &mut SnowballEnv) -> bool{
+pub fn stem(env: &mut SnowballEnv) -> bool{
     let mut context = &mut Context{
         B_is_defined: false,
         B_is_verb: false,
         B_is_noun: false,
-        I_word_len: 0,
+        i_word_len: 0,
     };
     // (, line 527
     // set is_noun, line 529
@@ -1670,7 +1670,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
     let v_1 = env.cursor;
     'lab0: loop{
         // call Checks1, line 534
-        if !__r_Checks1(env, context){
+        if !r_Checks1(env, context){
              break 'lab0;
         }
         break 'lab0;
@@ -1680,7 +1680,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
     let v_2 = env.cursor;
     'lab1: loop{
         // call Normalize_pre, line 537
-        if !__r_Normalize_pre(env, context){
+        if !r_Normalize_pre(env, context){
              break 'lab1;
         }
         break 'lab1;
@@ -1717,7 +1717,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                             let v_7 = env.limit - env.cursor;
                             'lab8: loop{
                                 // call Suffix_Verb_Step1, line 548
-                                if !__r_Suffix_Verb_Step1(env, context){
+                                if !r_Suffix_Verb_Step1(env, context){
                                      break 'lab8;
                                 }
                                 v_6 -= 1;
@@ -1735,7 +1735,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                 let v_8 = env.limit - env.cursor;
                                 'lab10: loop{
                                     // call Suffix_Verb_Step2a, line 549
-                                    if !__r_Suffix_Verb_Step2a(env, context){
+                                    if !r_Suffix_Verb_Step2a(env, context){
                                          break 'lab10;
                                     }
                                     break 'lab9;
@@ -1744,7 +1744,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                 env.cursor = env.limit - v_8;;
                                 'lab11: loop{
                                     // call Suffix_Verb_Step2c, line 549
-                                    if !__r_Suffix_Verb_Step2c(env, context){
+                                    if !r_Suffix_Verb_Step2c(env, context){
                                          break 'lab11;
                                     }
                                     break 'lab9;
@@ -1764,7 +1764,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                         env.cursor = env.limit - v_5;;
                         'lab12: loop{
                             // call Suffix_Verb_Step2b, line 551
-                            if !__r_Suffix_Verb_Step2b(env, context){
+                            if !r_Suffix_Verb_Step2b(env, context){
                                  break 'lab12;
                             }
                             break 'lab5;
@@ -1772,7 +1772,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                         }
                         env.cursor = env.limit - v_5;;
                         // call Suffix_Verb_Step2a, line 552
-                        if !__r_Suffix_Verb_Step2a(env, context){
+                        if !r_Suffix_Verb_Step2a(env, context){
                              break 'lab4;
                         }
                         break 'lab5;
@@ -1797,7 +1797,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                             let v_10 = env.limit - env.cursor;
                             'lab16: loop{
                                 // call Suffix_Noun_Step2c2, line 561
-                                if !__r_Suffix_Noun_Step2c2(env, context){
+                                if !r_Suffix_Noun_Step2c2(env, context){
                                      break 'lab16;
                                 }
                                 break 'lab15;
@@ -1816,7 +1816,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                     break 'lab18;
                                 }
                                 // call Suffix_Noun_Step1a, line 562
-                                if !__r_Suffix_Noun_Step1a(env, context){
+                                if !r_Suffix_Noun_Step1a(env, context){
                                      break 'lab17;
                                 }
                                 // (, line 562
@@ -1825,7 +1825,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                     let v_12 = env.limit - env.cursor;
                                     'lab20: loop{
                                         // call Suffix_Noun_Step2a, line 563
-                                        if !__r_Suffix_Noun_Step2a(env, context){
+                                        if !r_Suffix_Noun_Step2a(env, context){
                                              break 'lab20;
                                         }
                                         break 'lab19;
@@ -1834,7 +1834,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                     env.cursor = env.limit - v_12;;
                                     'lab21: loop{
                                         // call Suffix_Noun_Step2b, line 564
-                                        if !__r_Suffix_Noun_Step2b(env, context){
+                                        if !r_Suffix_Noun_Step2b(env, context){
                                              break 'lab21;
                                         }
                                         break 'lab19;
@@ -1843,7 +1843,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                     env.cursor = env.limit - v_12;;
                                     'lab22: loop{
                                         // call Suffix_Noun_Step2c1, line 565
-                                        if !__r_Suffix_Noun_Step2c1(env, context){
+                                        if !r_Suffix_Noun_Step2c1(env, context){
                                              break 'lab22;
                                         }
                                         break 'lab19;
@@ -1864,7 +1864,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                             'lab23: loop{
                                 // (, line 567
                                 // call Suffix_Noun_Step1b, line 567
-                                if !__r_Suffix_Noun_Step1b(env, context){
+                                if !r_Suffix_Noun_Step1b(env, context){
                                      break 'lab23;
                                 }
                                 // (, line 567
@@ -1873,7 +1873,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                     let v_13 = env.limit - env.cursor;
                                     'lab25: loop{
                                         // call Suffix_Noun_Step2a, line 568
-                                        if !__r_Suffix_Noun_Step2a(env, context){
+                                        if !r_Suffix_Noun_Step2a(env, context){
                                              break 'lab25;
                                         }
                                         break 'lab24;
@@ -1882,7 +1882,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                     env.cursor = env.limit - v_13;;
                                     'lab26: loop{
                                         // call Suffix_Noun_Step2b, line 569
-                                        if !__r_Suffix_Noun_Step2b(env, context){
+                                        if !r_Suffix_Noun_Step2b(env, context){
                                              break 'lab26;
                                         }
                                         break 'lab24;
@@ -1890,7 +1890,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                     }
                                     env.cursor = env.limit - v_13;;
                                     // call Suffix_Noun_Step2c1, line 570
-                                    if !__r_Suffix_Noun_Step2c1(env, context){
+                                    if !r_Suffix_Noun_Step2c1(env, context){
                                          break 'lab23;
                                     }
                                     break 'lab24;
@@ -1911,7 +1911,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                                     break 'lab28;
                                 }
                                 // call Suffix_Noun_Step2a, line 571
-                                if !__r_Suffix_Noun_Step2a(env, context){
+                                if !r_Suffix_Noun_Step2a(env, context){
                                      break 'lab27;
                                 }
                                 break 'lab15;
@@ -1920,7 +1920,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                             env.cursor = env.limit - v_10;;
                             // (, line 572
                             // call Suffix_Noun_Step2b, line 572
-                            if !__r_Suffix_Noun_Step2b(env, context){
+                            if !r_Suffix_Noun_Step2b(env, context){
                                 env.cursor = env.limit - v_9;
                                  break 'lab14;
                             }
@@ -1929,7 +1929,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                         break 'lab14;
                     }
                     // call Suffix_Noun_Step3, line 574
-                    if !__r_Suffix_Noun_Step3(env, context){
+                    if !r_Suffix_Noun_Step3(env, context){
                          break 'lab13;
                     }
                     break 'lab3;
@@ -1937,7 +1937,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                 }
                 env.cursor = env.limit - v_4;;
                 // call Suffix_All_alef_maqsura, line 580
-                if !__r_Suffix_All_alef_maqsura(env, context){
+                if !r_Suffix_All_alef_maqsura(env, context){
                      break 'lab2;
                 }
                 break 'lab3;
@@ -1954,7 +1954,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
             let v_16 = env.cursor;
             'lab30: loop{
                 // call Prefix_Step1, line 586
-                if !__r_Prefix_Step1(env, context){
+                if !r_Prefix_Step1(env, context){
                     env.cursor = v_16;
                      break 'lab30;
                 }
@@ -1964,7 +1964,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
             let v_17 = env.cursor;
             'lab31: loop{
                 // call Prefix_Step2, line 587
-                if !__r_Prefix_Step2(env, context){
+                if !r_Prefix_Step2(env, context){
                     env.cursor = v_17;
                      break 'lab31;
                 }
@@ -1976,7 +1976,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                 let v_18 = env.cursor;
                 'lab33: loop{
                     // call Prefix_Step3a_Noun, line 588
-                    if !__r_Prefix_Step3a_Noun(env, context){
+                    if !r_Prefix_Step3a_Noun(env, context){
                          break 'lab33;
                     }
                     break 'lab32;
@@ -1990,7 +1990,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                          break 'lab34;
                     }
                     // call Prefix_Step3b_Noun, line 589
-                    if !__r_Prefix_Step3b_Noun(env, context){
+                    if !r_Prefix_Step3b_Noun(env, context){
                          break 'lab34;
                     }
                     break 'lab32;
@@ -2006,14 +2006,14 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                 let v_19 = env.cursor;
                 'lab35: loop{
                     // call Prefix_Step3_Verb, line 590
-                    if !__r_Prefix_Step3_Verb(env, context){
+                    if !r_Prefix_Step3_Verb(env, context){
                         env.cursor = v_19;
                          break 'lab35;
                     }
                     break 'lab35;
                 }
                 // call Prefix_Step4_Verb, line 590
-                if !__r_Prefix_Step4_Verb(env, context){
+                if !r_Prefix_Step4_Verb(env, context){
                      break 'lab29;
                 }
                 break 'lab32;
@@ -2025,7 +2025,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
         let v_20 = env.cursor;
         'lab36: loop{
             // call Normalize_post, line 595
-            if !__r_Normalize_post(env, context){
+            if !r_Normalize_post(env, context){
                  break 'lab36;
             }
             break 'lab36;

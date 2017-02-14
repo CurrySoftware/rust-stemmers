@@ -252,12 +252,12 @@ static g_v: &'static [u8; 21] = &[17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 struct Context {
     B_standard_suffix_removed: bool,
-    I_p2: usize,
-    I_p1: usize,
-    I_pV: usize,
+    i_p2: usize,
+    i_p1: usize,
+    i_pV: usize,
 }
 
-fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 30
     // repeat, line 31
     'replab0: loop{
@@ -329,11 +329,11 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
         }        return true;
     }
 
-    fn __r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool{
+    fn r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool{
         // (, line 37
-        context.I_pV = env.limit;;
-        context.I_p1 = env.limit;;
-        context.I_p2 = env.limit;;
+        context.i_pV = env.limit;;
+        context.i_p1 = env.limit;;
+        context.i_p2 = env.limit;;
         // do, line 43
         let v_1 = env.cursor;
         'lab0: loop{
@@ -440,7 +440,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 break 'lab1;
             }
             // setmark pV, line 47
-            context.I_pV = env.cursor;
+            context.i_pV = env.cursor;
             break 'lab0;
         }
         env.cursor = v_1;;
@@ -477,7 +477,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 env.next_char();
             }
             // setmark p1, line 50
-            context.I_p1 = env.cursor;
+            context.i_p1 = env.cursor;
             // gopast, line 51
             'golab18: loop{
                 'lab19: loop{
@@ -507,14 +507,14 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 env.next_char();
             }
             // setmark p2, line 51
-            context.I_p2 = env.cursor;
+            context.i_p2 = env.cursor;
             break 'lab13;
         }
         env.cursor = v_8;;
         return true;
     }
 
-    fn __r_postlude(env: &mut SnowballEnv, context: &mut Context) -> bool{
+    fn r_postlude(env: &mut SnowballEnv, context: &mut Context) -> bool{
         // repeat, line 55
         'replab0: loop{
             let v_1 = env.cursor;
@@ -563,28 +563,28 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
             }            return true;
         }
 
-        fn __r_RV(env: &mut SnowballEnv, context: &mut Context) -> bool{
-            if !(context.I_pV <= env.cursor){
+        fn r_RV(env: &mut SnowballEnv, context: &mut Context) -> bool{
+            if !(context.i_pV <= env.cursor){
                 return false;
             }
             return true;
         }
 
-        fn __r_R1(env: &mut SnowballEnv, context: &mut Context) -> bool{
-            if !(context.I_p1 <= env.cursor){
+        fn r_R1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+            if !(context.i_p1 <= env.cursor){
                 return false;
             }
             return true;
         }
 
-        fn __r_R2(env: &mut SnowballEnv, context: &mut Context) -> bool{
-            if !(context.I_p2 <= env.cursor){
+        fn r_R2(env: &mut SnowballEnv, context: &mut Context) -> bool{
+            if !(context.i_p2 <= env.cursor){
                 return false;
             }
             return true;
         }
 
-        fn __r_step_0(env: &mut SnowballEnv, context: &mut Context) -> bool{
+        fn r_step_0(env: &mut SnowballEnv, context: &mut Context) -> bool{
             // (, line 71
             // [, line 72
             env.ket = env.cursor;
@@ -596,7 +596,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
             // ], line 72
             env.bra = env.cursor;
             // call R1, line 72
-            if !__r_R1(env, context){
+            if !r_R1(env, context){
                 return false;
             }
             if among_var == 0{
@@ -666,7 +666,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return true;
         }
 
-        fn __r_combo_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool{
+        fn r_combo_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool{
             // test, line 90
             let v_1 = env.limit - env.cursor;
             // (, line 90
@@ -680,7 +680,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
             // ], line 91
             env.bra = env.cursor;
             // call R1, line 91
-            if !__r_R1(env, context){
+            if !r_R1(env, context){
                 return false;
             }
             // (, line 91
@@ -736,7 +736,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return true;
         }
 
-        fn __r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool{
+        fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool{
             // (, line 128
             // unset standard_suffix_removed, line 129
             context.B_standard_suffix_removed = false;
@@ -745,7 +745,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 let v_1 = env.limit - env.cursor;
                 'lab1: loop{
                     // call combo_suffix, line 130
-                    if !__r_combo_suffix(env, context){
+                    if !r_combo_suffix(env, context){
                          break 'lab1;
                     }
                     continue 'replab0;
@@ -763,7 +763,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 // ], line 131
                 env.bra = env.cursor;
                 // call R2, line 131
-                if !__r_R2(env, context){
+                if !r_R2(env, context){
                     return false;
                 }
                 // (, line 131
@@ -803,14 +803,14 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 return true;
             }
 
-            fn __r_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool{
+            fn r_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 // setlimit, line 163
                 let v_1 = env.limit - env.cursor;
                 // tomark, line 163
-                if env.cursor < context.I_pV{
+                if env.cursor < context.i_pV{
                     return false;
                 }
-                env.cursor = context.I_pV;
+                env.cursor = context.i_pV;
                 let v_2 = env.limit_backward;
                 env.limit_backward = env.cursor;
                 env.cursor = env.limit - v_1;;
@@ -866,7 +866,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 return true;
             }
 
-            fn __r_vowel_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool{
+            fn r_vowel_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 // (, line 217
                 // [, line 218
                 env.ket = env.cursor;
@@ -878,7 +878,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 // ], line 218
                 env.bra = env.cursor;
                 // call RV, line 218
-                if !__r_RV(env, context){
+                if !r_RV(env, context){
                     return false;
                 }
                 if among_var == 0{
@@ -895,19 +895,19 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 return true;
             }
 
-            pub fn _stem(env: &mut SnowballEnv) -> bool{
+            pub fn stem(env: &mut SnowballEnv) -> bool{
                 let mut context = &mut Context{
                     B_standard_suffix_removed: false,
-                    I_p2: 0,
-                    I_p1: 0,
-                    I_pV: 0,
+                    i_p2: 0,
+                    i_p1: 0,
+                    i_pV: 0,
                 };
                 // (, line 224
                 // do, line 225
                 let v_1 = env.cursor;
                 'lab0: loop{
                     // call prelude, line 225
-                    if !__r_prelude(env, context){
+                    if !r_prelude(env, context){
                          break 'lab0;
                     }
                     break 'lab0;
@@ -917,7 +917,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 let v_2 = env.cursor;
                 'lab1: loop{
                     // call mark_regions, line 226
-                    if !__r_mark_regions(env, context){
+                    if !r_mark_regions(env, context){
                          break 'lab1;
                     }
                     break 'lab1;
@@ -931,7 +931,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 let v_3 = env.limit - env.cursor;
                 'lab2: loop{
                     // call step_0, line 228
-                    if !__r_step_0(env, context){
+                    if !r_step_0(env, context){
                          break 'lab2;
                     }
                     break 'lab2;
@@ -941,7 +941,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 let v_4 = env.limit - env.cursor;
                 'lab3: loop{
                     // call standard_suffix, line 229
-                    if !__r_standard_suffix(env, context){
+                    if !r_standard_suffix(env, context){
                          break 'lab3;
                     }
                     break 'lab3;
@@ -964,7 +964,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                         }
                         env.cursor = env.limit - v_6;;
                         // call verb_suffix, line 230
-                        if !__r_verb_suffix(env, context){
+                        if !r_verb_suffix(env, context){
                              break 'lab4;
                         }
                         break 'lab5;
@@ -976,7 +976,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 let v_7 = env.limit - env.cursor;
                 'lab7: loop{
                     // call vowel_suffix, line 231
-                    if !__r_vowel_suffix(env, context){
+                    if !r_vowel_suffix(env, context){
                          break 'lab7;
                     }
                     break 'lab7;
@@ -987,7 +987,7 @@ fn __r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 let v_8 = env.cursor;
                 'lab8: loop{
                     // call postlude, line 233
-                    if !__r_postlude(env, context){
+                    if !r_postlude(env, context){
                          break 'lab8;
                     }
                     break 'lab8;

@@ -164,14 +164,14 @@ static a_7: &'static [Among; 4] = &[
 static g_v: &'static [u8; 4] = &[33, 65, 8, 232];
 
 struct Context {
-    I_p2: usize,
-    I_pV: usize,
+    i_p2: usize,
+    i_pV: usize,
 }
 
-fn __r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 57
-    context.I_pV = env.limit;;
-    context.I_p2 = env.limit;;
+    context.i_pV = env.limit;;
+    context.i_p2 = env.limit;;
     // do, line 61
     let v_1 = env.cursor;
     'lab0: loop{
@@ -191,7 +191,7 @@ fn __r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool{
             env.next_char();
         }
         // setmark pV, line 62
-        context.I_pV = env.cursor;
+        context.i_pV = env.cursor;
         // gopast, line 62
         'golab3: loop{
             'lab4: loop{
@@ -235,21 +235,21 @@ fn __r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool{
             env.next_char();
         }
         // setmark p2, line 63
-        context.I_p2 = env.cursor;
+        context.i_p2 = env.cursor;
         break 'lab0;
     }
     env.cursor = v_1;;
     return true;
 }
 
-fn __r_R2(env: &mut SnowballEnv, context: &mut Context) -> bool{
-    if !(context.I_p2 <= env.cursor){
+fn r_R2(env: &mut SnowballEnv, context: &mut Context) -> bool{
+    if !(context.i_p2 <= env.cursor){
         return false;
     }
     return true;
 }
 
-fn __r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 71
     // [, line 72
     env.ket = env.cursor;
@@ -299,7 +299,7 @@ fn __r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_adjective(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_adjective(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 87
     // [, line 88
     env.ket = env.cursor;
@@ -324,10 +324,10 @@ fn __r_adjective(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 101
     // call adjective, line 102
-    if !__r_adjective(env, context){
+    if !r_adjective(env, context){
         return false;
     }
     // try, line 109
@@ -387,7 +387,7 @@ fn __r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_reflexive(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_reflexive(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 128
     // [, line 129
     env.ket = env.cursor;
@@ -412,7 +412,7 @@ fn __r_reflexive(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 136
     // [, line 137
     env.ket = env.cursor;
@@ -462,7 +462,7 @@ fn __r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 159
     // [, line 160
     env.ket = env.cursor;
@@ -487,7 +487,7 @@ fn __r_noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_derivational(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_derivational(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 175
     // [, line 176
     env.ket = env.cursor;
@@ -499,7 +499,7 @@ fn __r_derivational(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // ], line 176
     env.bra = env.cursor;
     // call R2, line 176
-    if !__r_R2(env, context){
+    if !r_R2(env, context){
         return false;
     }
     if among_var == 0{
@@ -516,7 +516,7 @@ fn __r_derivational(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn __r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool{
     // (, line 183
     // [, line 184
     env.ket = env.cursor;
@@ -575,17 +575,17 @@ fn __r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-pub fn _stem(env: &mut SnowballEnv) -> bool{
+pub fn stem(env: &mut SnowballEnv) -> bool{
     let mut context = &mut Context{
-        I_p2: 0,
-        I_pV: 0,
+        i_p2: 0,
+        i_pV: 0,
     };
     // (, line 199
     // do, line 201
     let v_1 = env.cursor;
     'lab0: loop{
         // call mark_regions, line 201
-        if !__r_mark_regions(env, context){
+        if !r_mark_regions(env, context){
              break 'lab0;
         }
         break 'lab0;
@@ -597,10 +597,10 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
     // setlimit, line 202
     let v_2 = env.limit - env.cursor;
     // tomark, line 202
-    if env.cursor < context.I_pV{
+    if env.cursor < context.i_pV{
         return false;
     }
-    env.cursor = context.I_pV;
+    env.cursor = context.i_pV;
     let v_3 = env.limit_backward;
     env.limit_backward = env.cursor;
     env.cursor = env.limit - v_2;;
@@ -614,7 +614,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
             let v_5 = env.limit - env.cursor;
             'lab3: loop{
                 // call perfective_gerund, line 204
-                if !__r_perfective_gerund(env, context){
+                if !r_perfective_gerund(env, context){
                      break 'lab3;
                 }
                 break 'lab2;
@@ -626,7 +626,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
             let v_6 = env.limit - env.cursor;
             'lab4: loop{
                 // call reflexive, line 205
-                if !__r_reflexive(env, context){
+                if !r_reflexive(env, context){
                     env.cursor = env.limit - v_6;
                      break 'lab4;
                 }
@@ -637,7 +637,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                 let v_7 = env.limit - env.cursor;
                 'lab6: loop{
                     // call adjectival, line 206
-                    if !__r_adjectival(env, context){
+                    if !r_adjectival(env, context){
                          break 'lab6;
                     }
                     break 'lab5;
@@ -646,7 +646,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                 env.cursor = env.limit - v_7;;
                 'lab7: loop{
                     // call verb, line 206
-                    if !__r_verb(env, context){
+                    if !r_verb(env, context){
                          break 'lab7;
                     }
                     break 'lab5;
@@ -654,7 +654,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
                 }
                 env.cursor = env.limit - v_7;;
                 // call noun, line 206
-                if !__r_noun(env, context){
+                if !r_noun(env, context){
                      break 'lab1;
                 }
                 break 'lab5;
@@ -687,7 +687,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
     let v_9 = env.limit - env.cursor;
     'lab9: loop{
         // call derivational, line 212
-        if !__r_derivational(env, context){
+        if !r_derivational(env, context){
              break 'lab9;
         }
         break 'lab9;
@@ -697,7 +697,7 @@ pub fn _stem(env: &mut SnowballEnv) -> bool{
     let v_10 = env.limit - env.cursor;
     'lab10: loop{
         // call tidy_up, line 213
-        if !__r_tidy_up(env, context){
+        if !r_tidy_up(env, context){
              break 'lab10;
         }
         break 'lab10;

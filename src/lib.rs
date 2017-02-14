@@ -52,15 +52,15 @@ impl Stemmer {
     /// Create a new stemmer from an algorithm
     pub fn create(lang: Algorithm) -> Self {
         match lang {
-            Algorithm::Arabic => Stemmer { stemmer: Box::new(algorithms::arabic::_stem) },
-            Algorithm::English => Stemmer { stemmer: Box::new(algorithms::english::_stem) },
-            Algorithm::French => Stemmer { stemmer: Box::new(algorithms::french::_stem) },
-            Algorithm::German => Stemmer { stemmer: Box::new(algorithms::german::_stem) },
-            Algorithm::Italian => Stemmer { stemmer: Box::new(algorithms::italian::_stem) },
-            Algorithm::Portuguese => Stemmer { stemmer: Box::new(algorithms::portuguese::_stem) },
-            Algorithm::Romanian => Stemmer { stemmer: Box::new(algorithms::romanian::_stem) },
-            Algorithm::Russian => Stemmer { stemmer: Box::new(algorithms::russian::_stem) },
-            Algorithm::Spanish => Stemmer { stemmer: Box::new(algorithms::spanish::_stem) },
+            Algorithm::Arabic => Stemmer { stemmer: Box::new(algorithms::arabic::stem) },
+            Algorithm::English => Stemmer { stemmer: Box::new(algorithms::english::stem) },
+            Algorithm::French => Stemmer { stemmer: Box::new(algorithms::french::stem) },
+            Algorithm::German => Stemmer { stemmer: Box::new(algorithms::german::stem) },
+            Algorithm::Italian => Stemmer { stemmer: Box::new(algorithms::italian::stem) },
+            Algorithm::Portuguese => Stemmer { stemmer: Box::new(algorithms::portuguese::stem) },
+            Algorithm::Romanian => Stemmer { stemmer: Box::new(algorithms::romanian::stem) },
+            Algorithm::Russian => Stemmer { stemmer: Box::new(algorithms::russian::stem) },
+            Algorithm::Spanish => Stemmer { stemmer: Box::new(algorithms::spanish::stem) },
         }
     }
 
