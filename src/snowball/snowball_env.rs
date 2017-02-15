@@ -1,7 +1,7 @@
 use std::borrow::Cow;
 use snowball::Among;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct SnowballEnv<'a> {
     pub current: Cow<'a, str>,
     pub cursor: usize,
@@ -27,6 +27,10 @@ impl<'a> SnowballEnv<'a> {
 
     pub fn get_current(self) -> Cow<'a, str> {
         self.current
+    }
+
+    pub fn set_current(&mut self, current: &'a str) {
+        self.current = Cow::from(current);
     }
 
     fn replace_s(&mut self, bra: usize, ket: usize, s: &str) -> i32 {

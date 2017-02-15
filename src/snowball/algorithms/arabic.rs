@@ -333,7 +333,7 @@ fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
             env.bra = env.cursor;
             // substring, line 261
             let among_var = env.find_among(A_0);
-            if among_var == 0{
+            if among_var == 0 {
                  break 'lab1;
             }
             // ], line 261
@@ -729,9 +729,9 @@ fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
             }
             break 'lab0;
         }
-        env.cursor = v_2;;
+        env.cursor = v_2;
         // next, line 329
-        if env.cursor >= env.limit{
+        if env.cursor >= env.limit {
             return false;
         }
         env.next_char();
@@ -755,7 +755,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
         env.ket = env.cursor;
         // substring, line 338
         let among_var = env.find_among_b(A_1);
-        if among_var == 0{
+        if among_var == 0 {
              break 'lab0;
         }
         // ], line 338
@@ -788,7 +788,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
         env.cursor = env.limit_backward;
         break 'lab0;
     }
-    env.cursor = v_1;;
+    env.cursor = v_1;
     // do, line 346
     let v_2 = env.cursor;
     'lab1: loop{
@@ -804,7 +804,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 env.bra = env.cursor;
                 // substring, line 349
                 let among_var = env.find_among(A_2);
-                if among_var == 0{
+                if among_var == 0 {
                      break 'lab3;
                 }
                 // ], line 349
@@ -836,9 +836,9 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
                 }
                 break 'lab2;
             }
-            env.cursor = v_4;;
+            env.cursor = v_4;
             // next, line 356
-            if env.cursor >= env.limit{
+            if env.cursor >= env.limit {
                  break 'lab1;
             }
             env.next_char();
@@ -847,7 +847,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
         }
         break 'lab1;
     }
-    env.cursor = v_2;;
+    env.cursor = v_2;
     return true;
 }
 
@@ -858,7 +858,7 @@ fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.bra = env.cursor;
     // substring, line 363
     let among_var = env.find_among(A_3);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 363
@@ -901,7 +901,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.bra = env.cursor;
     // substring, line 373
     let among_var = env.find_among(A_4);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 373
@@ -970,29 +970,29 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     let v_1 = env.cursor;
     'lab0: loop{
         // literal, line 385
-        if !env.eq_s("\u{0641}\u{0627}"){
+        if !env.eq_s("\u{0641}\u{0627}") {
              break 'lab0;
         }
         return false;
         break 'lab0;
     }
-    env.cursor = v_1;;
+    env.cursor = v_1;
     // not, line 386
     let v_2 = env.cursor;
     'lab1: loop{
         // literal, line 386
-        if !env.eq_s("\u{0648}\u{0627}"){
+        if !env.eq_s("\u{0648}\u{0627}") {
              break 'lab1;
         }
         return false;
         break 'lab1;
     }
-    env.cursor = v_2;;
+    env.cursor = v_2;
     // [, line 387
     env.bra = env.cursor;
     // substring, line 387
     let among_var = env.find_among(A_5);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 387
@@ -1031,7 +1031,7 @@ fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.bra = env.cursor;
     // substring, line 395
     let among_var = env.find_among(A_6);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 395
@@ -1070,18 +1070,18 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     let v_1 = env.cursor;
     'lab0: loop{
         // literal, line 403
-        if !env.eq_s("\u{0628}\u{0627}"){
+        if !env.eq_s("\u{0628}\u{0627}") {
              break 'lab0;
         }
         return false;
         break 'lab0;
     }
-    env.cursor = v_1;;
+    env.cursor = v_1;
     // [, line 404
     env.bra = env.cursor;
     // substring, line 404
     let among_var = env.find_among(A_7);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 404
@@ -1130,7 +1130,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.bra = env.cursor;
     // substring, line 415
     let among_var = env.find_among(A_8);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 415
@@ -1189,7 +1189,7 @@ fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.bra = env.cursor;
     // substring, line 426
     let among_var = env.find_among(A_9);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 426
@@ -1222,7 +1222,7 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 436
     let among_var = env.find_among_b(A_10);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 436
@@ -1271,7 +1271,7 @@ fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 444
     let among_var = env.find_among_b(A_11);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 444
@@ -1300,7 +1300,7 @@ fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 451
     let among_var = env.find_among_b(A_12);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 451
@@ -1329,7 +1329,7 @@ fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 458
     let among_var = env.find_among_b(A_13);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 458
@@ -1358,7 +1358,7 @@ fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 465
     let among_var = env.find_among_b(A_14);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 465
@@ -1387,7 +1387,7 @@ fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 471
     let among_var = env.find_among_b(A_15);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 471
@@ -1416,7 +1416,7 @@ fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 477
     let among_var = env.find_among_b(A_16);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 477
@@ -1445,7 +1445,7 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 484
     let among_var = env.find_among_b(A_17);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 484
@@ -1494,7 +1494,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 492
     let among_var = env.find_among_b(A_18);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 492
@@ -1563,7 +1563,7 @@ fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 503
     let among_var = env.find_among_b(A_19);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 503
@@ -1592,7 +1592,7 @@ fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.ket = env.cursor;
     // substring, line 511
     let among_var = env.find_among_b(A_20);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 511
@@ -1631,7 +1631,7 @@ fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bo
     env.ket = env.cursor;
     // substring, line 519
     let among_var = env.find_among_b(A_21);
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
     // ], line 519
@@ -1668,22 +1668,22 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
     let v_1 = env.cursor;
     'lab0: loop{
         // call Checks1, line 534
-        if !r_Checks1(env, context){
+        if !r_Checks1(env, context) {
              break 'lab0;
         }
         break 'lab0;
     }
-    env.cursor = v_1;;
+    env.cursor = v_1;
     // do, line 537
     let v_2 = env.cursor;
     'lab1: loop{
         // call Normalize_pre, line 537
-        if !r_Normalize_pre(env, context){
+        if !r_Normalize_pre(env, context) {
              break 'lab1;
         }
         break 'lab1;
     }
-    env.cursor = v_2;;
+    env.cursor = v_2;
     // backwards, line 540
     env.limit_backward = env.cursor;
     env.cursor = env.limit;
@@ -1698,7 +1698,7 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
             'lab4: loop{
                 // (, line 544
                 // Boolean test is_verb, line 545
-                if !context.B_is_verb{
+                if !context.B_is_verb {
                      break 'lab4;
                 }
                 // (, line 546
@@ -1715,301 +1715,302 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                             let v_7 = env.limit - env.cursor;
                             'lab8: for _ in 0..1 {
                                 // call Suffix_Verb_Step1, line 548
-                                if !r_Suffix_Verb_Step1(env, context){
+                                if !r_Suffix_Verb_Step1(env, context) {
                                      break 'lab8;
                                 }
                                 v_6 -= 1;
                                 continue 'replab7;
                             }
-                            env.cursor = env.limit - v_7;;
+                            env.cursor = env.limit - v_7;
                             break 'replab7;
-                            }                            if v_6 > 0{
-                                 break 'lab6;
-                            }
-                            // (, line 549
-                            // or, line 549
-                            'lab9: loop{
-                                let v_8 = env.limit - env.cursor;
-                                'lab10: loop{
-                                    // call Suffix_Verb_Step2a, line 549
-                                    if !r_Suffix_Verb_Step2a(env, context){
-                                         break 'lab10;
-                                    }
-                                    break 'lab9;
+                        }
+                        if v_6 > 0 {
+                             break 'lab6;
+                        }
+                        // (, line 549
+                        // or, line 549
+                        'lab9: loop{
+                            let v_8 = env.limit - env.cursor;
+                            'lab10: loop{
+                                // call Suffix_Verb_Step2a, line 549
+                                if !r_Suffix_Verb_Step2a(env, context) {
+                                     break 'lab10;
                                 }
-                                env.cursor = env.limit - v_8;;
-                                'lab11: loop{
-                                    // call Suffix_Verb_Step2c, line 549
-                                    if !r_Suffix_Verb_Step2c(env, context){
-                                         break 'lab11;
-                                    }
-                                    break 'lab9;
-                                }
-                                env.cursor = env.limit - v_8;;
-                                // next, line 549
-                                if env.cursor <= env.limit_backward{
-                                     break 'lab6;
-                                }
-                                env.previous_char();
                                 break 'lab9;
                             }
-                            break 'lab5;
-                        }
-                        env.cursor = env.limit - v_5;;
-                        'lab12: loop{
-                            // call Suffix_Verb_Step2b, line 551
-                            if !r_Suffix_Verb_Step2b(env, context){
-                                 break 'lab12;
+                            env.cursor = env.limit - v_8;
+                            'lab11: loop{
+                                // call Suffix_Verb_Step2c, line 549
+                                if !r_Suffix_Verb_Step2c(env, context) {
+                                     break 'lab11;
+                                }
+                                break 'lab9;
                             }
-                            break 'lab5;
-                        }
-                        env.cursor = env.limit - v_5;;
-                        // call Suffix_Verb_Step2a, line 552
-                        if !r_Suffix_Verb_Step2a(env, context){
-                             break 'lab4;
+                            env.cursor = env.limit - v_8;
+                            // next, line 549
+                            if env.cursor <= env.limit_backward {
+                                 break 'lab6;
+                            }
+                            env.previous_char();
+                            break 'lab9;
                         }
                         break 'lab5;
                     }
-                    break 'lab3;
-                }
-                env.cursor = env.limit - v_4;;
-                'lab13: loop{
-                    // (, line 556
-                    // Boolean test is_noun, line 557
-                    if !context.B_is_noun{
-                         break 'lab13;
-                    }
-                    // (, line 558
-                    // try, line 560
-                    let v_9 = env.limit - env.cursor;
-                    'lab14: loop{
-                        // (, line 560
-                        // or, line 562
-                        'lab15: loop{
-                            let v_10 = env.limit - env.cursor;
-                            'lab16: loop{
-                                // call Suffix_Noun_Step2c2, line 561
-                                if !r_Suffix_Noun_Step2c2(env, context){
-                                     break 'lab16;
-                                }
-                                break 'lab15;
-                            }
-                            env.cursor = env.limit - v_10;;
-                            'lab17: loop{
-                                // (, line 562
-                                // not, line 562
-                                'lab18: loop{
-                                    // Boolean test is_defined, line 562
-                                    if !context.B_is_defined{
-                                         break 'lab18;
-                                    }
-                                     break 'lab17;
-                                    break 'lab18;
-                                }
-                                // call Suffix_Noun_Step1a, line 562
-                                if !r_Suffix_Noun_Step1a(env, context){
-                                     break 'lab17;
-                                }
-                                // (, line 562
-                                // or, line 564
-                                'lab19: loop{
-                                    let v_12 = env.limit - env.cursor;
-                                    'lab20: loop{
-                                        // call Suffix_Noun_Step2a, line 563
-                                        if !r_Suffix_Noun_Step2a(env, context){
-                                             break 'lab20;
-                                        }
-                                        break 'lab19;
-                                    }
-                                    env.cursor = env.limit - v_12;;
-                                    'lab21: loop{
-                                        // call Suffix_Noun_Step2b, line 564
-                                        if !r_Suffix_Noun_Step2b(env, context){
-                                             break 'lab21;
-                                        }
-                                        break 'lab19;
-                                    }
-                                    env.cursor = env.limit - v_12;;
-                                    'lab22: loop{
-                                        // call Suffix_Noun_Step2c1, line 565
-                                        if !r_Suffix_Noun_Step2c1(env, context){
-                                             break 'lab22;
-                                        }
-                                        break 'lab19;
-                                    }
-                                    env.cursor = env.limit - v_12;;
-                                    // next, line 566
-                                    if env.cursor <= env.limit_backward{
-                                         break 'lab17;
-                                    }
-                                    env.previous_char();
-                                    break 'lab19;
-                                }
-                                break 'lab15;
-                            }
-                            env.cursor = env.limit - v_10;;
-                            'lab23: loop{
-                                // (, line 567
-                                // call Suffix_Noun_Step1b, line 567
-                                if !r_Suffix_Noun_Step1b(env, context){
-                                     break 'lab23;
-                                }
-                                // (, line 567
-                                // or, line 569
-                                'lab24: loop{
-                                    let v_13 = env.limit - env.cursor;
-                                    'lab25: loop{
-                                        // call Suffix_Noun_Step2a, line 568
-                                        if !r_Suffix_Noun_Step2a(env, context){
-                                             break 'lab25;
-                                        }
-                                        break 'lab24;
-                                    }
-                                    env.cursor = env.limit - v_13;;
-                                    'lab26: loop{
-                                        // call Suffix_Noun_Step2b, line 569
-                                        if !r_Suffix_Noun_Step2b(env, context){
-                                             break 'lab26;
-                                        }
-                                        break 'lab24;
-                                    }
-                                    env.cursor = env.limit - v_13;;
-                                    // call Suffix_Noun_Step2c1, line 570
-                                    if !r_Suffix_Noun_Step2c1(env, context){
-                                         break 'lab23;
-                                    }
-                                    break 'lab24;
-                                }
-                                break 'lab15;
-                            }
-                            env.cursor = env.limit - v_10;;
-                            'lab27: loop{
-                                // (, line 571
-                                // not, line 571
-                                'lab28: loop{
-                                    // Boolean test is_defined, line 571
-                                    if !context.B_is_defined{
-                                         break 'lab28;
-                                    }
-                                     break 'lab27;
-                                    break 'lab28;
-                                }
-                                // call Suffix_Noun_Step2a, line 571
-                                if !r_Suffix_Noun_Step2a(env, context){
-                                     break 'lab27;
-                                }
-                                break 'lab15;
-                            }
-                            env.cursor = env.limit - v_10;;
-                            // (, line 572
-                            // call Suffix_Noun_Step2b, line 572
-                            if !r_Suffix_Noun_Step2b(env, context){
-                                env.cursor = env.limit - v_9;
-                                 break 'lab14;
-                            }
-                            break 'lab15;
+                    env.cursor = env.limit - v_5;
+                    'lab12: loop{
+                        // call Suffix_Verb_Step2b, line 551
+                        if !r_Suffix_Verb_Step2b(env, context) {
+                             break 'lab12;
                         }
-                        break 'lab14;
+                        break 'lab5;
                     }
-                    // call Suffix_Noun_Step3, line 574
-                    if !r_Suffix_Noun_Step3(env, context){
-                         break 'lab13;
+                    env.cursor = env.limit - v_5;
+                    // call Suffix_Verb_Step2a, line 552
+                    if !r_Suffix_Verb_Step2a(env, context) {
+                         break 'lab4;
                     }
-                    break 'lab3;
-                }
-                env.cursor = env.limit - v_4;;
-                // call Suffix_All_alef_maqsura, line 580
-                if !r_Suffix_All_alef_maqsura(env, context){
-                     break 'lab2;
+                    break 'lab5;
                 }
                 break 'lab3;
             }
-            break 'lab2;
+            env.cursor = env.limit - v_4;
+            'lab13: loop{
+                // (, line 556
+                // Boolean test is_noun, line 557
+                if !context.B_is_noun {
+                     break 'lab13;
+                }
+                // (, line 558
+                // try, line 560
+                let v_9 = env.limit - env.cursor;
+                'lab14: loop{
+                    // (, line 560
+                    // or, line 562
+                    'lab15: loop{
+                        let v_10 = env.limit - env.cursor;
+                        'lab16: loop{
+                            // call Suffix_Noun_Step2c2, line 561
+                            if !r_Suffix_Noun_Step2c2(env, context) {
+                                 break 'lab16;
+                            }
+                            break 'lab15;
+                        }
+                        env.cursor = env.limit - v_10;
+                        'lab17: loop{
+                            // (, line 562
+                            // not, line 562
+                            'lab18: loop{
+                                // Boolean test is_defined, line 562
+                                if !context.B_is_defined {
+                                     break 'lab18;
+                                }
+                                 break 'lab17;
+                                break 'lab18;
+                            }
+                            // call Suffix_Noun_Step1a, line 562
+                            if !r_Suffix_Noun_Step1a(env, context) {
+                                 break 'lab17;
+                            }
+                            // (, line 562
+                            // or, line 564
+                            'lab19: loop{
+                                let v_12 = env.limit - env.cursor;
+                                'lab20: loop{
+                                    // call Suffix_Noun_Step2a, line 563
+                                    if !r_Suffix_Noun_Step2a(env, context) {
+                                         break 'lab20;
+                                    }
+                                    break 'lab19;
+                                }
+                                env.cursor = env.limit - v_12;
+                                'lab21: loop{
+                                    // call Suffix_Noun_Step2b, line 564
+                                    if !r_Suffix_Noun_Step2b(env, context) {
+                                         break 'lab21;
+                                    }
+                                    break 'lab19;
+                                }
+                                env.cursor = env.limit - v_12;
+                                'lab22: loop{
+                                    // call Suffix_Noun_Step2c1, line 565
+                                    if !r_Suffix_Noun_Step2c1(env, context) {
+                                         break 'lab22;
+                                    }
+                                    break 'lab19;
+                                }
+                                env.cursor = env.limit - v_12;
+                                // next, line 566
+                                if env.cursor <= env.limit_backward {
+                                     break 'lab17;
+                                }
+                                env.previous_char();
+                                break 'lab19;
+                            }
+                            break 'lab15;
+                        }
+                        env.cursor = env.limit - v_10;
+                        'lab23: loop{
+                            // (, line 567
+                            // call Suffix_Noun_Step1b, line 567
+                            if !r_Suffix_Noun_Step1b(env, context) {
+                                 break 'lab23;
+                            }
+                            // (, line 567
+                            // or, line 569
+                            'lab24: loop{
+                                let v_13 = env.limit - env.cursor;
+                                'lab25: loop{
+                                    // call Suffix_Noun_Step2a, line 568
+                                    if !r_Suffix_Noun_Step2a(env, context) {
+                                         break 'lab25;
+                                    }
+                                    break 'lab24;
+                                }
+                                env.cursor = env.limit - v_13;
+                                'lab26: loop{
+                                    // call Suffix_Noun_Step2b, line 569
+                                    if !r_Suffix_Noun_Step2b(env, context) {
+                                         break 'lab26;
+                                    }
+                                    break 'lab24;
+                                }
+                                env.cursor = env.limit - v_13;
+                                // call Suffix_Noun_Step2c1, line 570
+                                if !r_Suffix_Noun_Step2c1(env, context) {
+                                     break 'lab23;
+                                }
+                                break 'lab24;
+                            }
+                            break 'lab15;
+                        }
+                        env.cursor = env.limit - v_10;
+                        'lab27: loop{
+                            // (, line 571
+                            // not, line 571
+                            'lab28: loop{
+                                // Boolean test is_defined, line 571
+                                if !context.B_is_defined {
+                                     break 'lab28;
+                                }
+                                 break 'lab27;
+                                break 'lab28;
+                            }
+                            // call Suffix_Noun_Step2a, line 571
+                            if !r_Suffix_Noun_Step2a(env, context) {
+                                 break 'lab27;
+                            }
+                            break 'lab15;
+                        }
+                        env.cursor = env.limit - v_10;
+                        // (, line 572
+                        // call Suffix_Noun_Step2b, line 572
+                        if !r_Suffix_Noun_Step2b(env, context) {
+                            env.cursor = env.limit - v_9;
+                             break 'lab14;
+                        }
+                        break 'lab15;
+                    }
+                    break 'lab14;
+                }
+                // call Suffix_Noun_Step3, line 574
+                if !r_Suffix_Noun_Step3(env, context) {
+                     break 'lab13;
+                }
+                break 'lab3;
+            }
+            env.cursor = env.limit - v_4;
+            // call Suffix_All_alef_maqsura, line 580
+            if !r_Suffix_All_alef_maqsura(env, context) {
+                 break 'lab2;
+            }
+            break 'lab3;
         }
-        env.cursor = env.limit - v_3;;
-        env.cursor = env.limit_backward;
-        // do, line 585
-        let v_15 = env.cursor;
-        'lab29: loop{
-            // (, line 585
-            // try, line 586
-            let v_16 = env.cursor;
-            'lab30: loop{
-                // call Prefix_Step1, line 586
-                if !r_Prefix_Step1(env, context){
-                    env.cursor = v_16;
-                     break 'lab30;
-                }
-                break 'lab30;
+        break 'lab2;
+    }
+    env.cursor = env.limit - v_3;
+    env.cursor = env.limit_backward;
+    // do, line 585
+    let v_15 = env.cursor;
+    'lab29: loop{
+        // (, line 585
+        // try, line 586
+        let v_16 = env.cursor;
+        'lab30: loop{
+            // call Prefix_Step1, line 586
+            if !r_Prefix_Step1(env, context) {
+                env.cursor = v_16;
+                 break 'lab30;
             }
-            // try, line 587
-            let v_17 = env.cursor;
-            'lab31: loop{
-                // call Prefix_Step2, line 587
-                if !r_Prefix_Step2(env, context){
-                    env.cursor = v_17;
-                     break 'lab31;
-                }
-                break 'lab31;
+            break 'lab30;
+        }
+        // try, line 587
+        let v_17 = env.cursor;
+        'lab31: loop{
+            // call Prefix_Step2, line 587
+            if !r_Prefix_Step2(env, context) {
+                env.cursor = v_17;
+                 break 'lab31;
             }
-            // (, line 588
-            // or, line 589
-            'lab32: loop{
-                let v_18 = env.cursor;
-                'lab33: loop{
-                    // call Prefix_Step3a_Noun, line 588
-                    if !r_Prefix_Step3a_Noun(env, context){
-                         break 'lab33;
-                    }
-                    break 'lab32;
-                }
-                env.cursor = v_18;;
-                'lab34: loop{
-                    // (, line 589
-                    // Boolean test is_noun, line 589
-                    if !context.B_is_noun{
-                         break 'lab34;
-                    }
-                    // call Prefix_Step3b_Noun, line 589
-                    if !r_Prefix_Step3b_Noun(env, context){
-                         break 'lab34;
-                    }
-                    break 'lab32;
-                }
-                env.cursor = v_18;;
-                // (, line 590
-                // Boolean test is_verb, line 590
-                if !context.B_is_verb{
-                     break 'lab29;
-                }
-                // try, line 590
-                let v_19 = env.cursor;
-                'lab35: loop{
-                    // call Prefix_Step3_Verb, line 590
-                    if !r_Prefix_Step3_Verb(env, context){
-                        env.cursor = v_19;
-                         break 'lab35;
-                    }
-                    break 'lab35;
-                }
-                // call Prefix_Step4_Verb, line 590
-                if !r_Prefix_Step4_Verb(env, context){
-                     break 'lab29;
+            break 'lab31;
+        }
+        // (, line 588
+        // or, line 589
+        'lab32: loop{
+            let v_18 = env.cursor;
+            'lab33: loop{
+                // call Prefix_Step3a_Noun, line 588
+                if !r_Prefix_Step3a_Noun(env, context) {
+                     break 'lab33;
                 }
                 break 'lab32;
             }
-            break 'lab29;
-        }
-        env.cursor = v_15;;
-        // do, line 595
-        let v_20 = env.cursor;
-        'lab36: loop{
-            // call Normalize_post, line 595
-            if !r_Normalize_post(env, context){
-                 break 'lab36;
+            env.cursor = v_18;
+            'lab34: loop{
+                // (, line 589
+                // Boolean test is_noun, line 589
+                if !context.B_is_noun {
+                     break 'lab34;
+                }
+                // call Prefix_Step3b_Noun, line 589
+                if !r_Prefix_Step3b_Noun(env, context) {
+                     break 'lab34;
+                }
+                break 'lab32;
             }
-            break 'lab36;
+            env.cursor = v_18;
+            // (, line 590
+            // Boolean test is_verb, line 590
+            if !context.B_is_verb {
+                 break 'lab29;
+            }
+            // try, line 590
+            let v_19 = env.cursor;
+            'lab35: loop{
+                // call Prefix_Step3_Verb, line 590
+                if !r_Prefix_Step3_Verb(env, context) {
+                    env.cursor = v_19;
+                     break 'lab35;
+                }
+                break 'lab35;
+            }
+            // call Prefix_Step4_Verb, line 590
+            if !r_Prefix_Step4_Verb(env, context) {
+                 break 'lab29;
+            }
+            break 'lab32;
         }
-        env.cursor = v_20;;
-        return true;
+        break 'lab29;
     }
+    env.cursor = v_15;
+    // do, line 595
+    let v_20 = env.cursor;
+    'lab36: loop{
+        // call Normalize_post, line 595
+        if !r_Normalize_post(env, context) {
+             break 'lab36;
+        }
+        break 'lab36;
+    }
+    env.cursor = v_20;
+    return true;
+}
