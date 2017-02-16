@@ -351,23 +351,7 @@ impl<'a> SnowballEnv<'a> {
                     diff = -1;
                     break;
                 }
-                // What we do here, I can only assume.
-                // We do not check bytewise, as in find_among, but characterwise
-                // And probably we check some characters at least twice...
-                // I tried fixing that by counting up common by the number of matched bytes.
-                // That did not work...
-
-                // Get the char boundries for self.current and w
-                let char_bound = Self::get_next_char_boundry_b(&self.current, c - 1 - common);
-                let w_char_bound = Self::get_next_char_boundry_b(&w.0, lvar);
-                // Get the chars
-                let cur_char = self.current[char_bound..].chars().next();
-                let w_char = w.0[w_char_bound..].chars().next();
-                // Diff them!
-                if cur_char.is_none() || w_char.is_none() {
-                    break;
-                }
-                diff = cur_char.unwrap() as i32 - w_char.unwrap() as i32;
+                diff = self.current.as_bytes()[c - common - 1] as i32 - w.0.as_bytes()[lvar] as i32;
                 if diff != 0 {
                     break;
                 }
