@@ -1,5 +1,6 @@
 pub mod arabic;
 pub mod english;
+pub mod finnish;
 pub mod french;
 pub mod german;
 pub mod italian;

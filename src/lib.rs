@@ -34,13 +34,14 @@ use snowball::algorithms;
 pub enum Algorithm {
     Arabic,
     English,
+    Finnish,
     French,
     German,
     Italian,
     Portuguese,
     Romanian,
     Russian,
-    Spanish,
+    Spanish,    
 }
 
 /// Wrapps a usable interface around the actual stemmer implementation
@@ -54,6 +55,7 @@ impl Stemmer {
         match lang {
             Algorithm::Arabic => Stemmer { stemmer: Box::new(algorithms::arabic::stem) },
             Algorithm::English => Stemmer { stemmer: Box::new(algorithms::english::stem) },
+            Algorithm::Finnish => Stemmer { stemmer: Box::new(algorithms::finnish::stem) },
             Algorithm::French => Stemmer { stemmer: Box::new(algorithms::french::stem) },
             Algorithm::German => Stemmer { stemmer: Box::new(algorithms::german::stem) },
             Algorithm::Italian => Stemmer { stemmer: Box::new(algorithms::italian::stem) },
@@ -242,6 +244,24 @@ mod tests {
             stemms_to(voc.unwrap().as_str(),
                       res.unwrap().as_str(),
                       Algorithm::Arabic);
+        }
+    }
+
+    #[test]
+    fn finnish_test() {
+        use std::fs;
+        use std::io;
+        use std::io::BufRead;
+
+        let vocab = io::BufReader::new(fs::File::open("test_data/voc_fi.txt").unwrap());
+        let result = io::BufReader::new(fs::File::open("test_data/res_fi.txt").unwrap());
+
+        let lines = vocab.lines().zip(result.lines());
+
+        for (voc, res) in lines {
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::Finnish);
         }
     }
 

@@ -4,7 +4,7 @@
 use snowball::SnowballEnv;
 use snowball::Among;
 
-static A_0: &'static [Among; 9] = &[
+static A_0: &'static [Among<Context>; 9] = &[
     Among("\u{0432}\u{0448}\u{0438}\u{0441}\u{044C}", -1, 1, None),
     Among("\u{044B}\u{0432}\u{0448}\u{0438}\u{0441}\u{044C}", 0, 2, None),
     Among("\u{0438}\u{0432}\u{0448}\u{0438}\u{0441}\u{044C}", 0, 2, None),
@@ -16,7 +16,7 @@ static A_0: &'static [Among; 9] = &[
     Among("\u{0438}\u{0432}\u{0448}\u{0438}", 6, 2, None)
 ];
 
-static A_1: &'static [Among; 26] = &[
+static A_1: &'static [Among<Context>; 26] = &[
     Among("\u{0435}\u{043C}\u{0443}", -1, 1, None),
     Among("\u{043E}\u{043C}\u{0443}", -1, 1, None),
     Among("\u{044B}\u{0445}", -1, 1, None),
@@ -45,7 +45,7 @@ static A_1: &'static [Among; 26] = &[
     Among("\u{043E}\u{0433}\u{043E}", -1, 1, None)
 ];
 
-static A_2: &'static [Among; 8] = &[
+static A_2: &'static [Among<Context>; 8] = &[
     Among("\u{0432}\u{0448}", -1, 1, None),
     Among("\u{044B}\u{0432}\u{0448}", 0, 2, None),
     Among("\u{0438}\u{0432}\u{0448}", 0, 2, None),
@@ -56,12 +56,12 @@ static A_2: &'static [Among; 8] = &[
     Among("\u{043D}\u{043D}", -1, 1, None)
 ];
 
-static A_3: &'static [Among; 2] = &[
+static A_3: &'static [Among<Context>; 2] = &[
     Among("\u{0441}\u{044C}", -1, 1, None),
     Among("\u{0441}\u{044F}", -1, 1, None)
 ];
 
-static A_4: &'static [Among; 46] = &[
+static A_4: &'static [Among<Context>; 46] = &[
     Among("\u{044B}\u{0442}", -1, 2, None),
     Among("\u{044E}\u{0442}", -1, 1, None),
     Among("\u{0443}\u{044E}\u{0442}", 1, 2, None),
@@ -110,7 +110,7 @@ static A_4: &'static [Among; 46] = &[
     Among("\u{043D}\u{043D}\u{043E}", 43, 1, None)
 ];
 
-static A_5: &'static [Among; 36] = &[
+static A_5: &'static [Among<Context>; 36] = &[
     Among("\u{0443}", -1, 1, None),
     Among("\u{044F}\u{0445}", -1, 1, None),
     Among("\u{0438}\u{044F}\u{0445}", 1, 1, None),
@@ -149,12 +149,12 @@ static A_5: &'static [Among; 36] = &[
     Among("\u{043E}", -1, 1, None)
 ];
 
-static A_6: &'static [Among; 2] = &[
+static A_6: &'static [Among<Context>; 2] = &[
     Among("\u{043E}\u{0441}\u{0442}", -1, 1, None),
     Among("\u{043E}\u{0441}\u{0442}\u{044C}", -1, 1, None)
 ];
 
-static A_7: &'static [Among; 4] = &[
+static A_7: &'static [Among<Context>; 4] = &[
     Among("\u{0435}\u{0439}\u{0448}", -1, 1, None),
     Among("\u{044C}", -1, 3, None),
     Among("\u{0435}\u{0439}\u{0448}\u{0435}", -1, 1, None),
@@ -250,7 +250,7 @@ fn r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 72
     env.ket = env.cursor;
     // substring, line 72
-    let among_var = env.find_among_b(A_0);
+    let among_var = env.find_among_b(A_0, context);
     if among_var == 0 {
         return false;
     }
@@ -267,14 +267,14 @@ fn r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool {
             let v_1 = env.limit - env.cursor;
             'lab1: loop {
                 // literal, line 76
-                if !env.eq_s_b("\u{0430}") {
+                if !env.eq_s_b(&"\u{0430}") {
                     break 'lab1;
                 }
                 break 'lab0;
             }
             env.cursor = env.limit - v_1;
             // literal, line 76
-            if !env.eq_s_b("\u{044F}") {
+            if !env.eq_s_b(&"\u{044F}") {
                 return false;
             }
             break 'lab0;
@@ -299,7 +299,7 @@ fn r_adjective(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 88
     env.ket = env.cursor;
     // substring, line 88
-    let among_var = env.find_among_b(A_1);
+    let among_var = env.find_among_b(A_1, context);
     if among_var == 0 {
         return false;
     }
@@ -332,7 +332,7 @@ fn r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool {
         // [, line 110
         env.ket = env.cursor;
         // substring, line 110
-        let among_var = env.find_among_b(A_2);
+        let among_var = env.find_among_b(A_2, context);
         if among_var == 0 {
             env.cursor = env.limit - v_1;
             break 'lab0;
@@ -351,14 +351,14 @@ fn r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool {
                 let v_2 = env.limit - env.cursor;
                 'lab2: loop {
                     // literal, line 115
-                    if !env.eq_s_b("\u{0430}") {
+                    if !env.eq_s_b(&"\u{0430}") {
                         break 'lab2;
                     }
                     break 'lab1;
                 }
                 env.cursor = env.limit - v_2;
                 // literal, line 115
-                if !env.eq_s_b("\u{044F}") {
+                if !env.eq_s_b(&"\u{044F}") {
                     env.cursor = env.limit - v_1;
                     break 'lab0;
                 }
@@ -386,7 +386,7 @@ fn r_reflexive(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 129
     env.ket = env.cursor;
     // substring, line 129
-    let among_var = env.find_among_b(A_3);
+    let among_var = env.find_among_b(A_3, context);
     if among_var == 0 {
         return false;
     }
@@ -411,7 +411,7 @@ fn r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 137
     env.ket = env.cursor;
     // substring, line 137
-    let among_var = env.find_among_b(A_4);
+    let among_var = env.find_among_b(A_4, context);
     if among_var == 0 {
         return false;
     }
@@ -428,14 +428,14 @@ fn r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
             let v_1 = env.limit - env.cursor;
             'lab1: loop {
                 // literal, line 143
-                if !env.eq_s_b("\u{0430}") {
+                if !env.eq_s_b(&"\u{0430}") {
                     break 'lab1;
                 }
                 break 'lab0;
             }
             env.cursor = env.limit - v_1;
             // literal, line 143
-            if !env.eq_s_b("\u{044F}") {
+            if !env.eq_s_b(&"\u{044F}") {
                 return false;
             }
             break 'lab0;
@@ -460,7 +460,7 @@ fn r_noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 160
     env.ket = env.cursor;
     // substring, line 160
-    let among_var = env.find_among_b(A_5);
+    let among_var = env.find_among_b(A_5, context);
     if among_var == 0 {
         return false;
     }
@@ -485,7 +485,7 @@ fn r_derivational(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 176
     env.ket = env.cursor;
     // substring, line 176
-    let among_var = env.find_among_b(A_6);
+    let among_var = env.find_among_b(A_6, context);
     if among_var == 0 {
         return false;
     }
@@ -514,7 +514,7 @@ fn r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 184
     env.ket = env.cursor;
     // substring, line 184
-    let among_var = env.find_among_b(A_7);
+    let among_var = env.find_among_b(A_7, context);
     if among_var == 0 {
         return false;
     }
@@ -533,13 +533,13 @@ fn r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool {
         // [, line 189
         env.ket = env.cursor;
         // literal, line 189
-        if !env.eq_s_b("\u{043D}") {
+        if !env.eq_s_b(&"\u{043D}") {
             return false;
         }
         // ], line 189
         env.bra = env.cursor;
         // literal, line 189
-        if !env.eq_s_b("\u{043D}") {
+        if !env.eq_s_b(&"\u{043D}") {
             return false;
         }
         // delete, line 189
@@ -550,7 +550,7 @@ fn r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool {
     else if among_var == 2{
         // (, line 192
         // literal, line 192
-        if !env.eq_s_b("\u{043D}") {
+        if !env.eq_s_b(&"\u{043D}") {
             return false;
         }
         // delete, line 192
@@ -661,7 +661,7 @@ pub fn stem(env: &mut SnowballEnv) -> bool {
         // [, line 209
         env.ket = env.cursor;
         // literal, line 209
-        if !env.eq_s_b("\u{0438}") {
+        if !env.eq_s_b(&"\u{0438}") {
             env.cursor = env.limit - v_8;
             break 'lab8;
         }

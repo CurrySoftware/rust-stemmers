@@ -254,8 +254,11 @@ impl<'a> SnowballEnv<'a> {
         }
     }
 
+    pub fn slice_to(&mut self) -> String {
+        self.current[self.bra..self.ket].to_string()
+    }
 
-    pub fn find_among(&mut self, amongs: &[Among]) -> i32 {
+    pub fn find_among<T>(&mut self, amongs: &[Among<T>], context: &mut T) -> i32 {
         use std::cmp::min;
         let mut i: i32 = 0;
         let mut j: i32 = amongs.len() as i32;
@@ -309,7 +312,7 @@ impl<'a> SnowballEnv<'a> {
             if common_i >= w.0.len() {
                 self.cursor = c + w.0.len();
                 if let Some(ref method) = w.3 {
-                    let res = method(self);
+                    let res = method(self, context);
                     self.cursor = c + w.0.len();
                     if res {
                         return w.2;
@@ -325,7 +328,7 @@ impl<'a> SnowballEnv<'a> {
         }
     }
 
-    pub fn find_among_b(&mut self, amongs: &[Among]) -> i32 {
+    pub fn find_among_b<T>(&mut self, amongs: &[Among<T>], context: &mut T) -> i32 {
         let mut i: i32 = 0;
         let mut j: i32 = amongs.len() as i32;
 
@@ -383,7 +386,7 @@ impl<'a> SnowballEnv<'a> {
             if common_i >= w.0.len() {
                 self.cursor = c - w.0.len();
                 if let Some(ref method) = w.3 {
-                    let res = method(self);
+                    let res = method(self, context);
                     self.cursor = c - w.0.len();
                     if res {
                         return w.2;

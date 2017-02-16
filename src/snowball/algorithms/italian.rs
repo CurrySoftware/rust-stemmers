@@ -4,7 +4,7 @@
 use snowball::SnowballEnv;
 use snowball::Among;
 
-static A_0: &'static [Among; 7] = &[
+static A_0: &'static [Among<Context>; 7] = &[
     Among("", -1, 7, None),
     Among("qu", 0, 6, None),
     Among("\u{00E1}", 0, 1, None),
@@ -14,13 +14,13 @@ static A_0: &'static [Among; 7] = &[
     Among("\u{00FA}", 0, 5, None)
 ];
 
-static A_1: &'static [Among; 3] = &[
+static A_1: &'static [Among<Context>; 3] = &[
     Among("", -1, 3, None),
     Among("I", 0, 1, None),
     Among("U", 0, 2, None)
 ];
 
-static A_2: &'static [Among; 37] = &[
+static A_2: &'static [Among<Context>; 37] = &[
     Among("la", -1, -1, None),
     Among("cela", 0, -1, None),
     Among("gliela", 0, -1, None),
@@ -60,7 +60,7 @@ static A_2: &'static [Among; 37] = &[
     Among("velo", 31, -1, None)
 ];
 
-static A_3: &'static [Among; 5] = &[
+static A_3: &'static [Among<Context>; 5] = &[
     Among("ando", -1, 1, None),
     Among("endo", -1, 1, None),
     Among("ar", -1, 2, None),
@@ -68,20 +68,20 @@ static A_3: &'static [Among; 5] = &[
     Among("ir", -1, 2, None)
 ];
 
-static A_4: &'static [Among; 4] = &[
+static A_4: &'static [Among<Context>; 4] = &[
     Among("ic", -1, -1, None),
     Among("abil", -1, -1, None),
     Among("os", -1, -1, None),
     Among("iv", -1, 1, None)
 ];
 
-static A_5: &'static [Among; 3] = &[
+static A_5: &'static [Among<Context>; 3] = &[
     Among("ic", -1, 1, None),
     Among("abil", -1, 1, None),
     Among("iv", -1, 1, None)
 ];
 
-static A_6: &'static [Among; 51] = &[
+static A_6: &'static [Among<Context>; 51] = &[
     Among("ica", -1, 1, None),
     Among("logia", -1, 3, None),
     Among("osa", -1, 1, None),
@@ -135,7 +135,7 @@ static A_6: &'static [Among; 51] = &[
     Among("ist\u{00EC}", -1, 1, None)
 ];
 
-static A_7: &'static [Among; 87] = &[
+static A_7: &'static [Among<Context>; 87] = &[
     Among("isca", -1, 1, None),
     Among("enda", -1, 1, None),
     Among("ata", -1, 1, None),
@@ -249,7 +249,7 @@ fn r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 35
             env.bra = env.cursor;
             // substring, line 35
-            let among_var = env.find_among(A_0);
+            let among_var = env.find_among(A_0, context);
             if among_var == 0 {
                 break 'lab1;
             }
@@ -335,7 +335,7 @@ fn r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool {
                         'lab7: loop {
                             // (, line 46
                             // literal, line 46
-                            if !env.eq_s("u") {
+                            if !env.eq_s(&"u") {
                                 break 'lab7;
                             }
                             // ], line 46
@@ -352,7 +352,7 @@ fn r_prelude(env: &mut SnowballEnv, context: &mut Context) -> bool {
                         env.cursor = v_5;
                         // (, line 47
                         // literal, line 47
-                        if !env.eq_s("i") {
+                        if !env.eq_s(&"i") {
                             break 'lab5;
                         }
                         // ], line 47
@@ -567,7 +567,7 @@ fn r_postlude(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 71
             env.bra = env.cursor;
             // substring, line 71
-            let among_var = env.find_among(A_1);
+            let among_var = env.find_among(A_1, context);
             if among_var == 0 {
                 break 'lab1;
             }
@@ -633,13 +633,13 @@ fn r_attached_pronoun(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 86
     env.ket = env.cursor;
     // substring, line 86
-    if env.find_among_b(A_2) == 0 {
+    if env.find_among_b(A_2, context) == 0 {
         return false;
     }
     // ], line 86
     env.bra = env.cursor;
     // among, line 96
-    let among_var = env.find_among_b(A_3);
+    let among_var = env.find_among_b(A_3, context);
     if among_var == 0 {
         return false;
     }
@@ -674,7 +674,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 103
     env.ket = env.cursor;
     // substring, line 103
-    let among_var = env.find_among_b(A_6);
+    let among_var = env.find_among_b(A_6, context);
     if among_var == 0 {
         return false;
     }
@@ -712,7 +712,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 113
             env.ket = env.cursor;
             // literal, line 113
-            if !env.eq_s_b("ic") {
+            if !env.eq_s_b(&"ic") {
                 env.cursor = env.limit - v_1;
                 break 'lab0;
             }
@@ -791,7 +791,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 126
             env.ket = env.cursor;
             // substring, line 126
-            let among_var = env.find_among_b(A_4);
+            let among_var = env.find_among_b(A_4, context);
             if among_var == 0 {
                 env.cursor = env.limit - v_2;
                 break 'lab1;
@@ -817,7 +817,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
                 // [, line 127
                 env.ket = env.cursor;
                 // literal, line 127
-                if !env.eq_s_b("at") {
+                if !env.eq_s_b(&"at") {
                     env.cursor = env.limit - v_2;
                     break 'lab1;
                 }
@@ -853,7 +853,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 135
             env.ket = env.cursor;
             // substring, line 135
-            let among_var = env.find_among_b(A_5);
+            let among_var = env.find_among_b(A_5, context);
             if among_var == 0 {
                 env.cursor = env.limit - v_3;
                 break 'lab2;
@@ -897,7 +897,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 142
             env.ket = env.cursor;
             // literal, line 142
-            if !env.eq_s_b("at") {
+            if !env.eq_s_b(&"at") {
                 env.cursor = env.limit - v_4;
                 break 'lab3;
             }
@@ -915,7 +915,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 142
             env.ket = env.cursor;
             // literal, line 142
-            if !env.eq_s_b("ic") {
+            if !env.eq_s_b(&"ic") {
                 env.cursor = env.limit - v_4;
                 break 'lab3;
             }
@@ -951,7 +951,7 @@ fn r_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 148
     env.ket = env.cursor;
     // substring, line 148
-    let among_var = env.find_among_b(A_7);
+    let among_var = env.find_among_b(A_7, context);
     if among_var == 0 {
         env.limit_backward = v_2;
         return false;
@@ -1000,7 +1000,7 @@ fn r_vowel_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         // [, line 172
         env.ket = env.cursor;
         // literal, line 172
-        if !env.eq_s_b("i") {
+        if !env.eq_s_b(&"i") {
             env.cursor = env.limit - v_1;
             break 'lab0;
         }
@@ -1024,7 +1024,7 @@ fn r_vowel_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         // [, line 175
         env.ket = env.cursor;
         // literal, line 175
-        if !env.eq_s_b("h") {
+        if !env.eq_s_b(&"h") {
             env.cursor = env.limit - v_2;
             break 'lab1;
         }
