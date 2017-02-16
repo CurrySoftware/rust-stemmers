@@ -80,7 +80,13 @@ mod tests {
     use super::{Stemmer, Algorithm};
 
     fn stemms_to(lhs: &str, rhs: &str, stemmer: Algorithm) {
+        println!("{}", lhs);
         assert_eq!(Stemmer::create(stemmer).stem(lhs), rhs);
+    }
+
+    #[test]
+    fn failing() {
+        stemms_to("abstractizăm", "abstractiz", Algorithm::Romanian);
     }
 
     #[test]

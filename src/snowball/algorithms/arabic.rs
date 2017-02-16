@@ -231,16 +231,16 @@ static A_9: &'static [Among; 3] = &[
 ];
 
 static A_10: &'static [Among; 10] = &[
-    Among("\u{0643}\u{0645}\u{0627}", -1, 3, None),
-    Among("\u{0647}\u{0645}\u{0627}", -1, 3, None),
-    Among("\u{0646}\u{0627}", -1, 2, None),
-    Among("\u{0647}\u{0627}", -1, 2, None),
     Among("\u{0643}", -1, 1, None),
     Among("\u{0643}\u{0645}", -1, 2, None),
     Among("\u{0647}\u{0645}", -1, 2, None),
     Among("\u{0647}\u{0646}", -1, 2, None),
     Among("\u{0647}", -1, 1, None),
-    Among("\u{064A}", -1, 1, None)
+    Among("\u{064A}", -1, 1, None),
+    Among("\u{0643}\u{0645}\u{0627}", -1, 3, None),
+    Among("\u{0647}\u{0645}\u{0627}", -1, 3, None),
+    Among("\u{0646}\u{0627}", -1, 2, None),
+    Among("\u{0647}\u{0627}", -1, 2, None)
 ];
 
 static A_11: &'static [Among; 1] = &[
@@ -248,9 +248,9 @@ static A_11: &'static [Among; 1] = &[
 ];
 
 static A_12: &'static [Among; 3] = &[
-    Among("\u{0627}", -1, 1, None),
     Among("\u{0648}", -1, 1, None),
-    Among("\u{064A}", -1, 1, None)
+    Among("\u{064A}", -1, 1, None),
+    Among("\u{0627}", -1, 1, None)
 ];
 
 static A_13: &'static [Among; 1] = &[
@@ -270,10 +270,6 @@ static A_16: &'static [Among; 1] = &[
 ];
 
 static A_17: &'static [Among; 12] = &[
-    Among("\u{0643}\u{0645}\u{0627}", -1, 3, None),
-    Among("\u{0647}\u{0645}\u{0627}", -1, 3, None),
-    Among("\u{0646}\u{0627}", -1, 2, None),
-    Among("\u{0647}\u{0627}", -1, 2, None),
     Among("\u{0643}", -1, 1, None),
     Among("\u{0643}\u{0645}", -1, 2, None),
     Among("\u{0647}\u{0645}", -1, 2, None),
@@ -281,26 +277,30 @@ static A_17: &'static [Among; 12] = &[
     Among("\u{0647}\u{0646}", -1, 2, None),
     Among("\u{0647}", -1, 1, None),
     Among("\u{0643}\u{0645}\u{0648}", -1, 3, None),
-    Among("\u{0646}\u{064A}", -1, 2, None)
+    Among("\u{0646}\u{064A}", -1, 2, None),
+    Among("\u{0643}\u{0645}\u{0627}", -1, 3, None),
+    Among("\u{0647}\u{0645}\u{0627}", -1, 3, None),
+    Among("\u{0646}\u{0627}", -1, 2, None),
+    Among("\u{0647}\u{0627}", -1, 2, None)
 ];
 
 static A_18: &'static [Among; 11] = &[
-    Among("\u{0627}", -1, 2, None),
-    Among("\u{062A}\u{0627}", 0, 3, None),
-    Among("\u{062A}\u{0645}\u{0627}", 0, 5, None),
-    Among("\u{0646}\u{0627}", 0, 3, None),
-    Among("\u{062A}", -1, 1, None),
     Among("\u{0646}", -1, 2, None),
-    Among("\u{0627}\u{0646}", 5, 4, None),
-    Among("\u{062A}\u{0646}", 5, 3, None),
-    Among("\u{0648}\u{0646}", 5, 4, None),
-    Among("\u{064A}\u{0646}", 5, 4, None),
-    Among("\u{064A}", -1, 2, None)
+    Among("\u{0648}\u{0646}", 0, 4, None),
+    Among("\u{064A}\u{0646}", 0, 4, None),
+    Among("\u{0627}\u{0646}", 0, 4, None),
+    Among("\u{062A}\u{0646}", 0, 3, None),
+    Among("\u{064A}", -1, 2, None),
+    Among("\u{0627}", -1, 2, None),
+    Among("\u{062A}\u{0645}\u{0627}", 6, 5, None),
+    Among("\u{0646}\u{0627}", 6, 3, None),
+    Among("\u{062A}\u{0627}", 6, 3, None),
+    Among("\u{062A}", -1, 1, None)
 ];
 
 static A_19: &'static [Among; 2] = &[
-    Among("\u{0648}\u{0627}", -1, 1, None),
-    Among("\u{062A}\u{0645}", -1, 1, None)
+    Among("\u{062A}\u{0645}", -1, 1, None),
+    Among("\u{0648}\u{0627}", -1, 1, None)
 ];
 
 static A_20: &'static [Among; 2] = &[
@@ -319,411 +319,411 @@ struct Context {
     i_word_len: usize,
 }
 
-fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 258
     // loop, line 259
     for _ in 0..env.current.chars().count()
     {    // (, line 259
     // or, line 328
-    'lab0: loop{
+    'lab0: loop {
         let v_2 = env.cursor;
-        'lab1: loop{
+        'lab1: loop {
             // (, line 260
             // [, line 261
             env.bra = env.cursor;
             // substring, line 261
             let among_var = env.find_among(A_0);
             if among_var == 0 {
-                 break 'lab1;
+                break 'lab1;
             }
             // ], line 261
             env.ket = env.cursor;
-            if among_var == 0{
-                 break 'lab1;
+            if among_var == 0 {
+                break 'lab1;
             }
 
             else if among_var == 1{
                 // (, line 262
                 // delete, line 262
-                if !env.slice_del(){
+                if !env.slice_del() {
                     return false;
                 }
             }
             else if among_var == 2{
                 // (, line 263
                 // delete, line 263
-                if !env.slice_del(){
+                if !env.slice_del() {
                     return false;
                 }
             }
             else if among_var == 3{
                 // (, line 266
                 // delete, line 266
-                if !env.slice_del(){
+                if !env.slice_del() {
                     return false;
                 }
             }
             else if among_var == 4{
                 // (, line 267
                 // delete, line 267
-                if !env.slice_del(){
+                if !env.slice_del() {
                     return false;
                 }
             }
             else if among_var == 5{
                 // (, line 270
                 // <-, line 270
-                if !env.slice_from("0"){
+                if !env.slice_from("0") {
                     return false;
                 }
             }
             else if among_var == 6{
                 // (, line 271
                 // <-, line 271
-                if !env.slice_from("1"){
+                if !env.slice_from("1") {
                     return false;
                 }
             }
             else if among_var == 7{
                 // (, line 272
                 // <-, line 272
-                if !env.slice_from("2"){
+                if !env.slice_from("2") {
                     return false;
                 }
             }
             else if among_var == 8{
                 // (, line 273
                 // <-, line 273
-                if !env.slice_from("3"){
+                if !env.slice_from("3") {
                     return false;
                 }
             }
             else if among_var == 9{
                 // (, line 274
                 // <-, line 274
-                if !env.slice_from("4"){
+                if !env.slice_from("4") {
                     return false;
                 }
             }
             else if among_var == 10{
                 // (, line 275
                 // <-, line 275
-                if !env.slice_from("5"){
+                if !env.slice_from("5") {
                     return false;
                 }
             }
             else if among_var == 11{
                 // (, line 276
                 // <-, line 276
-                if !env.slice_from("6"){
+                if !env.slice_from("6") {
                     return false;
                 }
             }
             else if among_var == 12{
                 // (, line 277
                 // <-, line 277
-                if !env.slice_from("7"){
+                if !env.slice_from("7") {
                     return false;
                 }
             }
             else if among_var == 13{
                 // (, line 278
                 // <-, line 278
-                if !env.slice_from("8"){
+                if !env.slice_from("8") {
                     return false;
                 }
             }
             else if among_var == 14{
                 // (, line 279
                 // <-, line 279
-                if !env.slice_from("9"){
+                if !env.slice_from("9") {
                     return false;
                 }
             }
             else if among_var == 15{
                 // (, line 280
                 // delete, line 280
-                if !env.slice_del(){
+                if !env.slice_del() {
                     return false;
                 }
             }
             else if among_var == 16{
                 // (, line 283
                 // <-, line 283
-                if !env.slice_from("\u{0621}"){
+                if !env.slice_from("\u{0621}") {
                     return false;
                 }
             }
             else if among_var == 17{
                 // (, line 284
                 // <-, line 284
-                if !env.slice_from("\u{0623}"){
+                if !env.slice_from("\u{0623}") {
                     return false;
                 }
             }
             else if among_var == 18{
                 // (, line 285
                 // <-, line 285
-                if !env.slice_from("\u{0625}"){
+                if !env.slice_from("\u{0625}") {
                     return false;
                 }
             }
             else if among_var == 19{
                 // (, line 286
                 // <-, line 286
-                if !env.slice_from("\u{0626}"){
+                if !env.slice_from("\u{0626}") {
                     return false;
                 }
             }
             else if among_var == 20{
                 // (, line 287
                 // <-, line 287
-                if !env.slice_from("\u{0622}"){
+                if !env.slice_from("\u{0622}") {
                     return false;
                 }
             }
             else if among_var == 21{
                 // (, line 288
                 // <-, line 288
-                if !env.slice_from("\u{0624}"){
+                if !env.slice_from("\u{0624}") {
                     return false;
                 }
             }
             else if among_var == 22{
                 // (, line 289
                 // <-, line 289
-                if !env.slice_from("\u{0627}"){
+                if !env.slice_from("\u{0627}") {
                     return false;
                 }
             }
             else if among_var == 23{
                 // (, line 290
                 // <-, line 290
-                if !env.slice_from("\u{0628}"){
+                if !env.slice_from("\u{0628}") {
                     return false;
                 }
             }
             else if among_var == 24{
                 // (, line 291
                 // <-, line 291
-                if !env.slice_from("\u{0629}"){
+                if !env.slice_from("\u{0629}") {
                     return false;
                 }
             }
             else if among_var == 25{
                 // (, line 292
                 // <-, line 292
-                if !env.slice_from("\u{062A}"){
+                if !env.slice_from("\u{062A}") {
                     return false;
                 }
             }
             else if among_var == 26{
                 // (, line 293
                 // <-, line 293
-                if !env.slice_from("\u{062B}"){
+                if !env.slice_from("\u{062B}") {
                     return false;
                 }
             }
             else if among_var == 27{
                 // (, line 294
                 // <-, line 294
-                if !env.slice_from("\u{062C}"){
+                if !env.slice_from("\u{062C}") {
                     return false;
                 }
             }
             else if among_var == 28{
                 // (, line 295
                 // <-, line 295
-                if !env.slice_from("\u{062D}"){
+                if !env.slice_from("\u{062D}") {
                     return false;
                 }
             }
             else if among_var == 29{
                 // (, line 296
                 // <-, line 296
-                if !env.slice_from("\u{062E}"){
+                if !env.slice_from("\u{062E}") {
                     return false;
                 }
             }
             else if among_var == 30{
                 // (, line 297
                 // <-, line 297
-                if !env.slice_from("\u{062F}"){
+                if !env.slice_from("\u{062F}") {
                     return false;
                 }
             }
             else if among_var == 31{
                 // (, line 298
                 // <-, line 298
-                if !env.slice_from("\u{0630}"){
+                if !env.slice_from("\u{0630}") {
                     return false;
                 }
             }
             else if among_var == 32{
                 // (, line 299
                 // <-, line 299
-                if !env.slice_from("\u{0631}"){
+                if !env.slice_from("\u{0631}") {
                     return false;
                 }
             }
             else if among_var == 33{
                 // (, line 300
                 // <-, line 300
-                if !env.slice_from("\u{0632}"){
+                if !env.slice_from("\u{0632}") {
                     return false;
                 }
             }
             else if among_var == 34{
                 // (, line 301
                 // <-, line 301
-                if !env.slice_from("\u{0633}"){
+                if !env.slice_from("\u{0633}") {
                     return false;
                 }
             }
             else if among_var == 35{
                 // (, line 302
                 // <-, line 302
-                if !env.slice_from("\u{0634}"){
+                if !env.slice_from("\u{0634}") {
                     return false;
                 }
             }
             else if among_var == 36{
                 // (, line 303
                 // <-, line 303
-                if !env.slice_from("\u{0635}"){
+                if !env.slice_from("\u{0635}") {
                     return false;
                 }
             }
             else if among_var == 37{
                 // (, line 304
                 // <-, line 304
-                if !env.slice_from("\u{0636}"){
+                if !env.slice_from("\u{0636}") {
                     return false;
                 }
             }
             else if among_var == 38{
                 // (, line 305
                 // <-, line 305
-                if !env.slice_from("\u{0637}"){
+                if !env.slice_from("\u{0637}") {
                     return false;
                 }
             }
             else if among_var == 39{
                 // (, line 306
                 // <-, line 306
-                if !env.slice_from("\u{0638}"){
+                if !env.slice_from("\u{0638}") {
                     return false;
                 }
             }
             else if among_var == 40{
                 // (, line 307
                 // <-, line 307
-                if !env.slice_from("\u{0639}"){
+                if !env.slice_from("\u{0639}") {
                     return false;
                 }
             }
             else if among_var == 41{
                 // (, line 308
                 // <-, line 308
-                if !env.slice_from("\u{063A}"){
+                if !env.slice_from("\u{063A}") {
                     return false;
                 }
             }
             else if among_var == 42{
                 // (, line 309
                 // <-, line 309
-                if !env.slice_from("\u{0641}"){
+                if !env.slice_from("\u{0641}") {
                     return false;
                 }
             }
             else if among_var == 43{
                 // (, line 310
                 // <-, line 310
-                if !env.slice_from("\u{0642}"){
+                if !env.slice_from("\u{0642}") {
                     return false;
                 }
             }
             else if among_var == 44{
                 // (, line 311
                 // <-, line 311
-                if !env.slice_from("\u{0643}"){
+                if !env.slice_from("\u{0643}") {
                     return false;
                 }
             }
             else if among_var == 45{
                 // (, line 312
                 // <-, line 312
-                if !env.slice_from("\u{0644}"){
+                if !env.slice_from("\u{0644}") {
                     return false;
                 }
             }
             else if among_var == 46{
                 // (, line 313
                 // <-, line 313
-                if !env.slice_from("\u{0645}"){
+                if !env.slice_from("\u{0645}") {
                     return false;
                 }
             }
             else if among_var == 47{
                 // (, line 314
                 // <-, line 314
-                if !env.slice_from("\u{0646}"){
+                if !env.slice_from("\u{0646}") {
                     return false;
                 }
             }
             else if among_var == 48{
                 // (, line 315
                 // <-, line 315
-                if !env.slice_from("\u{0647}"){
+                if !env.slice_from("\u{0647}") {
                     return false;
                 }
             }
             else if among_var == 49{
                 // (, line 316
                 // <-, line 316
-                if !env.slice_from("\u{0648}"){
+                if !env.slice_from("\u{0648}") {
                     return false;
                 }
             }
             else if among_var == 50{
                 // (, line 317
                 // <-, line 317
-                if !env.slice_from("\u{0649}"){
+                if !env.slice_from("\u{0649}") {
                     return false;
                 }
             }
             else if among_var == 51{
                 // (, line 318
                 // <-, line 318
-                if !env.slice_from("\u{064A}"){
+                if !env.slice_from("\u{064A}") {
                     return false;
                 }
             }
             else if among_var == 52{
                 // (, line 321
                 // <-, line 321
-                if !env.slice_from("\u{0644}\u{0627}"){
+                if !env.slice_from("\u{0644}\u{0627}") {
                     return false;
                 }
             }
             else if among_var == 53{
                 // (, line 322
                 // <-, line 322
-                if !env.slice_from("\u{0644}\u{0623}"){
+                if !env.slice_from("\u{0644}\u{0623}") {
                     return false;
                 }
             }
             else if among_var == 54{
                 // (, line 323
                 // <-, line 323
-                if !env.slice_from("\u{0644}\u{0625}"){
+                if !env.slice_from("\u{0644}\u{0625}") {
                     return false;
                 }
             }
             else if among_var == 55{
                 // (, line 324
                 // <-, line 324
-                if !env.slice_from("\u{0644}\u{0622}"){
+                if !env.slice_from("\u{0644}\u{0622}") {
                     return false;
                 }
             }
@@ -741,11 +741,11 @@ fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 333
     // do, line 335
     let v_1 = env.cursor;
-    'lab0: loop{
+    'lab0: loop {
         // (, line 335
         // backwards, line 337
         env.limit_backward = env.cursor;
@@ -756,32 +756,32 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
         // substring, line 338
         let among_var = env.find_among_b(A_1);
         if among_var == 0 {
-             break 'lab0;
+            break 'lab0;
         }
         // ], line 338
         env.bra = env.cursor;
-        if among_var == 0{
-             break 'lab0;
+        if among_var == 0 {
+            break 'lab0;
         }
 
         else if among_var == 1{
             // (, line 339
             // <-, line 339
-            if !env.slice_from("\u{0621}"){
+            if !env.slice_from("\u{0621}") {
                 return false;
             }
         }
         else if among_var == 2{
             // (, line 340
             // <-, line 340
-            if !env.slice_from("\u{0621}"){
+            if !env.slice_from("\u{0621}") {
                 return false;
             }
         }
         else if among_var == 3{
             // (, line 341
             // <-, line 341
-            if !env.slice_from("\u{0621}"){
+            if !env.slice_from("\u{0621}") {
                 return false;
             }
         }
@@ -791,46 +791,46 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.cursor = v_1;
     // do, line 346
     let v_2 = env.cursor;
-    'lab1: loop{
+    'lab1: loop {
         // loop, line 346
         for _ in 0..context.i_word_len
         {        // (, line 346
         // or, line 355
-        'lab2: loop{
+        'lab2: loop {
             let v_4 = env.cursor;
-            'lab3: loop{
+            'lab3: loop {
                 // (, line 347
                 // [, line 349
                 env.bra = env.cursor;
                 // substring, line 349
                 let among_var = env.find_among(A_2);
                 if among_var == 0 {
-                     break 'lab3;
+                    break 'lab3;
                 }
                 // ], line 349
                 env.ket = env.cursor;
-                if among_var == 0{
-                     break 'lab3;
+                if among_var == 0 {
+                    break 'lab3;
                 }
 
                 else if among_var == 1{
                     // (, line 350
                     // <-, line 350
-                    if !env.slice_from("\u{0627}"){
+                    if !env.slice_from("\u{0627}") {
                         return false;
                     }
                 }
                 else if among_var == 2{
                     // (, line 351
                     // <-, line 351
-                    if !env.slice_from("\u{0648}"){
+                    if !env.slice_from("\u{0648}") {
                         return false;
                     }
                 }
                 else if among_var == 3{
                     // (, line 352
                     // <-, line 352
-                    if !env.slice_from("\u{064A}"){
+                    if !env.slice_from("\u{064A}") {
                         return false;
                     }
                 }
@@ -839,7 +839,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
             env.cursor = v_4;
             // next, line 356
             if env.cursor >= env.limit {
-                 break 'lab1;
+                break 'lab1;
             }
             env.next_char();
             break 'lab2;
@@ -851,7 +851,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 361
     context.i_word_len = env.current.chars().count();
     // [, line 363
@@ -863,7 +863,7 @@ fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 363
     env.ket = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -894,7 +894,7 @@ fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     return true;
 }
 
-fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 371
     context.i_word_len = env.current.chars().count();
     // [, line 373
@@ -906,7 +906,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 373
     env.ket = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -916,7 +916,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 374
-        if !env.slice_from("\u{0623}"){
+        if !env.slice_from("\u{0623}") {
             return false;
         }
     }
@@ -926,7 +926,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 375
-        if !env.slice_from("\u{0622}"){
+        if !env.slice_from("\u{0622}") {
             return false;
         }
     }
@@ -936,7 +936,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 376
-        if !env.slice_from("\u{0623}"){
+        if !env.slice_from("\u{0623}") {
             return false;
         }
     }
@@ -946,7 +946,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 377
-        if !env.slice_from("\u{0627}"){
+        if !env.slice_from("\u{0627}") {
             return false;
         }
     }
@@ -956,22 +956,22 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 378
-        if !env.slice_from("\u{0625}"){
+        if !env.slice_from("\u{0625}") {
             return false;
         }
     }
     return true;
 }
 
-fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 383
     context.i_word_len = env.current.chars().count();
     // not, line 385
     let v_1 = env.cursor;
-    'lab0: loop{
+    'lab0: loop {
         // literal, line 385
         if !env.eq_s("\u{0641}\u{0627}") {
-             break 'lab0;
+            break 'lab0;
         }
         return false;
         break 'lab0;
@@ -979,10 +979,10 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     env.cursor = v_1;
     // not, line 386
     let v_2 = env.cursor;
-    'lab1: loop{
+    'lab1: loop {
         // literal, line 386
         if !env.eq_s("\u{0648}\u{0627}") {
-             break 'lab1;
+            break 'lab1;
         }
         return false;
         break 'lab1;
@@ -997,7 +997,7 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 387
     env.ket = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1007,7 +1007,7 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 388
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1017,14 +1017,14 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 389
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 393
     context.i_word_len = env.current.chars().count();
     // [, line 395
@@ -1036,7 +1036,7 @@ fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 395
     env.ket = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1046,7 +1046,7 @@ fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 396
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1056,22 +1056,22 @@ fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 397
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 401
     context.i_word_len = env.current.chars().count();
     // not, line 403
     let v_1 = env.cursor;
-    'lab0: loop{
+    'lab0: loop {
         // literal, line 403
         if !env.eq_s("\u{0628}\u{0627}") {
-             break 'lab0;
+            break 'lab0;
         }
         return false;
         break 'lab0;
@@ -1086,7 +1086,7 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 404
     env.ket = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1096,7 +1096,7 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 405
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1106,7 +1106,7 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 407
-        if !env.slice_from("\u{0628}"){
+        if !env.slice_from("\u{0628}") {
             return false;
         }
     }
@@ -1116,14 +1116,14 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 408
-        if !env.slice_from("\u{0643}"){
+        if !env.slice_from("\u{0643}") {
             return false;
         }
     }
     return true;
 }
 
-fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 413
     context.i_word_len = env.current.chars().count();
     // [, line 415
@@ -1135,7 +1135,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 415
     env.ket = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1145,7 +1145,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 417
-        if !env.slice_from("\u{064A}"){
+        if !env.slice_from("\u{064A}") {
             return false;
         }
     }
@@ -1155,7 +1155,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 418
-        if !env.slice_from("\u{062A}"){
+        if !env.slice_from("\u{062A}") {
             return false;
         }
     }
@@ -1165,7 +1165,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 419
-        if !env.slice_from("\u{0646}"){
+        if !env.slice_from("\u{0646}") {
             return false;
         }
     }
@@ -1175,14 +1175,14 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // <-, line 420
-        if !env.slice_from("\u{0623}"){
+        if !env.slice_from("\u{0623}") {
             return false;
         }
     }
     return true;
 }
 
-fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 424
     context.i_word_len = env.current.chars().count();
     // [, line 426
@@ -1194,7 +1194,7 @@ fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 426
     env.ket = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1208,14 +1208,14 @@ fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool{
         // unset is_noun, line 427
         context.B_is_noun = false;
         // <-, line 427
-        if !env.slice_from("\u{0627}\u{0633}\u{062A}"){
+        if !env.slice_from("\u{0627}\u{0633}\u{062A}") {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 434
     context.i_word_len = env.current.chars().count();
     // [, line 436
@@ -1227,7 +1227,7 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 436
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1237,7 +1237,7 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 437
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1247,7 +1247,7 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 438
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1257,14 +1257,14 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 439
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 442
     context.i_word_len = env.current.chars().count();
     // [, line 444
@@ -1276,7 +1276,7 @@ fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 444
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1286,14 +1286,14 @@ fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 445
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 449
     context.i_word_len = env.current.chars().count();
     // [, line 451
@@ -1305,7 +1305,7 @@ fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 451
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1315,14 +1315,14 @@ fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 452
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 456
     context.i_word_len = env.current.chars().count();
     // [, line 458
@@ -1334,7 +1334,7 @@ fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 458
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1344,14 +1344,14 @@ fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 459
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 463
     context.i_word_len = env.current.chars().count();
     // [, line 465
@@ -1363,7 +1363,7 @@ fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 465
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1373,14 +1373,14 @@ fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 466
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 469
     context.i_word_len = env.current.chars().count();
     // [, line 471
@@ -1392,7 +1392,7 @@ fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 471
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1402,14 +1402,14 @@ fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 472
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 475
     context.i_word_len = env.current.chars().count();
     // [, line 477
@@ -1421,7 +1421,7 @@ fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 477
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1431,14 +1431,14 @@ fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 478
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 482
     context.i_word_len = env.current.chars().count();
     // [, line 484
@@ -1450,7 +1450,7 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 484
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1460,7 +1460,7 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 485
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1470,7 +1470,7 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 486
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1480,14 +1480,14 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 487
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 490
     context.i_word_len = env.current.chars().count();
     // [, line 492
@@ -1499,7 +1499,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 492
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1509,7 +1509,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 493
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1519,7 +1519,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 494
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1529,7 +1529,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 495
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1539,7 +1539,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 496
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1549,14 +1549,14 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 497
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 501
     context.i_word_len = env.current.chars().count();
     // [, line 503
@@ -1568,7 +1568,7 @@ fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 503
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1578,14 +1578,14 @@ fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 504
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 509
     context.i_word_len = env.current.chars().count();
     // [, line 511
@@ -1597,7 +1597,7 @@ fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
     }
     // ], line 511
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
@@ -1607,7 +1607,7 @@ fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 512
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
@@ -1617,14 +1617,14 @@ fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool{
             return false;
         }
         // delete, line 513
-        if !env.slice_del(){
+        if !env.slice_del() {
             return false;
         }
     }
     return true;
 }
 
-fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bool{
+fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // (, line 517
     context.i_word_len = env.current.chars().count();
     // [, line 519
@@ -1636,22 +1636,22 @@ fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bo
     }
     // ], line 519
     env.bra = env.cursor;
-    if among_var == 0{
+    if among_var == 0 {
         return false;
     }
 
     else if among_var == 1{
         // (, line 520
         // <-, line 520
-        if !env.slice_from("\u{064A}"){
+        if !env.slice_from("\u{064A}") {
             return false;
         }
     }
     return true;
 }
 
-pub fn stem(env: &mut SnowballEnv) -> bool{
-    let mut context = &mut Context{
+pub fn stem(env: &mut SnowballEnv) -> bool {
+    let mut context = &mut Context {
         B_is_defined: false,
         B_is_verb: false,
         B_is_noun: false,
@@ -1666,20 +1666,20 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
     context.B_is_defined = false;
     // do, line 534
     let v_1 = env.cursor;
-    'lab0: loop{
+    'lab0: loop {
         // call Checks1, line 534
         if !r_Checks1(env, context) {
-             break 'lab0;
+            break 'lab0;
         }
         break 'lab0;
     }
     env.cursor = v_1;
     // do, line 537
     let v_2 = env.cursor;
-    'lab1: loop{
+    'lab1: loop {
         // call Normalize_pre, line 537
         if !r_Normalize_pre(env, context) {
-             break 'lab1;
+            break 'lab1;
         }
         break 'lab1;
     }
@@ -1690,22 +1690,22 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
     // (, line 540
     // do, line 542
     let v_3 = env.limit - env.cursor;
-    'lab2: loop{
+    'lab2: loop {
         // (, line 542
         // or, line 556
-        'lab3: loop{
+        'lab3: loop {
             let v_4 = env.limit - env.cursor;
-            'lab4: loop{
+            'lab4: loop {
                 // (, line 544
                 // Boolean test is_verb, line 545
                 if !context.B_is_verb {
-                     break 'lab4;
+                    break 'lab4;
                 }
                 // (, line 546
                 // or, line 551
-                'lab5: loop{
+                'lab5: loop {
                     let v_5 = env.limit - env.cursor;
-                    'lab6: loop{
+                    'lab6: loop {
                         // (, line 547
                         // (, line 548
                         // atleast, line 548
@@ -1716,7 +1716,7 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                             'lab8: for _ in 0..1 {
                                 // call Suffix_Verb_Step1, line 548
                                 if !r_Suffix_Verb_Step1(env, context) {
-                                     break 'lab8;
+                                    break 'lab8;
                                 }
                                 v_6 -= 1;
                                 continue 'replab7;
@@ -1725,31 +1725,31 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                             break 'replab7;
                         }
                         if v_6 > 0 {
-                             break 'lab6;
+                            break 'lab6;
                         }
                         // (, line 549
                         // or, line 549
-                        'lab9: loop{
+                        'lab9: loop {
                             let v_8 = env.limit - env.cursor;
-                            'lab10: loop{
+                            'lab10: loop {
                                 // call Suffix_Verb_Step2a, line 549
                                 if !r_Suffix_Verb_Step2a(env, context) {
-                                     break 'lab10;
+                                    break 'lab10;
                                 }
                                 break 'lab9;
                             }
                             env.cursor = env.limit - v_8;
-                            'lab11: loop{
+                            'lab11: loop {
                                 // call Suffix_Verb_Step2c, line 549
                                 if !r_Suffix_Verb_Step2c(env, context) {
-                                     break 'lab11;
+                                    break 'lab11;
                                 }
                                 break 'lab9;
                             }
                             env.cursor = env.limit - v_8;
                             // next, line 549
                             if env.cursor <= env.limit_backward {
-                                 break 'lab6;
+                                break 'lab6;
                             }
                             env.previous_char();
                             break 'lab9;
@@ -1757,91 +1757,91 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                         break 'lab5;
                     }
                     env.cursor = env.limit - v_5;
-                    'lab12: loop{
+                    'lab12: loop {
                         // call Suffix_Verb_Step2b, line 551
                         if !r_Suffix_Verb_Step2b(env, context) {
-                             break 'lab12;
+                            break 'lab12;
                         }
                         break 'lab5;
                     }
                     env.cursor = env.limit - v_5;
                     // call Suffix_Verb_Step2a, line 552
                     if !r_Suffix_Verb_Step2a(env, context) {
-                         break 'lab4;
+                        break 'lab4;
                     }
                     break 'lab5;
                 }
                 break 'lab3;
             }
             env.cursor = env.limit - v_4;
-            'lab13: loop{
+            'lab13: loop {
                 // (, line 556
                 // Boolean test is_noun, line 557
                 if !context.B_is_noun {
-                     break 'lab13;
+                    break 'lab13;
                 }
                 // (, line 558
                 // try, line 560
                 let v_9 = env.limit - env.cursor;
-                'lab14: loop{
+                'lab14: loop {
                     // (, line 560
                     // or, line 562
-                    'lab15: loop{
+                    'lab15: loop {
                         let v_10 = env.limit - env.cursor;
-                        'lab16: loop{
+                        'lab16: loop {
                             // call Suffix_Noun_Step2c2, line 561
                             if !r_Suffix_Noun_Step2c2(env, context) {
-                                 break 'lab16;
+                                break 'lab16;
                             }
                             break 'lab15;
                         }
                         env.cursor = env.limit - v_10;
-                        'lab17: loop{
+                        'lab17: loop {
                             // (, line 562
                             // not, line 562
-                            'lab18: loop{
+                            'lab18: loop {
                                 // Boolean test is_defined, line 562
                                 if !context.B_is_defined {
-                                     break 'lab18;
+                                    break 'lab18;
                                 }
-                                 break 'lab17;
+                                break 'lab17;
                                 break 'lab18;
                             }
                             // call Suffix_Noun_Step1a, line 562
                             if !r_Suffix_Noun_Step1a(env, context) {
-                                 break 'lab17;
+                                break 'lab17;
                             }
                             // (, line 562
                             // or, line 564
-                            'lab19: loop{
+                            'lab19: loop {
                                 let v_12 = env.limit - env.cursor;
-                                'lab20: loop{
+                                'lab20: loop {
                                     // call Suffix_Noun_Step2a, line 563
                                     if !r_Suffix_Noun_Step2a(env, context) {
-                                         break 'lab20;
+                                        break 'lab20;
                                     }
                                     break 'lab19;
                                 }
                                 env.cursor = env.limit - v_12;
-                                'lab21: loop{
+                                'lab21: loop {
                                     // call Suffix_Noun_Step2b, line 564
                                     if !r_Suffix_Noun_Step2b(env, context) {
-                                         break 'lab21;
+                                        break 'lab21;
                                     }
                                     break 'lab19;
                                 }
                                 env.cursor = env.limit - v_12;
-                                'lab22: loop{
+                                'lab22: loop {
                                     // call Suffix_Noun_Step2c1, line 565
                                     if !r_Suffix_Noun_Step2c1(env, context) {
-                                         break 'lab22;
+                                        break 'lab22;
                                     }
                                     break 'lab19;
                                 }
                                 env.cursor = env.limit - v_12;
                                 // next, line 566
                                 if env.cursor <= env.limit_backward {
-                                     break 'lab17;
+                                    break 'lab17;
                                 }
                                 env.previous_char();
                                 break 'lab19;
@@ -1849,55 +1849,55 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                             break 'lab15;
                         }
                         env.cursor = env.limit - v_10;
-                        'lab23: loop{
+                        'lab23: loop {
                             // (, line 567
                             // call Suffix_Noun_Step1b, line 567
                             if !r_Suffix_Noun_Step1b(env, context) {
-                                 break 'lab23;
+                                break 'lab23;
                             }
                             // (, line 567
                             // or, line 569
-                            'lab24: loop{
+                            'lab24: loop {
                                 let v_13 = env.limit - env.cursor;
-                                'lab25: loop{
+                                'lab25: loop {
                                     // call Suffix_Noun_Step2a, line 568
                                     if !r_Suffix_Noun_Step2a(env, context) {
-                                         break 'lab25;
+                                        break 'lab25;
                                     }
                                     break 'lab24;
                                 }
                                 env.cursor = env.limit - v_13;
-                                'lab26: loop{
+                                'lab26: loop {
                                     // call Suffix_Noun_Step2b, line 569
                                     if !r_Suffix_Noun_Step2b(env, context) {
-                                         break 'lab26;
+                                        break 'lab26;
                                     }
                                     break 'lab24;
                                 }
                                 env.cursor = env.limit - v_13;
                                 // call Suffix_Noun_Step2c1, line 570
                                 if !r_Suffix_Noun_Step2c1(env, context) {
-                                     break 'lab23;
+                                    break 'lab23;
                                 }
                                 break 'lab24;
                             }
                             break 'lab15;
                         }
                         env.cursor = env.limit - v_10;
-                        'lab27: loop{
+                        'lab27: loop {
                             // (, line 571
                             // not, line 571
-                            'lab28: loop{
+                            'lab28: loop {
                                 // Boolean test is_defined, line 571
                                 if !context.B_is_defined {
-                                     break 'lab28;
+                                    break 'lab28;
                                 }
-                                 break 'lab27;
+                                break 'lab27;
                                 break 'lab28;
                             }
                             // call Suffix_Noun_Step2a, line 571
                             if !r_Suffix_Noun_Step2a(env, context) {
-                                 break 'lab27;
+                                break 'lab27;
                             }
                             break 'lab15;
                         }
@@ -1906,7 +1906,7 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                         // call Suffix_Noun_Step2b, line 572
                         if !r_Suffix_Noun_Step2b(env, context) {
                             env.cursor = env.limit - v_9;
-                             break 'lab14;
+                            break 'lab14;
                         }
                         break 'lab15;
                     }
@@ -1914,14 +1914,14 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
                 }
                 // call Suffix_Noun_Step3, line 574
                 if !r_Suffix_Noun_Step3(env, context) {
-                     break 'lab13;
+                    break 'lab13;
                 }
                 break 'lab3;
             }
             env.cursor = env.limit - v_4;
             // call Suffix_All_alef_maqsura, line 580
             if !r_Suffix_All_alef_maqsura(env, context) {
-                 break 'lab2;
+                break 'lab2;
             }
             break 'lab3;
         }
@@ -1931,49 +1931,49 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
     env.cursor = env.limit_backward;
     // do, line 585
     let v_15 = env.cursor;
-    'lab29: loop{
+    'lab29: loop {
         // (, line 585
         // try, line 586
         let v_16 = env.cursor;
-        'lab30: loop{
+        'lab30: loop {
             // call Prefix_Step1, line 586
             if !r_Prefix_Step1(env, context) {
                 env.cursor = v_16;
-                 break 'lab30;
+                break 'lab30;
             }
             break 'lab30;
         }
         // try, line 587
         let v_17 = env.cursor;
-        'lab31: loop{
+        'lab31: loop {
             // call Prefix_Step2, line 587
             if !r_Prefix_Step2(env, context) {
                 env.cursor = v_17;
-                 break 'lab31;
+                break 'lab31;
             }
             break 'lab31;
         }
         // (, line 588
         // or, line 589
-        'lab32: loop{
+        'lab32: loop {
             let v_18 = env.cursor;
-            'lab33: loop{
+            'lab33: loop {
                 // call Prefix_Step3a_Noun, line 588
                 if !r_Prefix_Step3a_Noun(env, context) {
-                     break 'lab33;
+                    break 'lab33;
                 }
                 break 'lab32;
             }
             env.cursor = v_18;
-            'lab34: loop{
+            'lab34: loop {
                 // (, line 589
                 // Boolean test is_noun, line 589
                 if !context.B_is_noun {
-                     break 'lab34;
+                    break 'lab34;
                 }
                 // call Prefix_Step3b_Noun, line 589
                 if !r_Prefix_Step3b_Noun(env, context) {
-                     break 'lab34;
+                    break 'lab34;
                 }
                 break 'lab32;
             }
@@ -1981,21 +1981,21 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
             // (, line 590
             // Boolean test is_verb, line 590
             if !context.B_is_verb {
-                 break 'lab29;
+                break 'lab29;
             }
             // try, line 590
             let v_19 = env.cursor;
-            'lab35: loop{
+            'lab35: loop {
                 // call Prefix_Step3_Verb, line 590
                 if !r_Prefix_Step3_Verb(env, context) {
                     env.cursor = v_19;
-                     break 'lab35;
+                    break 'lab35;
                 }
                 break 'lab35;
             }
             // call Prefix_Step4_Verb, line 590
             if !r_Prefix_Step4_Verb(env, context) {
-                 break 'lab29;
+                break 'lab29;
             }
             break 'lab32;
         }
@@ -2004,10 +2004,10 @@ pub fn stem(env: &mut SnowballEnv) -> bool{
     env.cursor = v_15;
     // do, line 595
     let v_20 = env.cursor;
-    'lab36: loop{
+    'lab36: loop {
         // call Normalize_post, line 595
         if !r_Normalize_post(env, context) {
-             break 'lab36;
+            break 'lab36;
         }
         break 'lab36;
     }
