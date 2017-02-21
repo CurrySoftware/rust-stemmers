@@ -1,6 +1,10 @@
 //! This file was generated automatically by the Snowball to Rust compiler
 //! http://snowballstem.org/
 
+#![allow(non_upper_case_globals)]
+#![allow(non_snake_case)]
+#![allow(unused_variables)]
+#![allow(unused_mut)]
 use snowball::SnowballEnv;
 use snowball::Among;
 
@@ -13,7 +17,7 @@ static A_0: &'static [Among<Context>; 9] = &[
     Among("\u{0438}\u{0432}", 3, 2, None),
     Among("\u{0432}\u{0448}\u{0438}", -1, 1, None),
     Among("\u{044B}\u{0432}\u{0448}\u{0438}", 6, 2, None),
-    Among("\u{0438}\u{0432}\u{0448}\u{0438}", 6, 2, None)
+    Among("\u{0438}\u{0432}\u{0448}\u{0438}", 6, 2, None),
 ];
 
 static A_1: &'static [Among<Context>; 26] = &[
@@ -42,7 +46,7 @@ static A_1: &'static [Among<Context>; 26] = &[
     Among("\u{0438}\u{043C}", -1, 1, None),
     Among("\u{043E}\u{043C}", -1, 1, None),
     Among("\u{0435}\u{0433}\u{043E}", -1, 1, None),
-    Among("\u{043E}\u{0433}\u{043E}", -1, 1, None)
+    Among("\u{043E}\u{0433}\u{043E}", -1, 1, None),
 ];
 
 static A_2: &'static [Among<Context>; 8] = &[
@@ -53,12 +57,12 @@ static A_2: &'static [Among<Context>; 8] = &[
     Among("\u{044E}\u{0449}", 3, 1, None),
     Among("\u{0443}\u{044E}\u{0449}", 4, 2, None),
     Among("\u{0435}\u{043C}", -1, 1, None),
-    Among("\u{043D}\u{043D}", -1, 1, None)
+    Among("\u{043D}\u{043D}", -1, 1, None),
 ];
 
 static A_3: &'static [Among<Context>; 2] = &[
     Among("\u{0441}\u{044C}", -1, 1, None),
-    Among("\u{0441}\u{044F}", -1, 1, None)
+    Among("\u{0441}\u{044F}", -1, 1, None),
 ];
 
 static A_4: &'static [Among<Context>; 46] = &[
@@ -107,7 +111,7 @@ static A_4: &'static [Among<Context>; 46] = &[
     Among("\u{0438}\u{043B}\u{043E}", 40, 2, None),
     Among("\u{043D}\u{043E}", -1, 1, None),
     Among("\u{0435}\u{043D}\u{043E}", 43, 2, None),
-    Among("\u{043D}\u{043D}\u{043E}", 43, 1, None)
+    Among("\u{043D}\u{043D}\u{043E}", 43, 1, None),
 ];
 
 static A_5: &'static [Among<Context>; 36] = &[
@@ -146,23 +150,24 @@ static A_5: &'static [Among<Context>; 36] = &[
     Among("\u{0435}\u{043C}", -1, 1, None),
     Among("\u{0438}\u{0435}\u{043C}", 32, 1, None),
     Among("\u{043E}\u{043C}", -1, 1, None),
-    Among("\u{043E}", -1, 1, None)
+    Among("\u{043E}", -1, 1, None),
 ];
 
 static A_6: &'static [Among<Context>; 2] = &[
     Among("\u{043E}\u{0441}\u{0442}", -1, 1, None),
-    Among("\u{043E}\u{0441}\u{0442}\u{044C}", -1, 1, None)
+    Among("\u{043E}\u{0441}\u{0442}\u{044C}", -1, 1, None),
 ];
 
 static A_7: &'static [Among<Context>; 4] = &[
     Among("\u{0435}\u{0439}\u{0448}", -1, 1, None),
     Among("\u{044C}", -1, 3, None),
     Among("\u{0435}\u{0439}\u{0448}\u{0435}", -1, 1, None),
-    Among("\u{043D}", -1, 2, None)
+    Among("\u{043D}", -1, 2, None),
 ];
 
 static G_v: &'static [u8; 4] = &[33, 65, 8, 232];
 
+#[derive(Clone)]
 struct Context {
     i_p2: usize,
     i_pV: usize,
@@ -246,11 +251,12 @@ fn r_R2(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 71
     // [, line 72
     env.ket = env.cursor;
     // substring, line 72
-    let among_var = env.find_among_b(A_0, context);
+    among_var = env.find_among_b(A_0, context);
     if among_var == 0 {
         return false;
     }
@@ -258,9 +264,7 @@ fn r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 76
         // or, line 76
         'lab0: loop {
@@ -283,8 +287,7 @@ fn r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 83
         // delete, line 83
         if !env.slice_del() {
@@ -295,11 +298,12 @@ fn r_perfective_gerund(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_adjective(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 87
     // [, line 88
     env.ket = env.cursor;
     // substring, line 88
-    let among_var = env.find_among_b(A_1, context);
+    among_var = env.find_among_b(A_1, context);
     if among_var == 0 {
         return false;
     }
@@ -307,9 +311,7 @@ fn r_adjective(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 97
         // delete, line 97
         if !env.slice_del() {
@@ -320,6 +322,7 @@ fn r_adjective(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 101
     // call adjective, line 102
     if !r_adjective(env, context) {
@@ -332,7 +335,7 @@ fn r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool {
         // [, line 110
         env.ket = env.cursor;
         // substring, line 110
-        let among_var = env.find_among_b(A_2, context);
+        among_var = env.find_among_b(A_2, context);
         if among_var == 0 {
             env.cursor = env.limit - v_1;
             break 'lab0;
@@ -342,9 +345,7 @@ fn r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if among_var == 0 {
             env.cursor = env.limit - v_1;
             break 'lab0;
-        }
-
-        else if among_var == 1{
+        } else if among_var == 1 {
             // (, line 115
             // or, line 115
             'lab1: loop {
@@ -368,8 +369,7 @@ fn r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool {
             if !env.slice_del() {
                 return false;
             }
-        }
-        else if among_var == 2{
+        } else if among_var == 2 {
             // (, line 122
             // delete, line 122
             if !env.slice_del() {
@@ -382,11 +382,12 @@ fn r_adjectival(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_reflexive(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 128
     // [, line 129
     env.ket = env.cursor;
     // substring, line 129
-    let among_var = env.find_among_b(A_3, context);
+    among_var = env.find_among_b(A_3, context);
     if among_var == 0 {
         return false;
     }
@@ -394,9 +395,7 @@ fn r_reflexive(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 132
         // delete, line 132
         if !env.slice_del() {
@@ -407,11 +406,12 @@ fn r_reflexive(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 136
     // [, line 137
     env.ket = env.cursor;
     // substring, line 137
-    let among_var = env.find_among_b(A_4, context);
+    among_var = env.find_among_b(A_4, context);
     if among_var == 0 {
         return false;
     }
@@ -419,9 +419,7 @@ fn r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 143
         // or, line 143
         'lab0: loop {
@@ -444,8 +442,7 @@ fn r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 151
         // delete, line 151
         if !env.slice_del() {
@@ -456,11 +453,12 @@ fn r_verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 159
     // [, line 160
     env.ket = env.cursor;
     // substring, line 160
-    let among_var = env.find_among_b(A_5, context);
+    among_var = env.find_among_b(A_5, context);
     if among_var == 0 {
         return false;
     }
@@ -468,9 +466,7 @@ fn r_noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 167
         // delete, line 167
         if !env.slice_del() {
@@ -481,11 +477,12 @@ fn r_noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_derivational(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 175
     // [, line 176
     env.ket = env.cursor;
     // substring, line 176
-    let among_var = env.find_among_b(A_6, context);
+    among_var = env.find_among_b(A_6, context);
     if among_var == 0 {
         return false;
     }
@@ -497,9 +494,7 @@ fn r_derivational(env: &mut SnowballEnv, context: &mut Context) -> bool {
     }
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 179
         // delete, line 179
         if !env.slice_del() {
@@ -510,11 +505,12 @@ fn r_derivational(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 183
     // [, line 184
     env.ket = env.cursor;
     // substring, line 184
-    let among_var = env.find_among_b(A_7, context);
+    among_var = env.find_among_b(A_7, context);
     if among_var == 0 {
         return false;
     }
@@ -522,9 +518,7 @@ fn r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 188
         // delete, line 188
         if !env.slice_del() {
@@ -546,8 +540,7 @@ fn r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 192
         // literal, line 192
         if !env.eq_s_b(&"\u{043D}") {
@@ -557,8 +550,7 @@ fn r_tidy_up(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 194
         // delete, line 194
         if !env.slice_del() {

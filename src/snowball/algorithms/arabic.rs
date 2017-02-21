@@ -1,6 +1,10 @@
 //! This file was generated automatically by the Snowball to Rust compiler
 //! http://snowballstem.org/
 
+#![allow(non_upper_case_globals)]
+#![allow(non_snake_case)]
+#![allow(unused_variables)]
+#![allow(unused_mut)]
 use snowball::SnowballEnv;
 use snowball::Among;
 
@@ -165,7 +169,7 @@ static A_0: &'static [Among<Context>; 161] = &[
     Among("\u{FEF9}", -1, 54, None),
     Among("\u{FEFA}", -1, 54, None),
     Among("\u{FEFB}", -1, 52, None),
-    Among("\u{FEFC}", -1, 52, None)
+    Among("\u{FEFC}", -1, 52, None),
 ];
 
 static A_1: &'static [Among<Context>; 5] = &[
@@ -173,7 +177,7 @@ static A_1: &'static [Among<Context>; 5] = &[
     Among("\u{0623}", -1, 1, None),
     Among("\u{0624}", -1, 2, None),
     Among("\u{0625}", -1, 1, None),
-    Among("\u{0626}", -1, 3, None)
+    Among("\u{0626}", -1, 3, None),
 ];
 
 static A_2: &'static [Among<Context>; 5] = &[
@@ -181,14 +185,14 @@ static A_2: &'static [Among<Context>; 5] = &[
     Among("\u{0623}", -1, 1, None),
     Among("\u{0624}", -1, 2, None),
     Among("\u{0625}", -1, 1, None),
-    Among("\u{0626}", -1, 3, None)
+    Among("\u{0626}", -1, 3, None),
 ];
 
 static A_3: &'static [Among<Context>; 4] = &[
     Among("\u{0627}\u{0644}", -1, 2, None),
     Among("\u{0628}\u{0627}\u{0644}", -1, 1, None),
     Among("\u{0643}\u{0627}\u{0644}", -1, 1, None),
-    Among("\u{0644}\u{0644}", -1, 2, None)
+    Among("\u{0644}\u{0644}", -1, 2, None),
 ];
 
 static A_4: &'static [Among<Context>; 5] = &[
@@ -196,38 +200,38 @@ static A_4: &'static [Among<Context>; 5] = &[
     Among("\u{0623}\u{0623}", -1, 1, None),
     Among("\u{0623}\u{0624}", -1, 3, None),
     Among("\u{0623}\u{0625}", -1, 5, None),
-    Among("\u{0623}\u{0627}", -1, 4, None)
+    Among("\u{0623}\u{0627}", -1, 4, None),
 ];
 
 static A_5: &'static [Among<Context>; 2] = &[
     Among("\u{0641}", -1, 1, None),
-    Among("\u{0648}", -1, 2, None)
+    Among("\u{0648}", -1, 2, None),
 ];
 
 static A_6: &'static [Among<Context>; 4] = &[
     Among("\u{0627}\u{0644}", -1, 2, None),
     Among("\u{0628}\u{0627}\u{0644}", -1, 1, None),
     Among("\u{0643}\u{0627}\u{0644}", -1, 1, None),
-    Among("\u{0644}\u{0644}", -1, 2, None)
+    Among("\u{0644}\u{0644}", -1, 2, None),
 ];
 
 static A_7: &'static [Among<Context>; 3] = &[
     Among("\u{0628}", -1, 1, None),
     Among("\u{0628}\u{0628}", 0, 2, None),
-    Among("\u{0643}\u{0643}", -1, 3, None)
+    Among("\u{0643}\u{0643}", -1, 3, None),
 ];
 
 static A_8: &'static [Among<Context>; 4] = &[
     Among("\u{0633}\u{0623}", -1, 4, None),
     Among("\u{0633}\u{062A}", -1, 2, None),
     Among("\u{0633}\u{0646}", -1, 3, None),
-    Among("\u{0633}\u{064A}", -1, 1, None)
+    Among("\u{0633}\u{064A}", -1, 1, None),
 ];
 
 static A_9: &'static [Among<Context>; 3] = &[
     Among("\u{062A}\u{0633}\u{062A}", -1, 1, None),
     Among("\u{0646}\u{0633}\u{062A}", -1, 1, None),
-    Among("\u{064A}\u{0633}\u{062A}", -1, 1, None)
+    Among("\u{064A}\u{0633}\u{062A}", -1, 1, None),
 ];
 
 static A_10: &'static [Among<Context>; 10] = &[
@@ -240,33 +244,33 @@ static A_10: &'static [Among<Context>; 10] = &[
     Among("\u{0643}\u{0645}\u{0627}", -1, 3, None),
     Among("\u{0647}\u{0645}\u{0627}", -1, 3, None),
     Among("\u{0646}\u{0627}", -1, 2, None),
-    Among("\u{0647}\u{0627}", -1, 2, None)
+    Among("\u{0647}\u{0627}", -1, 2, None),
 ];
 
 static A_11: &'static [Among<Context>; 1] = &[
-    Among("\u{0646}", -1, 1, None)
+    Among("\u{0646}", -1, 1, None),
 ];
 
 static A_12: &'static [Among<Context>; 3] = &[
     Among("\u{0648}", -1, 1, None),
     Among("\u{064A}", -1, 1, None),
-    Among("\u{0627}", -1, 1, None)
+    Among("\u{0627}", -1, 1, None),
 ];
 
 static A_13: &'static [Among<Context>; 1] = &[
-    Among("\u{0627}\u{062A}", -1, 1, None)
+    Among("\u{0627}\u{062A}", -1, 1, None),
 ];
 
 static A_14: &'static [Among<Context>; 1] = &[
-    Among("\u{062A}", -1, 1, None)
+    Among("\u{062A}", -1, 1, None),
 ];
 
 static A_15: &'static [Among<Context>; 1] = &[
-    Among("\u{0629}", -1, 1, None)
+    Among("\u{0629}", -1, 1, None),
 ];
 
 static A_16: &'static [Among<Context>; 1] = &[
-    Among("\u{064A}", -1, 1, None)
+    Among("\u{064A}", -1, 1, None),
 ];
 
 static A_17: &'static [Among<Context>; 12] = &[
@@ -281,7 +285,7 @@ static A_17: &'static [Among<Context>; 12] = &[
     Among("\u{0643}\u{0645}\u{0627}", -1, 3, None),
     Among("\u{0647}\u{0645}\u{0627}", -1, 3, None),
     Among("\u{0646}\u{0627}", -1, 2, None),
-    Among("\u{0647}\u{0627}", -1, 2, None)
+    Among("\u{0647}\u{0627}", -1, 2, None),
 ];
 
 static A_18: &'static [Among<Context>; 11] = &[
@@ -295,453 +299,400 @@ static A_18: &'static [Among<Context>; 11] = &[
     Among("\u{062A}\u{0645}\u{0627}", 6, 5, None),
     Among("\u{0646}\u{0627}", 6, 3, None),
     Among("\u{062A}\u{0627}", 6, 3, None),
-    Among("\u{062A}", -1, 1, None)
+    Among("\u{062A}", -1, 1, None),
 ];
 
 static A_19: &'static [Among<Context>; 2] = &[
     Among("\u{062A}\u{0645}", -1, 1, None),
-    Among("\u{0648}\u{0627}", -1, 1, None)
+    Among("\u{0648}\u{0627}", -1, 1, None),
 ];
 
 static A_20: &'static [Among<Context>; 2] = &[
     Among("\u{0648}", -1, 1, None),
-    Among("\u{062A}\u{0645}\u{0648}", 0, 2, None)
+    Among("\u{062A}\u{0645}\u{0648}", 0, 2, None),
 ];
 
 static A_21: &'static [Among<Context>; 1] = &[
-    Among("\u{0649}", -1, 1, None)
+    Among("\u{0649}", -1, 1, None),
 ];
 
+#[derive(Clone)]
 struct Context {
-    B_is_defined: bool,
-    B_is_verb: bool,
-    B_is_noun: bool,
+    b_is_defined: bool,
+    b_is_verb: bool,
+    b_is_noun: bool,
     i_word_len: usize,
 }
 
 fn r_Normalize_pre(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 258
     // loop, line 259
-    for _ in 0..env.current.chars().count()
-    {    // (, line 259
-    // or, line 328
-    'lab0: loop {
-        let v_2 = env.cursor;
-        'lab1: loop {
-            // (, line 260
-            // [, line 261
-            env.bra = env.cursor;
-            // substring, line 261
-            let among_var = env.find_among(A_0, context);
-            if among_var == 0 {
-                break 'lab1;
-            }
-            // ], line 261
-            env.ket = env.cursor;
-            if among_var == 0 {
-                break 'lab1;
-            }
-
-            else if among_var == 1{
-                // (, line 262
-                // delete, line 262
-                if !env.slice_del() {
-                    return false;
+    for _ in 0..env.current.chars().count() {
+        // (, line 259
+        // or, line 328
+        'lab0: loop {
+            let v_2 = env.cursor;
+            'lab1: loop {
+                // (, line 260
+                // [, line 261
+                env.bra = env.cursor;
+                // substring, line 261
+                among_var = env.find_among(A_0, context);
+                if among_var == 0 {
+                    break 'lab1;
                 }
-            }
-            else if among_var == 2{
-                // (, line 263
-                // delete, line 263
-                if !env.slice_del() {
-                    return false;
+                // ], line 261
+                env.ket = env.cursor;
+                if among_var == 0 {
+                    break 'lab1;
+                } else if among_var == 1 {
+                    // (, line 262
+                    // delete, line 262
+                    if !env.slice_del() {
+                        return false;
+                    }
+                } else if among_var == 2 {
+                    // (, line 263
+                    // delete, line 263
+                    if !env.slice_del() {
+                        return false;
+                    }
+                } else if among_var == 3 {
+                    // (, line 266
+                    // delete, line 266
+                    if !env.slice_del() {
+                        return false;
+                    }
+                } else if among_var == 4 {
+                    // (, line 267
+                    // delete, line 267
+                    if !env.slice_del() {
+                        return false;
+                    }
+                } else if among_var == 5 {
+                    // (, line 270
+                    // <-, line 270
+                    if !env.slice_from("0") {
+                        return false;
+                    }
+                } else if among_var == 6 {
+                    // (, line 271
+                    // <-, line 271
+                    if !env.slice_from("1") {
+                        return false;
+                    }
+                } else if among_var == 7 {
+                    // (, line 272
+                    // <-, line 272
+                    if !env.slice_from("2") {
+                        return false;
+                    }
+                } else if among_var == 8 {
+                    // (, line 273
+                    // <-, line 273
+                    if !env.slice_from("3") {
+                        return false;
+                    }
+                } else if among_var == 9 {
+                    // (, line 274
+                    // <-, line 274
+                    if !env.slice_from("4") {
+                        return false;
+                    }
+                } else if among_var == 10 {
+                    // (, line 275
+                    // <-, line 275
+                    if !env.slice_from("5") {
+                        return false;
+                    }
+                } else if among_var == 11 {
+                    // (, line 276
+                    // <-, line 276
+                    if !env.slice_from("6") {
+                        return false;
+                    }
+                } else if among_var == 12 {
+                    // (, line 277
+                    // <-, line 277
+                    if !env.slice_from("7") {
+                        return false;
+                    }
+                } else if among_var == 13 {
+                    // (, line 278
+                    // <-, line 278
+                    if !env.slice_from("8") {
+                        return false;
+                    }
+                } else if among_var == 14 {
+                    // (, line 279
+                    // <-, line 279
+                    if !env.slice_from("9") {
+                        return false;
+                    }
+                } else if among_var == 15 {
+                    // (, line 280
+                    // delete, line 280
+                    if !env.slice_del() {
+                        return false;
+                    }
+                } else if among_var == 16 {
+                    // (, line 283
+                    // <-, line 283
+                    if !env.slice_from("\u{0621}") {
+                        return false;
+                    }
+                } else if among_var == 17 {
+                    // (, line 284
+                    // <-, line 284
+                    if !env.slice_from("\u{0623}") {
+                        return false;
+                    }
+                } else if among_var == 18 {
+                    // (, line 285
+                    // <-, line 285
+                    if !env.slice_from("\u{0625}") {
+                        return false;
+                    }
+                } else if among_var == 19 {
+                    // (, line 286
+                    // <-, line 286
+                    if !env.slice_from("\u{0626}") {
+                        return false;
+                    }
+                } else if among_var == 20 {
+                    // (, line 287
+                    // <-, line 287
+                    if !env.slice_from("\u{0622}") {
+                        return false;
+                    }
+                } else if among_var == 21 {
+                    // (, line 288
+                    // <-, line 288
+                    if !env.slice_from("\u{0624}") {
+                        return false;
+                    }
+                } else if among_var == 22 {
+                    // (, line 289
+                    // <-, line 289
+                    if !env.slice_from("\u{0627}") {
+                        return false;
+                    }
+                } else if among_var == 23 {
+                    // (, line 290
+                    // <-, line 290
+                    if !env.slice_from("\u{0628}") {
+                        return false;
+                    }
+                } else if among_var == 24 {
+                    // (, line 291
+                    // <-, line 291
+                    if !env.slice_from("\u{0629}") {
+                        return false;
+                    }
+                } else if among_var == 25 {
+                    // (, line 292
+                    // <-, line 292
+                    if !env.slice_from("\u{062A}") {
+                        return false;
+                    }
+                } else if among_var == 26 {
+                    // (, line 293
+                    // <-, line 293
+                    if !env.slice_from("\u{062B}") {
+                        return false;
+                    }
+                } else if among_var == 27 {
+                    // (, line 294
+                    // <-, line 294
+                    if !env.slice_from("\u{062C}") {
+                        return false;
+                    }
+                } else if among_var == 28 {
+                    // (, line 295
+                    // <-, line 295
+                    if !env.slice_from("\u{062D}") {
+                        return false;
+                    }
+                } else if among_var == 29 {
+                    // (, line 296
+                    // <-, line 296
+                    if !env.slice_from("\u{062E}") {
+                        return false;
+                    }
+                } else if among_var == 30 {
+                    // (, line 297
+                    // <-, line 297
+                    if !env.slice_from("\u{062F}") {
+                        return false;
+                    }
+                } else if among_var == 31 {
+                    // (, line 298
+                    // <-, line 298
+                    if !env.slice_from("\u{0630}") {
+                        return false;
+                    }
+                } else if among_var == 32 {
+                    // (, line 299
+                    // <-, line 299
+                    if !env.slice_from("\u{0631}") {
+                        return false;
+                    }
+                } else if among_var == 33 {
+                    // (, line 300
+                    // <-, line 300
+                    if !env.slice_from("\u{0632}") {
+                        return false;
+                    }
+                } else if among_var == 34 {
+                    // (, line 301
+                    // <-, line 301
+                    if !env.slice_from("\u{0633}") {
+                        return false;
+                    }
+                } else if among_var == 35 {
+                    // (, line 302
+                    // <-, line 302
+                    if !env.slice_from("\u{0634}") {
+                        return false;
+                    }
+                } else if among_var == 36 {
+                    // (, line 303
+                    // <-, line 303
+                    if !env.slice_from("\u{0635}") {
+                        return false;
+                    }
+                } else if among_var == 37 {
+                    // (, line 304
+                    // <-, line 304
+                    if !env.slice_from("\u{0636}") {
+                        return false;
+                    }
+                } else if among_var == 38 {
+                    // (, line 305
+                    // <-, line 305
+                    if !env.slice_from("\u{0637}") {
+                        return false;
+                    }
+                } else if among_var == 39 {
+                    // (, line 306
+                    // <-, line 306
+                    if !env.slice_from("\u{0638}") {
+                        return false;
+                    }
+                } else if among_var == 40 {
+                    // (, line 307
+                    // <-, line 307
+                    if !env.slice_from("\u{0639}") {
+                        return false;
+                    }
+                } else if among_var == 41 {
+                    // (, line 308
+                    // <-, line 308
+                    if !env.slice_from("\u{063A}") {
+                        return false;
+                    }
+                } else if among_var == 42 {
+                    // (, line 309
+                    // <-, line 309
+                    if !env.slice_from("\u{0641}") {
+                        return false;
+                    }
+                } else if among_var == 43 {
+                    // (, line 310
+                    // <-, line 310
+                    if !env.slice_from("\u{0642}") {
+                        return false;
+                    }
+                } else if among_var == 44 {
+                    // (, line 311
+                    // <-, line 311
+                    if !env.slice_from("\u{0643}") {
+                        return false;
+                    }
+                } else if among_var == 45 {
+                    // (, line 312
+                    // <-, line 312
+                    if !env.slice_from("\u{0644}") {
+                        return false;
+                    }
+                } else if among_var == 46 {
+                    // (, line 313
+                    // <-, line 313
+                    if !env.slice_from("\u{0645}") {
+                        return false;
+                    }
+                } else if among_var == 47 {
+                    // (, line 314
+                    // <-, line 314
+                    if !env.slice_from("\u{0646}") {
+                        return false;
+                    }
+                } else if among_var == 48 {
+                    // (, line 315
+                    // <-, line 315
+                    if !env.slice_from("\u{0647}") {
+                        return false;
+                    }
+                } else if among_var == 49 {
+                    // (, line 316
+                    // <-, line 316
+                    if !env.slice_from("\u{0648}") {
+                        return false;
+                    }
+                } else if among_var == 50 {
+                    // (, line 317
+                    // <-, line 317
+                    if !env.slice_from("\u{0649}") {
+                        return false;
+                    }
+                } else if among_var == 51 {
+                    // (, line 318
+                    // <-, line 318
+                    if !env.slice_from("\u{064A}") {
+                        return false;
+                    }
+                } else if among_var == 52 {
+                    // (, line 321
+                    // <-, line 321
+                    if !env.slice_from("\u{0644}\u{0627}") {
+                        return false;
+                    }
+                } else if among_var == 53 {
+                    // (, line 322
+                    // <-, line 322
+                    if !env.slice_from("\u{0644}\u{0623}") {
+                        return false;
+                    }
+                } else if among_var == 54 {
+                    // (, line 323
+                    // <-, line 323
+                    if !env.slice_from("\u{0644}\u{0625}") {
+                        return false;
+                    }
+                } else if among_var == 55 {
+                    // (, line 324
+                    // <-, line 324
+                    if !env.slice_from("\u{0644}\u{0622}") {
+                        return false;
+                    }
                 }
+                break 'lab0;
             }
-            else if among_var == 3{
-                // (, line 266
-                // delete, line 266
-                if !env.slice_del() {
-                    return false;
-                }
+            env.cursor = v_2;
+            // next, line 329
+            if env.cursor >= env.limit {
+                return false;
             }
-            else if among_var == 4{
-                // (, line 267
-                // delete, line 267
-                if !env.slice_del() {
-                    return false;
-                }
-            }
-            else if among_var == 5{
-                // (, line 270
-                // <-, line 270
-                if !env.slice_from("0") {
-                    return false;
-                }
-            }
-            else if among_var == 6{
-                // (, line 271
-                // <-, line 271
-                if !env.slice_from("1") {
-                    return false;
-                }
-            }
-            else if among_var == 7{
-                // (, line 272
-                // <-, line 272
-                if !env.slice_from("2") {
-                    return false;
-                }
-            }
-            else if among_var == 8{
-                // (, line 273
-                // <-, line 273
-                if !env.slice_from("3") {
-                    return false;
-                }
-            }
-            else if among_var == 9{
-                // (, line 274
-                // <-, line 274
-                if !env.slice_from("4") {
-                    return false;
-                }
-            }
-            else if among_var == 10{
-                // (, line 275
-                // <-, line 275
-                if !env.slice_from("5") {
-                    return false;
-                }
-            }
-            else if among_var == 11{
-                // (, line 276
-                // <-, line 276
-                if !env.slice_from("6") {
-                    return false;
-                }
-            }
-            else if among_var == 12{
-                // (, line 277
-                // <-, line 277
-                if !env.slice_from("7") {
-                    return false;
-                }
-            }
-            else if among_var == 13{
-                // (, line 278
-                // <-, line 278
-                if !env.slice_from("8") {
-                    return false;
-                }
-            }
-            else if among_var == 14{
-                // (, line 279
-                // <-, line 279
-                if !env.slice_from("9") {
-                    return false;
-                }
-            }
-            else if among_var == 15{
-                // (, line 280
-                // delete, line 280
-                if !env.slice_del() {
-                    return false;
-                }
-            }
-            else if among_var == 16{
-                // (, line 283
-                // <-, line 283
-                if !env.slice_from("\u{0621}") {
-                    return false;
-                }
-            }
-            else if among_var == 17{
-                // (, line 284
-                // <-, line 284
-                if !env.slice_from("\u{0623}") {
-                    return false;
-                }
-            }
-            else if among_var == 18{
-                // (, line 285
-                // <-, line 285
-                if !env.slice_from("\u{0625}") {
-                    return false;
-                }
-            }
-            else if among_var == 19{
-                // (, line 286
-                // <-, line 286
-                if !env.slice_from("\u{0626}") {
-                    return false;
-                }
-            }
-            else if among_var == 20{
-                // (, line 287
-                // <-, line 287
-                if !env.slice_from("\u{0622}") {
-                    return false;
-                }
-            }
-            else if among_var == 21{
-                // (, line 288
-                // <-, line 288
-                if !env.slice_from("\u{0624}") {
-                    return false;
-                }
-            }
-            else if among_var == 22{
-                // (, line 289
-                // <-, line 289
-                if !env.slice_from("\u{0627}") {
-                    return false;
-                }
-            }
-            else if among_var == 23{
-                // (, line 290
-                // <-, line 290
-                if !env.slice_from("\u{0628}") {
-                    return false;
-                }
-            }
-            else if among_var == 24{
-                // (, line 291
-                // <-, line 291
-                if !env.slice_from("\u{0629}") {
-                    return false;
-                }
-            }
-            else if among_var == 25{
-                // (, line 292
-                // <-, line 292
-                if !env.slice_from("\u{062A}") {
-                    return false;
-                }
-            }
-            else if among_var == 26{
-                // (, line 293
-                // <-, line 293
-                if !env.slice_from("\u{062B}") {
-                    return false;
-                }
-            }
-            else if among_var == 27{
-                // (, line 294
-                // <-, line 294
-                if !env.slice_from("\u{062C}") {
-                    return false;
-                }
-            }
-            else if among_var == 28{
-                // (, line 295
-                // <-, line 295
-                if !env.slice_from("\u{062D}") {
-                    return false;
-                }
-            }
-            else if among_var == 29{
-                // (, line 296
-                // <-, line 296
-                if !env.slice_from("\u{062E}") {
-                    return false;
-                }
-            }
-            else if among_var == 30{
-                // (, line 297
-                // <-, line 297
-                if !env.slice_from("\u{062F}") {
-                    return false;
-                }
-            }
-            else if among_var == 31{
-                // (, line 298
-                // <-, line 298
-                if !env.slice_from("\u{0630}") {
-                    return false;
-                }
-            }
-            else if among_var == 32{
-                // (, line 299
-                // <-, line 299
-                if !env.slice_from("\u{0631}") {
-                    return false;
-                }
-            }
-            else if among_var == 33{
-                // (, line 300
-                // <-, line 300
-                if !env.slice_from("\u{0632}") {
-                    return false;
-                }
-            }
-            else if among_var == 34{
-                // (, line 301
-                // <-, line 301
-                if !env.slice_from("\u{0633}") {
-                    return false;
-                }
-            }
-            else if among_var == 35{
-                // (, line 302
-                // <-, line 302
-                if !env.slice_from("\u{0634}") {
-                    return false;
-                }
-            }
-            else if among_var == 36{
-                // (, line 303
-                // <-, line 303
-                if !env.slice_from("\u{0635}") {
-                    return false;
-                }
-            }
-            else if among_var == 37{
-                // (, line 304
-                // <-, line 304
-                if !env.slice_from("\u{0636}") {
-                    return false;
-                }
-            }
-            else if among_var == 38{
-                // (, line 305
-                // <-, line 305
-                if !env.slice_from("\u{0637}") {
-                    return false;
-                }
-            }
-            else if among_var == 39{
-                // (, line 306
-                // <-, line 306
-                if !env.slice_from("\u{0638}") {
-                    return false;
-                }
-            }
-            else if among_var == 40{
-                // (, line 307
-                // <-, line 307
-                if !env.slice_from("\u{0639}") {
-                    return false;
-                }
-            }
-            else if among_var == 41{
-                // (, line 308
-                // <-, line 308
-                if !env.slice_from("\u{063A}") {
-                    return false;
-                }
-            }
-            else if among_var == 42{
-                // (, line 309
-                // <-, line 309
-                if !env.slice_from("\u{0641}") {
-                    return false;
-                }
-            }
-            else if among_var == 43{
-                // (, line 310
-                // <-, line 310
-                if !env.slice_from("\u{0642}") {
-                    return false;
-                }
-            }
-            else if among_var == 44{
-                // (, line 311
-                // <-, line 311
-                if !env.slice_from("\u{0643}") {
-                    return false;
-                }
-            }
-            else if among_var == 45{
-                // (, line 312
-                // <-, line 312
-                if !env.slice_from("\u{0644}") {
-                    return false;
-                }
-            }
-            else if among_var == 46{
-                // (, line 313
-                // <-, line 313
-                if !env.slice_from("\u{0645}") {
-                    return false;
-                }
-            }
-            else if among_var == 47{
-                // (, line 314
-                // <-, line 314
-                if !env.slice_from("\u{0646}") {
-                    return false;
-                }
-            }
-            else if among_var == 48{
-                // (, line 315
-                // <-, line 315
-                if !env.slice_from("\u{0647}") {
-                    return false;
-                }
-            }
-            else if among_var == 49{
-                // (, line 316
-                // <-, line 316
-                if !env.slice_from("\u{0648}") {
-                    return false;
-                }
-            }
-            else if among_var == 50{
-                // (, line 317
-                // <-, line 317
-                if !env.slice_from("\u{0649}") {
-                    return false;
-                }
-            }
-            else if among_var == 51{
-                // (, line 318
-                // <-, line 318
-                if !env.slice_from("\u{064A}") {
-                    return false;
-                }
-            }
-            else if among_var == 52{
-                // (, line 321
-                // <-, line 321
-                if !env.slice_from("\u{0644}\u{0627}") {
-                    return false;
-                }
-            }
-            else if among_var == 53{
-                // (, line 322
-                // <-, line 322
-                if !env.slice_from("\u{0644}\u{0623}") {
-                    return false;
-                }
-            }
-            else if among_var == 54{
-                // (, line 323
-                // <-, line 323
-                if !env.slice_from("\u{0644}\u{0625}") {
-                    return false;
-                }
-            }
-            else if among_var == 55{
-                // (, line 324
-                // <-, line 324
-                if !env.slice_from("\u{0644}\u{0622}") {
-                    return false;
-                }
-            }
+            env.next_char();
             break 'lab0;
         }
-        env.cursor = v_2;
-        // next, line 329
-        if env.cursor >= env.limit {
-            return false;
-        }
-        env.next_char();
-        break 'lab0;
-    }
     }
     return true;
 }
 
 fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 333
     // do, line 335
     let v_1 = env.cursor;
@@ -754,7 +705,7 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool {
         // [, line 338
         env.ket = env.cursor;
         // substring, line 338
-        let among_var = env.find_among_b(A_1, context);
+        among_var = env.find_among_b(A_1, context);
         if among_var == 0 {
             break 'lab0;
         }
@@ -762,23 +713,19 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool {
         env.bra = env.cursor;
         if among_var == 0 {
             break 'lab0;
-        }
-
-        else if among_var == 1{
+        } else if among_var == 1 {
             // (, line 339
             // <-, line 339
             if !env.slice_from("\u{0621}") {
                 return false;
             }
-        }
-        else if among_var == 2{
+        } else if among_var == 2 {
             // (, line 340
             // <-, line 340
             if !env.slice_from("\u{0621}") {
                 return false;
             }
-        }
-        else if among_var == 3{
+        } else if among_var == 3 {
             // (, line 341
             // <-, line 341
             if !env.slice_from("\u{0621}") {
@@ -793,57 +740,53 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool {
     let v_2 = env.cursor;
     'lab1: loop {
         // loop, line 346
-        for _ in 0..context.i_word_len
-        {        // (, line 346
-        // or, line 355
-        'lab2: loop {
-            let v_4 = env.cursor;
-            'lab3: loop {
-                // (, line 347
-                // [, line 349
-                env.bra = env.cursor;
-                // substring, line 349
-                let among_var = env.find_among(A_2, context);
-                if among_var == 0 {
-                    break 'lab3;
-                }
-                // ], line 349
-                env.ket = env.cursor;
-                if among_var == 0 {
-                    break 'lab3;
-                }
-
-                else if among_var == 1{
-                    // (, line 350
-                    // <-, line 350
-                    if !env.slice_from("\u{0627}") {
-                        return false;
+        for _ in 0..context.i_word_len {
+            // (, line 346
+            // or, line 355
+            'lab2: loop {
+                let v_4 = env.cursor;
+                'lab3: loop {
+                    // (, line 347
+                    // [, line 349
+                    env.bra = env.cursor;
+                    // substring, line 349
+                    among_var = env.find_among(A_2, context);
+                    if among_var == 0 {
+                        break 'lab3;
                     }
-                }
-                else if among_var == 2{
-                    // (, line 351
-                    // <-, line 351
-                    if !env.slice_from("\u{0648}") {
-                        return false;
+                    // ], line 349
+                    env.ket = env.cursor;
+                    if among_var == 0 {
+                        break 'lab3;
+                    } else if among_var == 1 {
+                        // (, line 350
+                        // <-, line 350
+                        if !env.slice_from("\u{0627}") {
+                            return false;
+                        }
+                    } else if among_var == 2 {
+                        // (, line 351
+                        // <-, line 351
+                        if !env.slice_from("\u{0648}") {
+                            return false;
+                        }
+                    } else if among_var == 3 {
+                        // (, line 352
+                        // <-, line 352
+                        if !env.slice_from("\u{064A}") {
+                            return false;
+                        }
                     }
+                    break 'lab2;
                 }
-                else if among_var == 3{
-                    // (, line 352
-                    // <-, line 352
-                    if !env.slice_from("\u{064A}") {
-                        return false;
-                    }
+                env.cursor = v_4;
+                // next, line 356
+                if env.cursor >= env.limit {
+                    break 'lab1;
                 }
+                env.next_char();
                 break 'lab2;
             }
-            env.cursor = v_4;
-            // next, line 356
-            if env.cursor >= env.limit {
-                break 'lab1;
-            }
-            env.next_char();
-            break 'lab2;
-        }
         }
         break 'lab1;
     }
@@ -852,12 +795,13 @@ fn r_Normalize_post(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 361
     context.i_word_len = env.current.chars().count();
     // [, line 363
     env.bra = env.cursor;
     // substring, line 363
-    let among_var = env.find_among(A_3, context);
+    among_var = env.find_among(A_3, context);
     if among_var == 0 {
         return false;
     }
@@ -865,42 +809,40 @@ fn r_Checks1(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.ket = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 364
         if !(context.i_word_len > 4){
             return false;
         }
         // set is_noun, line 364
-        context.B_is_noun = true;
+        context.b_is_noun = true;
         // unset is_verb, line 364
-        context.B_is_verb = false;
+        context.b_is_verb = false;
         // set is_defined, line 364
-        context.B_is_defined = true;
-    }
-    else if among_var == 2{
+        context.b_is_defined = true;
+    } else if among_var == 2 {
         // (, line 365
         if !(context.i_word_len > 3){
             return false;
         }
         // set is_noun, line 365
-        context.B_is_noun = true;
+        context.b_is_noun = true;
         // unset is_verb, line 365
-        context.B_is_verb = false;
+        context.b_is_verb = false;
         // set is_defined, line 365
-        context.B_is_defined = true;
+        context.b_is_defined = true;
     }
     return true;
 }
 
 fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 371
     context.i_word_len = env.current.chars().count();
     // [, line 373
     env.bra = env.cursor;
     // substring, line 373
-    let among_var = env.find_among(A_4, context);
+    among_var = env.find_among(A_4, context);
     if among_var == 0 {
         return false;
     }
@@ -908,9 +850,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.ket = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 374
         if !(context.i_word_len > 3){
             return false;
@@ -919,8 +859,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("\u{0623}") {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 375
         if !(context.i_word_len > 3){
             return false;
@@ -929,8 +868,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("\u{0622}") {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 376
         if !(context.i_word_len > 3){
             return false;
@@ -939,8 +877,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("\u{0623}") {
             return false;
         }
-    }
-    else if among_var == 4{
+    } else if among_var == 4 {
         // (, line 377
         if !(context.i_word_len > 3){
             return false;
@@ -949,8 +886,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("\u{0627}") {
             return false;
         }
-    }
-    else if among_var == 5{
+    } else if among_var == 5 {
         // (, line 378
         if !(context.i_word_len > 3){
             return false;
@@ -964,6 +900,7 @@ fn r_Prefix_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 383
     context.i_word_len = env.current.chars().count();
     // not, line 385
@@ -974,7 +911,6 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool {
             break 'lab0;
         }
         return false;
-        break 'lab0;
     }
     env.cursor = v_1;
     // not, line 386
@@ -985,13 +921,12 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool {
             break 'lab1;
         }
         return false;
-        break 'lab1;
     }
     env.cursor = v_2;
     // [, line 387
     env.bra = env.cursor;
     // substring, line 387
-    let among_var = env.find_among(A_5, context);
+    among_var = env.find_among(A_5, context);
     if among_var == 0 {
         return false;
     }
@@ -999,9 +934,7 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.ket = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 388
         if !(context.i_word_len > 3){
             return false;
@@ -1010,8 +943,7 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 389
         if !(context.i_word_len > 3){
             return false;
@@ -1025,12 +957,13 @@ fn r_Prefix_Step2(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 393
     context.i_word_len = env.current.chars().count();
     // [, line 395
     env.bra = env.cursor;
     // substring, line 395
-    let among_var = env.find_among(A_6, context);
+    among_var = env.find_among(A_6, context);
     if among_var == 0 {
         return false;
     }
@@ -1038,9 +971,7 @@ fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.ket = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 396
         if !(context.i_word_len > 5){
             return false;
@@ -1049,8 +980,7 @@ fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 397
         if !(context.i_word_len > 4){
             return false;
@@ -1064,6 +994,7 @@ fn r_Prefix_Step3a_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 401
     context.i_word_len = env.current.chars().count();
     // not, line 403
@@ -1074,13 +1005,12 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
             break 'lab0;
         }
         return false;
-        break 'lab0;
     }
     env.cursor = v_1;
     // [, line 404
     env.bra = env.cursor;
     // substring, line 404
-    let among_var = env.find_among(A_7, context);
+    among_var = env.find_among(A_7, context);
     if among_var == 0 {
         return false;
     }
@@ -1088,9 +1018,7 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.ket = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 405
         if !(context.i_word_len > 3){
             return false;
@@ -1099,8 +1027,7 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 407
         if !(context.i_word_len > 3){
             return false;
@@ -1109,8 +1036,7 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("\u{0628}") {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 408
         if !(context.i_word_len > 3){
             return false;
@@ -1124,12 +1050,13 @@ fn r_Prefix_Step3b_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 413
     context.i_word_len = env.current.chars().count();
     // [, line 415
     env.bra = env.cursor;
     // substring, line 415
-    let among_var = env.find_among(A_8, context);
+    among_var = env.find_among(A_8, context);
     if among_var == 0 {
         return false;
     }
@@ -1137,9 +1064,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.ket = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 417
         if !(context.i_word_len > 4){
             return false;
@@ -1148,8 +1073,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("\u{064A}") {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 418
         if !(context.i_word_len > 4){
             return false;
@@ -1158,8 +1082,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("\u{062A}") {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 419
         if !(context.i_word_len > 4){
             return false;
@@ -1168,8 +1091,7 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("\u{0646}") {
             return false;
         }
-    }
-    else if among_var == 4{
+    } else if among_var == 4 {
         // (, line 420
         if !(context.i_word_len > 4){
             return false;
@@ -1183,12 +1105,13 @@ fn r_Prefix_Step3_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 424
     context.i_word_len = env.current.chars().count();
     // [, line 426
     env.bra = env.cursor;
     // substring, line 426
-    let among_var = env.find_among(A_9, context);
+    among_var = env.find_among(A_9, context);
     if among_var == 0 {
         return false;
     }
@@ -1196,17 +1119,15 @@ fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.ket = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 427
         if !(context.i_word_len > 4){
             return false;
         }
         // set is_verb, line 427
-        context.B_is_verb = true;
+        context.b_is_verb = true;
         // unset is_noun, line 427
-        context.B_is_noun = false;
+        context.b_is_noun = false;
         // <-, line 427
         if !env.slice_from("\u{0627}\u{0633}\u{062A}") {
             return false;
@@ -1216,12 +1137,13 @@ fn r_Prefix_Step4_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 434
     context.i_word_len = env.current.chars().count();
     // [, line 436
     env.ket = env.cursor;
     // substring, line 436
-    let among_var = env.find_among_b(A_10, context);
+    among_var = env.find_among_b(A_10, context);
     if among_var == 0 {
         return false;
     }
@@ -1229,9 +1151,7 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 437
         if !(context.i_word_len >= 4){
             return false;
@@ -1240,8 +1160,7 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 438
         if !(context.i_word_len >= 5){
             return false;
@@ -1250,8 +1169,7 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 439
         if !(context.i_word_len >= 6){
             return false;
@@ -1265,12 +1183,13 @@ fn r_Suffix_Noun_Step1a(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 442
     context.i_word_len = env.current.chars().count();
     // [, line 444
     env.ket = env.cursor;
     // substring, line 444
-    let among_var = env.find_among_b(A_11, context);
+    among_var = env.find_among_b(A_11, context);
     if among_var == 0 {
         return false;
     }
@@ -1278,9 +1197,7 @@ fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 445
         if !(context.i_word_len > 5){
             return false;
@@ -1294,12 +1211,13 @@ fn r_Suffix_Noun_Step1b(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 449
     context.i_word_len = env.current.chars().count();
     // [, line 451
     env.ket = env.cursor;
     // substring, line 451
-    let among_var = env.find_among_b(A_12, context);
+    among_var = env.find_among_b(A_12, context);
     if among_var == 0 {
         return false;
     }
@@ -1307,9 +1225,7 @@ fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 452
         if !(context.i_word_len > 4){
             return false;
@@ -1323,12 +1239,13 @@ fn r_Suffix_Noun_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 456
     context.i_word_len = env.current.chars().count();
     // [, line 458
     env.ket = env.cursor;
     // substring, line 458
-    let among_var = env.find_among_b(A_13, context);
+    among_var = env.find_among_b(A_13, context);
     if among_var == 0 {
         return false;
     }
@@ -1336,9 +1253,7 @@ fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 459
         if !(context.i_word_len >= 5){
             return false;
@@ -1352,12 +1267,13 @@ fn r_Suffix_Noun_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 463
     context.i_word_len = env.current.chars().count();
     // [, line 465
     env.ket = env.cursor;
     // substring, line 465
-    let among_var = env.find_among_b(A_14, context);
+    among_var = env.find_among_b(A_14, context);
     if among_var == 0 {
         return false;
     }
@@ -1365,9 +1281,7 @@ fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 466
         if !(context.i_word_len >= 4){
             return false;
@@ -1381,12 +1295,13 @@ fn r_Suffix_Noun_Step2c1(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 469
     context.i_word_len = env.current.chars().count();
     // [, line 471
     env.ket = env.cursor;
     // substring, line 471
-    let among_var = env.find_among_b(A_15, context);
+    among_var = env.find_among_b(A_15, context);
     if among_var == 0 {
         return false;
     }
@@ -1394,9 +1309,7 @@ fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 472
         if !(context.i_word_len >= 4){
             return false;
@@ -1410,12 +1323,13 @@ fn r_Suffix_Noun_Step2c2(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 475
     context.i_word_len = env.current.chars().count();
     // [, line 477
     env.ket = env.cursor;
     // substring, line 477
-    let among_var = env.find_among_b(A_16, context);
+    among_var = env.find_among_b(A_16, context);
     if among_var == 0 {
         return false;
     }
@@ -1423,9 +1337,7 @@ fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 478
         if !(context.i_word_len >= 3){
             return false;
@@ -1439,12 +1351,13 @@ fn r_Suffix_Noun_Step3(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 482
     context.i_word_len = env.current.chars().count();
     // [, line 484
     env.ket = env.cursor;
     // substring, line 484
-    let among_var = env.find_among_b(A_17, context);
+    among_var = env.find_among_b(A_17, context);
     if among_var == 0 {
         return false;
     }
@@ -1452,9 +1365,7 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 485
         if !(context.i_word_len >= 4){
             return false;
@@ -1463,8 +1374,7 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 486
         if !(context.i_word_len >= 5){
             return false;
@@ -1473,8 +1383,7 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 487
         if !(context.i_word_len >= 6){
             return false;
@@ -1488,12 +1397,13 @@ fn r_Suffix_Verb_Step1(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 490
     context.i_word_len = env.current.chars().count();
     // [, line 492
     env.ket = env.cursor;
     // substring, line 492
-    let among_var = env.find_among_b(A_18, context);
+    among_var = env.find_among_b(A_18, context);
     if among_var == 0 {
         return false;
     }
@@ -1501,9 +1411,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 493
         if !(context.i_word_len >= 4){
             return false;
@@ -1512,8 +1420,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 494
         if !(context.i_word_len >= 4){
             return false;
@@ -1522,8 +1429,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 495
         if !(context.i_word_len >= 5){
             return false;
@@ -1532,8 +1438,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 4{
+    } else if among_var == 4 {
         // (, line 496
         if !(context.i_word_len > 5){
             return false;
@@ -1542,8 +1447,7 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 5{
+    } else if among_var == 5 {
         // (, line 497
         if !(context.i_word_len >= 6){
             return false;
@@ -1557,12 +1461,13 @@ fn r_Suffix_Verb_Step2a(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 501
     context.i_word_len = env.current.chars().count();
     // [, line 503
     env.ket = env.cursor;
     // substring, line 503
-    let among_var = env.find_among_b(A_19, context);
+    among_var = env.find_among_b(A_19, context);
     if among_var == 0 {
         return false;
     }
@@ -1570,9 +1475,7 @@ fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 504
         if !(context.i_word_len >= 5){
             return false;
@@ -1586,12 +1489,13 @@ fn r_Suffix_Verb_Step2b(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 509
     context.i_word_len = env.current.chars().count();
     // [, line 511
     env.ket = env.cursor;
     // substring, line 511
-    let among_var = env.find_among_b(A_20, context);
+    among_var = env.find_among_b(A_20, context);
     if among_var == 0 {
         return false;
     }
@@ -1599,9 +1503,7 @@ fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 512
         if !(context.i_word_len >= 4){
             return false;
@@ -1610,8 +1512,7 @@ fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 513
         if !(context.i_word_len >= 6){
             return false;
@@ -1625,12 +1526,13 @@ fn r_Suffix_Verb_Step2c(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 517
     context.i_word_len = env.current.chars().count();
     // [, line 519
     env.ket = env.cursor;
     // substring, line 519
-    let among_var = env.find_among_b(A_21, context);
+    among_var = env.find_among_b(A_21, context);
     if among_var == 0 {
         return false;
     }
@@ -1638,9 +1540,7 @@ fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bo
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 520
         // <-, line 520
         if !env.slice_from("\u{064A}") {
@@ -1652,18 +1552,18 @@ fn r_Suffix_All_alef_maqsura(env: &mut SnowballEnv, context: &mut Context) -> bo
 
 pub fn stem(env: &mut SnowballEnv) -> bool {
     let mut context = &mut Context {
-        B_is_defined: false,
-        B_is_verb: false,
-        B_is_noun: false,
+        b_is_defined: false,
+        b_is_verb: false,
+        b_is_noun: false,
         i_word_len: 0,
     };
     // (, line 527
     // set is_noun, line 529
-    context.B_is_noun = true;
+    context.b_is_noun = true;
     // set is_verb, line 530
-    context.B_is_verb = true;
+    context.b_is_verb = true;
     // unset is_defined, line 531
-    context.B_is_defined = false;
+    context.b_is_defined = false;
     // do, line 534
     let v_1 = env.cursor;
     'lab0: loop {
@@ -1698,7 +1598,7 @@ pub fn stem(env: &mut SnowballEnv) -> bool {
             'lab4: loop {
                 // (, line 544
                 // Boolean test is_verb, line 545
-                if !context.B_is_verb {
+                if !context.b_is_verb {
                     break 'lab4;
                 }
                 // (, line 546
@@ -1777,7 +1677,7 @@ pub fn stem(env: &mut SnowballEnv) -> bool {
             'lab13: loop {
                 // (, line 556
                 // Boolean test is_noun, line 557
-                if !context.B_is_noun {
+                if !context.b_is_noun {
                     break 'lab13;
                 }
                 // (, line 558
@@ -1801,11 +1701,10 @@ pub fn stem(env: &mut SnowballEnv) -> bool {
                             // not, line 562
                             'lab18: loop {
                                 // Boolean test is_defined, line 562
-                                if !context.B_is_defined {
+                                if !context.b_is_defined {
                                     break 'lab18;
                                 }
                                 break 'lab17;
-                                break 'lab18;
                             }
                             // call Suffix_Noun_Step1a, line 562
                             if !r_Suffix_Noun_Step1a(env, context) {
@@ -1889,11 +1788,10 @@ pub fn stem(env: &mut SnowballEnv) -> bool {
                             // not, line 571
                             'lab28: loop {
                                 // Boolean test is_defined, line 571
-                                if !context.B_is_defined {
+                                if !context.b_is_defined {
                                     break 'lab28;
                                 }
                                 break 'lab27;
-                                break 'lab28;
                             }
                             // call Suffix_Noun_Step2a, line 571
                             if !r_Suffix_Noun_Step2a(env, context) {
@@ -1968,7 +1866,7 @@ pub fn stem(env: &mut SnowballEnv) -> bool {
             'lab34: loop {
                 // (, line 589
                 // Boolean test is_noun, line 589
-                if !context.B_is_noun {
+                if !context.b_is_noun {
                     break 'lab34;
                 }
                 // call Prefix_Step3b_Noun, line 589
@@ -1980,7 +1878,7 @@ pub fn stem(env: &mut SnowballEnv) -> bool {
             env.cursor = v_18;
             // (, line 590
             // Boolean test is_verb, line 590
-            if !context.B_is_verb {
+            if !context.b_is_verb {
                 break 'lab29;
             }
             // try, line 590

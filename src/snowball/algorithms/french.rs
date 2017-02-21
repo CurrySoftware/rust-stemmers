@@ -1,20 +1,24 @@
 //! This file was generated automatically by the Snowball to Rust compiler
 //! http://snowballstem.org/
 
+#![allow(non_upper_case_globals)]
+#![allow(non_snake_case)]
+#![allow(unused_variables)]
+#![allow(unused_mut)]
 use snowball::SnowballEnv;
 use snowball::Among;
 
 static A_0: &'static [Among<Context>; 3] = &[
     Among("col", -1, -1, None),
     Among("par", -1, -1, None),
-    Among("tap", -1, -1, None)
+    Among("tap", -1, -1, None),
 ];
 
 static A_1: &'static [Among<Context>; 4] = &[
     Among("", -1, 4, None),
     Among("I", 0, 1, None),
     Among("U", 0, 2, None),
-    Among("Y", 0, 3, None)
+    Among("Y", 0, 3, None),
 ];
 
 static A_2: &'static [Among<Context>; 6] = &[
@@ -23,13 +27,13 @@ static A_2: &'static [Among<Context>; 6] = &[
     Among("I\u{00E8}r", -1, 4, None),
     Among("i\u{00E8}r", -1, 4, None),
     Among("eus", -1, 2, None),
-    Among("iv", -1, 1, None)
+    Among("iv", -1, 1, None),
 ];
 
 static A_3: &'static [Among<Context>; 3] = &[
     Among("ic", -1, 2, None),
     Among("abil", -1, 1, None),
-    Among("iv", -1, 3, None)
+    Among("iv", -1, 3, None),
 ];
 
 static A_4: &'static [Among<Context>; 43] = &[
@@ -75,7 +79,7 @@ static A_4: &'static [Among<Context>; 43] = &[
     Among("aux", -1, 10, None),
     Among("eaux", 39, 9, None),
     Among("eux", -1, 1, None),
-    Among("it\u{00E9}", -1, 7, None)
+    Among("it\u{00E9}", -1, 7, None),
 ];
 
 static A_5: &'static [Among<Context>; 35] = &[
@@ -113,7 +117,7 @@ static A_5: &'static [Among<Context>; 35] = &[
     Among("iriez", -1, 1, None),
     Among("issiez", -1, 1, None),
     Among("irez", -1, 1, None),
-    Among("issez", -1, 1, None)
+    Among("issez", -1, 1, None),
 ];
 
 static A_6: &'static [Among<Context>; 38] = &[
@@ -154,7 +158,7 @@ static A_6: &'static [Among<Context>; 38] = &[
     Among("eriez", 33, 2, None),
     Among("assiez", 33, 3, None),
     Among("erez", 32, 2, None),
-    Among("\u{00E9}", -1, 2, None)
+    Among("\u{00E9}", -1, 2, None),
 ];
 
 static A_7: &'static [Among<Context>; 7] = &[
@@ -164,7 +168,7 @@ static A_7: &'static [Among<Context>; 7] = &[
     Among("ion", -1, 1, None),
     Among("Ier", -1, 2, None),
     Among("ier", -1, 2, None),
-    Among("\u{00EB}", -1, 4, None)
+    Among("\u{00EB}", -1, 4, None),
 ];
 
 static A_8: &'static [Among<Context>; 5] = &[
@@ -172,13 +176,14 @@ static A_8: &'static [Among<Context>; 5] = &[
     Among("eill", -1, -1, None),
     Among("enn", -1, -1, None),
     Among("onn", -1, -1, None),
-    Among("ett", -1, -1, None)
+    Among("ett", -1, -1, None),
 ];
 
 static G_v: &'static [u8; 20] = &[17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 130, 103, 8, 5];
 
 static G_keep_with_s: &'static [u8; 17] = &[1, 65, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128];
 
+#[derive(Clone)]
 struct Context {
     i_p2: usize,
     i_p1: usize,
@@ -445,6 +450,7 @@ fn r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_postlude(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // repeat, line 75
     'replab0: loop{
         let v_1 = env.cursor;
@@ -453,7 +459,7 @@ fn r_postlude(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 77
             env.bra = env.cursor;
             // substring, line 77
-            let among_var = env.find_among(A_1, context);
+            among_var = env.find_among(A_1, context);
             if among_var == 0 {
                 break 'lab1;
             }
@@ -461,30 +467,25 @@ fn r_postlude(env: &mut SnowballEnv, context: &mut Context) -> bool {
             env.ket = env.cursor;
             if among_var == 0 {
                 break 'lab1;
-            }
-
-            else if among_var == 1{
+            } else if among_var == 1 {
                 // (, line 78
                 // <-, line 78
                 if !env.slice_from("i") {
                     return false;
                 }
-            }
-            else if among_var == 2{
+            } else if among_var == 2 {
                 // (, line 79
                 // <-, line 79
                 if !env.slice_from("u") {
                     return false;
                 }
-            }
-            else if among_var == 3{
+            } else if among_var == 3 {
                 // (, line 80
                 // <-, line 80
                 if !env.slice_from("y") {
                     return false;
                 }
-            }
-            else if among_var == 4{
+            } else if among_var == 4 {
                 // (, line 81
                 // next, line 81
                 if env.cursor >= env.limit {
@@ -522,11 +523,12 @@ fn r_R2(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 91
     // [, line 92
     env.ket = env.cursor;
     // substring, line 92
-    let among_var = env.find_among_b(A_4, context);
+    among_var = env.find_among_b(A_4, context);
     if among_var == 0 {
         return false;
     }
@@ -534,9 +536,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     env.bra = env.cursor;
     if among_var == 0 {
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 96
         // call R2, line 96
         if !r_R2(env, context) {
@@ -546,8 +546,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 99
         // call R2, line 99
         if !r_R2(env, context) {
@@ -594,8 +593,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             }
             break 'lab0;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 104
         // call R2, line 104
         if !r_R2(env, context) {
@@ -605,8 +603,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("log") {
             return false;
         }
-    }
-    else if among_var == 4{
+    } else if among_var == 4 {
         // (, line 107
         // call R2, line 107
         if !r_R2(env, context) {
@@ -616,8 +613,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("u") {
             return false;
         }
-    }
-    else if among_var == 5{
+    } else if among_var == 5 {
         // (, line 110
         // call R2, line 110
         if !r_R2(env, context) {
@@ -627,8 +623,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("ent") {
             return false;
         }
-    }
-    else if among_var == 6{
+    } else if among_var == 6 {
         // (, line 113
         // call RV, line 114
         if !r_RV(env, context) {
@@ -645,7 +640,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 116
             env.ket = env.cursor;
             // substring, line 116
-            let among_var = env.find_among_b(A_2, context);
+            among_var = env.find_among_b(A_2, context);
             if among_var == 0 {
                 env.cursor = env.limit - v_3;
                 break 'lab3;
@@ -655,9 +650,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             if among_var == 0 {
                 env.cursor = env.limit - v_3;
                 break 'lab3;
-            }
-
-            else if among_var == 1{
+            } else if among_var == 1 {
                 // (, line 117
                 // call R2, line 117
                 if !r_R2(env, context) {
@@ -686,8 +679,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
                 if !env.slice_del() {
                     return false;
                 }
-            }
-            else if among_var == 2{
+            } else if among_var == 2 {
                 // (, line 118
                 // or, line 118
                 'lab4: loop {
@@ -717,8 +709,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
                     }
                     break 'lab4;
                 }
-            }
-            else if among_var == 3{
+            } else if among_var == 3 {
                 // (, line 120
                 // call R2, line 120
                 if !r_R2(env, context) {
@@ -729,8 +720,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
                 if !env.slice_del() {
                     return false;
                 }
-            }
-            else if among_var == 4{
+            } else if among_var == 4 {
                 // (, line 122
                 // call RV, line 122
                 if !r_RV(env, context) {
@@ -744,8 +734,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             }
             break 'lab3;
         }
-    }
-    else if among_var == 7{
+    } else if among_var == 7 {
         // (, line 128
         // call R2, line 129
         if !r_R2(env, context) {
@@ -762,7 +751,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             // [, line 131
             env.ket = env.cursor;
             // substring, line 131
-            let among_var = env.find_among_b(A_3, context);
+            among_var = env.find_among_b(A_3, context);
             if among_var == 0 {
                 env.cursor = env.limit - v_5;
                 break 'lab6;
@@ -772,9 +761,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             if among_var == 0 {
                 env.cursor = env.limit - v_5;
                 break 'lab6;
-            }
-
-            else if among_var == 1{
+            } else if among_var == 1 {
                 // (, line 132
                 // or, line 132
                 'lab7: loop {
@@ -798,8 +785,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
                     }
                     break 'lab7;
                 }
-            }
-            else if among_var == 2{
+            } else if among_var == 2 {
                 // (, line 133
                 // or, line 133
                 'lab9: loop {
@@ -823,8 +809,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
                     }
                     break 'lab9;
                 }
-            }
-            else if among_var == 3{
+            } else if among_var == 3 {
                 // (, line 134
                 // call R2, line 134
                 if !r_R2(env, context) {
@@ -838,8 +823,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             }
             break 'lab6;
         }
-    }
-    else if among_var == 8{
+    } else if among_var == 8 {
         // (, line 140
         // call R2, line 141
         if !r_R2(env, context) {
@@ -904,15 +888,13 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             }
             break 'lab11;
         }
-    }
-    else if among_var == 9{
+    } else if among_var == 9 {
         // (, line 144
         // <-, line 144
         if !env.slice_from("eau") {
             return false;
         }
-    }
-    else if among_var == 10{
+    } else if among_var == 10 {
         // (, line 145
         // call R1, line 145
         if !r_R1(env, context) {
@@ -922,8 +904,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_from("al") {
             return false;
         }
-    }
-    else if among_var == 11{
+    } else if among_var == 11 {
         // (, line 147
         // or, line 147
         'lab14: loop {
@@ -952,8 +933,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             }
             break 'lab14;
         }
-    }
-    else if among_var == 12{
+    } else if among_var == 12 {
         // (, line 150
         // call R1, line 150
         if !r_R1(env, context) {
@@ -966,8 +946,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 13{
+    } else if among_var == 13 {
         // (, line 155
         // call RV, line 155
         if !r_RV(env, context) {
@@ -980,8 +959,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             return false;
         }
         return false;
-    }
-    else if among_var == 14{
+    } else if among_var == 14 {
         // (, line 156
         // call RV, line 156
         if !r_RV(env, context) {
@@ -994,8 +972,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
             return false;
         }
         return false;
-    }
-    else if among_var == 15{
+    } else if among_var == 15 {
         // (, line 158
         // test, line 158
         let v_11 = env.limit - env.cursor;
@@ -1020,6 +997,7 @@ fn r_standard_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_i_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // setlimit, line 163
     let v_1 = env.limit - env.cursor;
     // tomark, line 163
@@ -1034,7 +1012,7 @@ fn r_i_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 164
     env.ket = env.cursor;
     // substring, line 164
-    let among_var = env.find_among_b(A_5, context);
+    among_var = env.find_among_b(A_5, context);
     if among_var == 0 {
         env.limit_backward = v_2;
         return false;
@@ -1044,9 +1022,7 @@ fn r_i_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     if among_var == 0 {
         env.limit_backward = v_2;
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 170
         if !env.out_grouping_b(G_v, 97, 251) {
             env.limit_backward = v_2;
@@ -1062,6 +1038,7 @@ fn r_i_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // setlimit, line 174
     let v_1 = env.limit - env.cursor;
     // tomark, line 174
@@ -1076,7 +1053,7 @@ fn r_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 175
     env.ket = env.cursor;
     // substring, line 175
-    let among_var = env.find_among_b(A_6, context);
+    among_var = env.find_among_b(A_6, context);
     if among_var == 0 {
         env.limit_backward = v_2;
         return false;
@@ -1086,9 +1063,7 @@ fn r_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     if among_var == 0 {
         env.limit_backward = v_2;
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 177
         // call R2, line 177
         if !r_R2(env, context) {
@@ -1099,15 +1074,13 @@ fn r_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 185
         // delete, line 185
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 190
         // delete, line 190
         if !env.slice_del() {
@@ -1138,6 +1111,7 @@ fn r_verb_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_residual_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
+    let mut among_var;
     // (, line 198
     // try, line 199
     let v_1 = env.limit - env.cursor;
@@ -1179,7 +1153,7 @@ fn r_residual_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     // [, line 201
     env.ket = env.cursor;
     // substring, line 201
-    let among_var = env.find_among_b(A_7, context);
+    among_var = env.find_among_b(A_7, context);
     if among_var == 0 {
         env.limit_backward = v_4;
         return false;
@@ -1189,9 +1163,7 @@ fn r_residual_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
     if among_var == 0 {
         env.limit_backward = v_4;
         return false;
-    }
-
-    else if among_var == 1{
+    } else if among_var == 1 {
         // (, line 202
         // call R2, line 202
         if !r_R2(env, context) {
@@ -1220,22 +1192,19 @@ fn r_residual_suffix(env: &mut SnowballEnv, context: &mut Context) -> bool {
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 2{
+    } else if among_var == 2 {
         // (, line 204
         // <-, line 204
         if !env.slice_from("i") {
             return false;
         }
-    }
-    else if among_var == 3{
+    } else if among_var == 3 {
         // (, line 205
         // delete, line 205
         if !env.slice_del() {
             return false;
         }
-    }
-    else if among_var == 4{
+    } else if among_var == 4 {
         // (, line 206
         // literal, line 206
         if !env.eq_s_b(&"gu") {
