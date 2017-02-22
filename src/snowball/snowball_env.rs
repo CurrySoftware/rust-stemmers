@@ -33,6 +33,10 @@ impl<'a> SnowballEnv<'a> {
         self.current = Cow::from(current);
     }
 
+    pub fn set_current_s(&mut self, current: String) {
+        self.current = Cow::from(current);
+    }
+
     fn replace_s(&mut self, bra: usize, ket: usize, s: &str) -> i32 {
         let adjustment = s.len() as i32 - (ket as i32 - bra as i32);
         let mut result = String::with_capacity(self.current.len());
@@ -137,8 +141,21 @@ impl<'a> SnowballEnv<'a> {
         }
     }
 
+    // A grouping is represented by a minimum code point, a maximum code point,
+    // and a bitfield of which code points in that range are in the grouping.
+    // For example, in english.sbl, valid_LI is 'cdeghkmnrt'.
+    // The minimum and maximum code points are 99 and 116,
+    // so every time one of these grouping functions is called for g_valid_LI,
+    // min must be 99 and max must be 116. There are 18 code points within that
+    // range (inclusive) so the grouping is represented with 18 bits, plus 6 bits of padding:
+    //
+    // cdefghij klmnopqr st
+    // 11101100 10110001 01000000
+    //
+    // The first bit is the least significant.
+    // Those three bytes become &[0b00110111, 0b10001101, 0b00000010],
+    // which is &[55, 141, 2], which is how g_valid_LI is defined in english.rs.
     /// Check if the char the cursor points to is in the grouping
-    /// This is determined by weird magic stuff. I have no idea how it works
     pub fn in_grouping(&mut self, chars: &[u8], min: u32, max: u32) -> bool {
         if self.cursor >= self.limit {
             return false;
@@ -226,24 +243,6 @@ impl<'a> SnowballEnv<'a> {
         self.slice_from("")
     }
 
-    pub fn get_next_char_boundry(data: &str, mut index: usize) -> usize {
-        loop {
-            if index > data.len() || data.is_char_boundary(index) {
-                return index;
-            }
-            index += 1;
-        }
-    }
-
-    pub fn get_next_char_boundry_b(data: &str, mut index: usize) -> usize {
-        loop {
-            if data.is_char_boundary(index) {
-                return index;
-            }
-            index -= 1;
-        }
-    }
-
     pub fn insert(&mut self, bra: usize, ket: usize, s: &str) {
         let adjustment = self.replace_s(bra, ket, s);
         if bra <= self.bra {
@@ -316,7 +315,7 @@ impl<'a> SnowballEnv<'a> {
                     self.cursor = c + w.0.len();
                     if res {
                         return w.2;
-                    };
+                    }
                 } else {
                     return w.2;
                 }
@@ -324,7 +323,7 @@ impl<'a> SnowballEnv<'a> {
             i = w.1;
             if i < 0 {
                 return 0;
-            };
+            }
         }
     }
 
@@ -390,7 +389,7 @@ impl<'a> SnowballEnv<'a> {
                     self.cursor = c - w.0.len();
                     if res {
                         return w.2;
-                    };
+                    }
                 } else {
                     return w.2;
                 }
@@ -398,7 +397,7 @@ impl<'a> SnowballEnv<'a> {
             i = w.1;
             if i < 0 {
                 return 0;
-            };
+            }
         }
     }
 }
