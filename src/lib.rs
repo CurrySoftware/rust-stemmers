@@ -46,23 +46,23 @@ pub enum Algorithm {
 
 /// Wrapps a usable interface around the actual stemmer implementation
 pub struct Stemmer {
-    stemmer: Box<Fn(&mut SnowballEnv) -> bool>,
+    stemmer: fn(&mut SnowballEnv) -> bool,
 }
 
 impl Stemmer {
     /// Create a new stemmer from an algorithm
     pub fn create(lang: Algorithm) -> Self {
         match lang {
-            Algorithm::Arabic => Stemmer { stemmer: Box::new(algorithms::arabic::stem) },
-            Algorithm::English => Stemmer { stemmer: Box::new(algorithms::english::stem) },
-            Algorithm::Finnish => Stemmer { stemmer: Box::new(algorithms::finnish::stem) },
-            Algorithm::French => Stemmer { stemmer: Box::new(algorithms::french::stem) },
-            Algorithm::German => Stemmer { stemmer: Box::new(algorithms::german::stem) },
-            Algorithm::Italian => Stemmer { stemmer: Box::new(algorithms::italian::stem) },
-            Algorithm::Portuguese => Stemmer { stemmer: Box::new(algorithms::portuguese::stem) },
-            Algorithm::Romanian => Stemmer { stemmer: Box::new(algorithms::romanian::stem) },
-            Algorithm::Russian => Stemmer { stemmer: Box::new(algorithms::russian::stem) },
-            Algorithm::Spanish => Stemmer { stemmer: Box::new(algorithms::spanish::stem) },
+            Algorithm::Arabic => Stemmer { stemmer: algorithms::arabic::stem },
+            Algorithm::English => Stemmer { stemmer: algorithms::english::stem },
+            Algorithm::Finnish => Stemmer { stemmer: algorithms::finnish::stem },
+            Algorithm::French => Stemmer { stemmer: algorithms::french::stem },
+            Algorithm::German => Stemmer { stemmer: algorithms::german::stem },
+            Algorithm::Italian => Stemmer { stemmer: algorithms::italian::stem },
+            Algorithm::Portuguese => Stemmer { stemmer: algorithms::portuguese::stem },
+            Algorithm::Romanian => Stemmer { stemmer: algorithms::romanian::stem },
+            Algorithm::Russian => Stemmer { stemmer: algorithms::russian::stem },
+            Algorithm::Spanish => Stemmer { stemmer: algorithms::spanish::stem },
         }
     }
 

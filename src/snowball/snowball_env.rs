@@ -29,14 +29,6 @@ impl<'a> SnowballEnv<'a> {
         self.current
     }
 
-    pub fn set_current(&mut self, current: &'a str) {
-        self.current = Cow::from(current);
-    }
-
-    pub fn set_current_s(&mut self, current: String) {
-        self.current = Cow::from(current);
-    }
-
     fn replace_s(&mut self, bra: usize, ket: usize, s: &str) -> i32 {
         let adjustment = s.len() as i32 - (ket as i32 - bra as i32);
         let mut result = String::with_capacity(self.current.len());
