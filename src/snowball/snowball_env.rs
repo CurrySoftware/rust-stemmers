@@ -349,7 +349,6 @@ impl<'a> SnowballEnv<'a> {
                 if diff != 0 {
                     break;
                 }
-                // Count up commons. But not one character but the byte width of that char
                 common += 1;
             }
             if diff < 0 {

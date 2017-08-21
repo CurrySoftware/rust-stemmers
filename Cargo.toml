@@ -7,3 +7,8 @@ repository = "https://github.com/JDemler/rust-stemmers"
 readme = "README.md"
 keywords = ["nlp", "stemming", "information", "retrieval", "language"]
 license = "MIT/BSD-3-Clause"
+
+[dependencies]
+serde = "*"
+serde_derive = "*"
+

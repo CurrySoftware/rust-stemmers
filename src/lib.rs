@@ -20,7 +20,9 @@
 //!    assert_eq!(en_stemmer.stem("fruitlessly"), "fruitless");
 //! }
 //! ```
-
+extern crate serde;
+#[macro_use]
+extern crate serde_derive;
 
 use std::borrow::Cow;
 
@@ -31,17 +33,24 @@ use snowball::algorithms;
 
 /// Enum of all supported algorithms.
 /// Check the [Snowball-Website](https://snowballstem.org/) for details.
+#[derive(Debug, Serialize, Deserialize)]
 pub enum Algorithm {
     Arabic,
+    Danish,
+    Dutch,
     English,
     Finnish,
     French,
     German,
+    Hungarian,
     Italian,
     Portuguese,
     Romanian,
     Russian,
-    Spanish,    
+    Spanish,
+    Swedish,
+    Tamil,
+    Turkish
 }
 
 /// Wrapps a usable interface around the actual stemmer implementation
@@ -54,15 +63,21 @@ impl Stemmer {
     pub fn create(lang: Algorithm) -> Self {
         match lang {
             Algorithm::Arabic => Stemmer { stemmer: algorithms::arabic::stem },
+            Algorithm::Danish => Stemmer { stemmer: algorithms::danish::stem },
+            Algorithm::Dutch => Stemmer { stemmer: algorithms::dutch::stem },
             Algorithm::English => Stemmer { stemmer: algorithms::english::stem },
             Algorithm::Finnish => Stemmer { stemmer: algorithms::finnish::stem },
             Algorithm::French => Stemmer { stemmer: algorithms::french::stem },
             Algorithm::German => Stemmer { stemmer: algorithms::german::stem },
+            Algorithm::Hungarian => Stemmer { stemmer: algorithms::hungarian::stem },
             Algorithm::Italian => Stemmer { stemmer: algorithms::italian::stem },
             Algorithm::Portuguese => Stemmer { stemmer: algorithms::portuguese::stem },
             Algorithm::Romanian => Stemmer { stemmer: algorithms::romanian::stem },
             Algorithm::Russian => Stemmer { stemmer: algorithms::russian::stem },
             Algorithm::Spanish => Stemmer { stemmer: algorithms::spanish::stem },
+            Algorithm::Swedish => Stemmer { stemmer: algorithms::swedish::stem },
+            Algorithm::Tamil => Stemmer { stemmer: algorithms::tamil::stem },
+            Algorithm::Turkish => Stemmer { stemmer: algorithms::turkish::stem },
         }
     }
 
