@@ -33,7 +33,7 @@ use snowball::algorithms;
 
 /// Enum of all supported algorithms.
 /// Check the [Snowball-Website](https://snowballstem.org/) for details.
-#[derive(Debug, Serialize, Deserialize, Eq, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, Eq, PartialEq, Copy, Clone)]
 pub enum Algorithm {
     Arabic,
     Danish,
