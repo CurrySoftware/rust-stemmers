@@ -7,7 +7,7 @@
 //! # Usage
 //! ```toml
 //! [dependencies]
-//! rust-stemmers = "0.1"
+//! rust-stemmers = "^1.0"
 //! ```
 //!
 //! ```rust
@@ -33,7 +33,7 @@ use snowball::algorithms;
 
 /// Enum of all supported algorithms.
 /// Check the [Snowball-Website](https://snowballstem.org/) for details.
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Eq, PartialEq)]
 pub enum Algorithm {
     Arabic,
     Danish,
