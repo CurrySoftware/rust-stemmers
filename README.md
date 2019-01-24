@@ -10,6 +10,7 @@ This crate implements some stemmer algorithms found in the [snowball project](ht
 -   English
 -   French
 -   German
+-   Greek
 -   Hungarian
 -   Italian
 -   Portuguese

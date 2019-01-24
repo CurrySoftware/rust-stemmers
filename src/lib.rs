@@ -42,6 +42,7 @@ pub enum Algorithm {
     Finnish,
     French,
     German,
+    Greek,
     Hungarian,
     Italian,
     Portuguese,
@@ -69,6 +70,7 @@ impl Stemmer {
             Algorithm::Finnish => Stemmer { stemmer: algorithms::finnish::stem },
             Algorithm::French => Stemmer { stemmer: algorithms::french::stem },
             Algorithm::German => Stemmer { stemmer: algorithms::german::stem },
+            Algorithm::Greek => Stemmer { stemmer: algorithms::greek::stem },
             Algorithm::Hungarian => Stemmer { stemmer: algorithms::hungarian::stem },
             Algorithm::Italian => Stemmer { stemmer: algorithms::italian::stem },
             Algorithm::Portuguese => Stemmer { stemmer: algorithms::portuguese::stem },
@@ -277,6 +279,24 @@ mod tests {
             stemms_to(voc.unwrap().as_str(),
                       res.unwrap().as_str(),
                       Algorithm::Finnish);
+        }
+    }
+
+    #[test]
+    fn greek_test() {
+        use std::fs;
+        use std::io;
+        use std::io::BufRead;
+
+        let vocab = io::BufReader::new(fs::File::open("test_data/voc_el.txt").unwrap());
+        let result = io::BufReader::new(fs::File::open("test_data/res_el.txt").unwrap());
+
+        let lines = vocab.lines().zip(result.lines());
+
+        for (voc, res) in lines {
+            stemms_to(voc.unwrap().as_str(),
+                      res.unwrap().as_str(),
+                      Algorithm::Greek);
         }
     }
 
