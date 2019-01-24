@@ -1,6 +1,6 @@
 [package]
 name = "rust-stemmers"
-version = "1.0.2"
+version = "1.1.0"
 authors = ["Jakob Demler <jdemler@curry-software.com>", "CurrySoftware <info@curry-software.com>"]
 description = "A rust implementation of some popular snowball stemming algorithms"
 repository = "https://github.com/CurrySoftware/rust-stemmers"
