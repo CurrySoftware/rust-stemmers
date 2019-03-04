@@ -25,7 +25,7 @@ This crate implements some stemmer algorithms found in the [snowball project](ht
 # Usage
 
 ```rust
-extern crate native_stemmers;
+extern crate rust_stemmers;
 use rust_stemmers::{Algorithm, Stemmer};
 
 // Create a stemmer for the english language
