@@ -13,6 +13,7 @@ This crate implements some stemmer algorithms found in the [snowball project](ht
 -   Greek
 -   Hungarian
 -   Italian
+-   Norwegian
 -   Portuguese
 -   Romanian
 -   Russian
