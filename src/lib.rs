@@ -23,6 +23,8 @@
 extern crate serde;
 #[macro_use]
 extern crate serde_derive;
+#[cfg(test)]
+extern crate serde_json;
 
 use std::borrow::Cow;
 
@@ -55,33 +57,52 @@ pub enum Algorithm {
     Turkish
 }
 
-/// Wrapps a usable interface around the actual stemmer implementation
+/// Wraps a usable interface around the actual stemmer implementation
+#[derive(Serialize, Deserialize)]
+#[serde(from = "Algorithm", into = "Algorithm")]
 pub struct Stemmer {
     stemmer: fn(&mut SnowballEnv) -> bool,
+    algorithm: Algorithm,
+}
+
+impl From<Algorithm> for Stemmer {
+    fn from(algorithm: Algorithm) -> Self {
+        Stemmer::create(algorithm)
+    }
+}
+
+impl From<Stemmer> for Algorithm {
+    fn from(stemmer: Stemmer) -> Self {
+        stemmer.algorithm
+    }
+}
+
+impl Clone for Stemmer {
+    fn clone(&self) -> Self { Self::from(self.algorithm) }
 }
 
 impl Stemmer {
     /// Create a new stemmer from an algorithm
-    pub fn create(lang: Algorithm) -> Self {
-        match lang {
-            Algorithm::Arabic => Stemmer { stemmer: algorithms::arabic::stem },
-            Algorithm::Danish => Stemmer { stemmer: algorithms::danish::stem },
-            Algorithm::Dutch => Stemmer { stemmer: algorithms::dutch::stem },
-            Algorithm::English => Stemmer { stemmer: algorithms::english::stem },
-            Algorithm::Finnish => Stemmer { stemmer: algorithms::finnish::stem },
-            Algorithm::French => Stemmer { stemmer: algorithms::french::stem },
-            Algorithm::German => Stemmer { stemmer: algorithms::german::stem },
-            Algorithm::Greek => Stemmer { stemmer: algorithms::greek::stem },
-            Algorithm::Hungarian => Stemmer { stemmer: algorithms::hungarian::stem },
-            Algorithm::Italian => Stemmer { stemmer: algorithms::italian::stem },
-            Algorithm::Norwegian => Stemmer { stemmer: algorithms::norwegian::stem },
-            Algorithm::Portuguese => Stemmer { stemmer: algorithms::portuguese::stem },
-            Algorithm::Romanian => Stemmer { stemmer: algorithms::romanian::stem },
-            Algorithm::Russian => Stemmer { stemmer: algorithms::russian::stem },
-            Algorithm::Spanish => Stemmer { stemmer: algorithms::spanish::stem },
-            Algorithm::Swedish => Stemmer { stemmer: algorithms::swedish::stem },
-            Algorithm::Tamil => Stemmer { stemmer: algorithms::tamil::stem },
-            Algorithm::Turkish => Stemmer { stemmer: algorithms::turkish::stem },
+    pub fn create(algorithm: Algorithm) -> Self {
+        match algorithm {
+            Algorithm::Arabic => Stemmer { stemmer: algorithms::arabic::stem, algorithm },
+            Algorithm::Danish => Stemmer { stemmer: algorithms::danish::stem, algorithm },
+            Algorithm::Dutch => Stemmer { stemmer: algorithms::dutch::stem, algorithm },
+            Algorithm::English => Stemmer { stemmer: algorithms::english::stem, algorithm },
+            Algorithm::Finnish => Stemmer { stemmer: algorithms::finnish::stem, algorithm },
+            Algorithm::French => Stemmer { stemmer: algorithms::french::stem, algorithm },
+            Algorithm::German => Stemmer { stemmer: algorithms::german::stem, algorithm },
+            Algorithm::Greek => Stemmer { stemmer: algorithms::greek::stem, algorithm },
+            Algorithm::Hungarian => Stemmer { stemmer: algorithms::hungarian::stem, algorithm },
+            Algorithm::Italian => Stemmer { stemmer: algorithms::italian::stem, algorithm },
+            Algorithm::Norwegian => Stemmer { stemmer: algorithms::norwegian::stem, algorithm },
+            Algorithm::Portuguese => Stemmer { stemmer: algorithms::portuguese::stem, algorithm },
+            Algorithm::Romanian => Stemmer { stemmer: algorithms::romanian::stem, algorithm },
+            Algorithm::Russian => Stemmer { stemmer: algorithms::russian::stem, algorithm },
+            Algorithm::Spanish => Stemmer { stemmer: algorithms::spanish::stem, algorithm },
+            Algorithm::Swedish => Stemmer { stemmer: algorithms::swedish::stem, algorithm },
+            Algorithm::Tamil => Stemmer { stemmer: algorithms::tamil::stem, algorithm },
+            Algorithm::Turkish => Stemmer { stemmer: algorithms::turkish::stem, algorithm },
         }
     }
 
@@ -320,4 +341,18 @@ mod tests {
         }
     }
 
+    #[test]
+    fn serialization_test() {
+        let word = "sarjallistaminen";
+
+        let stemmer = Stemmer::create(Algorithm::Finnish);
+        let stemmed_word_before_serialization = stemmer.stem(word);
+
+        let serialized_stemmer = serde_json::to_string(&stemmer).unwrap();
+        let deserialized_stemmer: Stemmer = serde_json::from_str(&serialized_stemmer).unwrap();
+
+        let stemmed_word_after_serialization = deserialized_stemmer.stem(word);
+
+        assert_eq!(stemmed_word_before_serialization, stemmed_word_after_serialization);
+    }
 }
