@@ -56,6 +56,7 @@ pub enum Algorithm {
 }
 
 /// Wrapps a usable interface around the actual stemmer implementation
+#[derive(Clone)]
 pub struct Stemmer {
     stemmer: fn(&mut SnowballEnv) -> bool,
 }
