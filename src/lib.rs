@@ -36,6 +36,7 @@ use snowball::algorithms;
 #[derive(Debug, Serialize, Deserialize, Eq, PartialEq, Copy, Clone)]
 pub enum Algorithm {
     Arabic,
+    Armenian,
     Danish,
     Dutch,
     English,
@@ -65,6 +66,7 @@ impl Stemmer {
     pub fn create(lang: Algorithm) -> Self {
         match lang {
             Algorithm::Arabic => Stemmer { stemmer: algorithms::arabic::stem },
+            Algorithm::Armenian => Stemmer { stemmer: algorithms::armenian::stem },
             Algorithm::Danish => Stemmer { stemmer: algorithms::danish::stem },
             Algorithm::Dutch => Stemmer { stemmer: algorithms::dutch::stem },
             Algorithm::English => Stemmer { stemmer: algorithms::english::stem },
