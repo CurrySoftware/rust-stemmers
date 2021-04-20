@@ -9,6 +9,7 @@ pub mod german;
 pub mod greek;
 pub mod hungarian;
 pub mod italian;
+pub mod nepali;
 pub mod norwegian;
 pub mod portuguese;
 pub mod romanian;
