@@ -13,6 +13,7 @@ pub mod norwegian;
 pub mod portuguese;
 pub mod romanian;
 pub mod russian;
+pub mod serbian;
 pub mod spanish;
 pub mod swedish;
 pub mod tamil;
