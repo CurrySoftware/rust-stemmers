@@ -37,6 +37,7 @@ use snowball::algorithms;
 pub enum Algorithm {
     Arabic,
     Armenian,
+    Basque,
     Danish,
     Dutch,
     English,
@@ -67,6 +68,7 @@ impl Stemmer {
         match lang {
             Algorithm::Arabic => Stemmer { stemmer: algorithms::arabic::stem },
             Algorithm::Armenian => Stemmer { stemmer: algorithms::armenian::stem },
+            Algorithm::Basque => Stemmer { stemmer: algorithms::basque::stem },
             Algorithm::Danish => Stemmer { stemmer: algorithms::danish::stem },
             Algorithm::Dutch => Stemmer { stemmer: algorithms::dutch::stem },
             Algorithm::English => Stemmer { stemmer: algorithms::english::stem },
