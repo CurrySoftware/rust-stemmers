@@ -18,6 +18,7 @@ This crate implements some stemmer algorithms found in the [snowball project](ht
 -   Portuguese
 -   Romanian
 -   Russian
+-   Serbian
 -   Spanish
 -   Swedish
 -   Tamil
