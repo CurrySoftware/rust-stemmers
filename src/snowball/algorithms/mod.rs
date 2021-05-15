@@ -8,6 +8,7 @@ pub mod french;
 pub mod german;
 pub mod greek;
 pub mod hungarian;
+pub mod irish;
 pub mod italian;
 pub mod norwegian;
 pub mod portuguese;
