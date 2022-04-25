@@ -20,7 +20,10 @@
 //!    assert_eq!(en_stemmer.stem("fruitlessly"), "fruitless");
 //! }
 //! ```
+#[cfg(feature="serde")]
 extern crate serde;
+
+#[cfg(feature="serde")]
 #[macro_use]
 extern crate serde_derive;
 
@@ -33,7 +36,8 @@ use snowball::algorithms;
 
 /// Enum of all supported algorithms.
 /// Check the [Snowball-Website](https://snowballstem.org/) for details.
-#[derive(Debug, Serialize, Deserialize, Eq, PartialEq, Copy, Clone)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Eq, PartialEq, Copy, Clone)]
 pub enum Algorithm {
     Arabic,
     Armenian,
@@ -320,6 +324,27 @@ mod tests {
                       res.unwrap().as_str(),
                       Algorithm::Norwegian);
         }
+    }
+
+    #[cfg(feature = "serde")]
+    fn dummy_serialization_function<T: serde::Serialize>(x: T) {
+        drop(x)
+    }
+
+    #[cfg(feature = "serde")]
+    fn dummy_deserialization_function<T: serde::de::DeserializeOwned>(x: T) {
+        drop(x)
+    }
+
+
+    #[cfg(feature = "serde")]
+    #[test]
+    fn serialization() {
+        let algorithm = Algorithm::English;
+        dummy_deserialization_function(algorithm);
+
+        let algorithm2 = Algorithm::Spanish;
+        dummy_serialization_function(algorithm2);
     }
 
 }

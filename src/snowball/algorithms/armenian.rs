@@ -219,8 +219,8 @@ struct Context {
 }
 
 fn r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    context.i_pV = env.limit;
-    context.i_p2 = env.limit;
+    context.i_pV = env.limit as i32;
+    context.i_p2 = env.limit as i32;
     let v_1 = env.cursor;
     'lab0: loop {
         'golab1: loop {
@@ -235,7 +235,7 @@ fn r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool {
             }
             env.next_char();
         }
-        context.i_pV = env.cursor;
+        context.i_pV = env.cursor as i32;
         'golab3: loop {
             'lab4: loop {
                 if !env.out_grouping(G_v, 1377, 1413) {
@@ -272,7 +272,7 @@ fn r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool {
             }
             env.next_char();
         }
-        context.i_p2 = env.cursor;
+        context.i_p2 = env.cursor as i32;
         break 'lab0;
     }
     env.cursor = v_1;
@@ -280,7 +280,7 @@ fn r_mark_regions(env: &mut SnowballEnv, context: &mut Context) -> bool {
 }
 
 fn r_R2(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    if !(context.i_p2 <= env.cursor){
+    if !(context.i_p2 <= env.cursor as i32){
         return false;
     }
     return true;
@@ -345,11 +345,11 @@ pub fn stem(env: &mut SnowballEnv) -> bool {
     r_mark_regions(env, context);
     env.limit_backward = env.cursor;
     env.cursor = env.limit;
-    if env.cursor < context.i_pV {
+    if env.cursor < context.i_pV as usize {
         return false;
     }
     let v_3 = env.limit_backward;
-    env.limit_backward = context.i_pV;
+    env.limit_backward = context.i_pV as usize;
     let v_4 = env.limit - env.cursor;
     r_ending(env, context);
     env.cursor = env.limit - v_4;
